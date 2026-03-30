@@ -1,0 +1,13 @@
+\begin{thebibliography}{1}
+
+\bibitem{rosco_mycolor}
+{Rosco Laboratories}, ``Rosco mycolor.'' \url{https://legacy.rosco.com/mycolor/mycolor.cfm}, 2026.
+\newblock Accessed: 2026-03-29.
+
+\bibitem{1931TrOS...33...73S}
+T.~{Smith} and J.~{Guild}, ``{The C.I.E. colorimetric standards and their use},'' {\em Transactions of the Optical Society}, vol.~33, pp.~73--134, Jan. 1931.
+
+\bibitem{Pascale2006RGBCO}
+D.~Pascale, ``Rgb coordinates of the macbeth colorchecker,'' 2006.
+
+\end{thebibliography}

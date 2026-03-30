@@ -1,1 +1,71 @@
 \section{Method}
+\subsection{Data Collection}
+We take the standard CIE 1931 XYZ color matching functions\cite{1931TrOS...33...73S} as our target spectral response functions for reconstruction.
+
+For our filter set, we use a standard set of Rosco Supergel\cite{rosco_mycolor} filters and measure their spectral response functions using a spectrophotometer under [FILL IN MODEL] lighting.
+We construct a dataset spanning $\lambda$ 400-750 at 1nm intervals, and normalize the response functions to a maximum of 1.
+
+
+\begin{center}
+    \centering
+    \includegraphics[width=\linewidth]{media/measure.jpeg}
+    \captionof{figure}{Filter measurement setup with spectrophotometer and Rosco Supergel filters.}
+\end{center}
+
+\subsection{Filter Selection}
+
+Our search method is a brute-force combinatorial search over all possible filter combinations of size $N$ from our filter set.
+For each combination, we compute the linear least squares solution (RMSE) to find the optimal weights for reconstructing the XYZ functions from the selected filters.
+
+We minimize for the distance between the target spectral response functions and the reconstructed functions from the selected filters:
+\begin{equation}
+    \argmin_{\vec{i}, \boldsymbol{M}} \sum_{X,Y,Z} F(p_C(\lambda)-\boldsymbol{M}_{\vec{i}}\int_{\lambda} I(\lambda)R(\lambda)e_{\vec{i}}(\lambda) \, d\lambda)
+\end{equation}
+
+\begin{center}
+\captionof{table}{Notation and symbols used in the text}
+\begin{tabular}{ll}
+\toprule
+Symbol & Description \\
+\midrule
+$N$ & number of filters \\
+$F$ & loss function \\
+$I(\lambda)$ & Illuminant intensity \\
+$e_i(\lambda)$ & spectral transmission function\\
+$R(\lambda)$ & surface reflectance spectrum \\
+$q_c(\lambda)$ & camera spectral sensitivity \\
+$p_c(\lambda)$ & target transmission function\\
+$c$ & color $c \in \{R,G,B\}$ \\
+$\boldsymbol{M}$ & $3 \times N$ matrix of weights\\
+$\vec{i}$ & a row vector of filter indices \\
+$\boldsymbol{I}$ & integral in optimizer above \\
+
+%$p_d(\lambda)$ & CIE XYZ color matching functions, $d \in \{X,Y,Z\}$ \\
+%$\boldsymbol{M}$ & $3 \times 3$ color-correction matrix with elements $m_{c,d}$ \\$\boldsymbol{v}$ & a row vector with RAW linear RGB color values \\
+%$\boldsymbol{u}$ & a row vector with CIE 1931 XYZ tristimulus values \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+To solve this, we can express the problem in matrix form as:
+\begin{equation}
+    \argmin_{\boldsymbol{M}} ||\boldsymbol{P} - \boldsymbol{M}\boldsymbol{I}||^2
+\end{equation}
+For $F$ as Mean Squared Error (MSE), The optimal weights can be found using the pseudo-inverse:
+\begin{equation}
+    \boldsymbol{M} = \boldsymbol{P}\boldsymbol{I}^T(\boldsymbol{I}\boldsymbol{I}^T)^{-1}
+\end{equation}  
+
+And for other $F$, such as SMAPE, we use gradient descent to find the optimal weights, informing our initial guess with the MSE solution.
+
+We find the optimal filter combination for each $N$ by selecting the combination with the lowest loss $F$. 
+We plot the errors across all combinations for N=4:
+
+\begin{center}
+    \centering
+    \includegraphics[width=\linewidth]{media/all_errorsN4MSE.png}
+    \captionof{figure}{MSE Error distribution across all filter combinations for N=4}
+\end{center}
+
+As the search space grows combinatorially with $N$, we consider $N$ up to 10, which is a reasonable number of filters for a filter wheel system.
+In filter wheels consisting of 10 or more filters, we utilize a greedy heuristic to add candidate filters to our search space, selecting filters that minimize the error when added to the best combination from $N-1$ filters.
