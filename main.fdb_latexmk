@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1774904229.80844 "main.aux" "main.bbl" "main" 1774905017.57301 0
+["bibtex main"] 1774990708.76637 "main.aux" "main.bbl" "main" 1774990710.39364 0
   "./document.bib" 1774879336.45721 3787 06b5ec2a27ceb0d07d5eb1df29dd20b7 ""
   "/usr/local/texlive/2026/texmf-dist/bibtex/bst/base/ieeetr.bst" 1292289607 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "main.aux" 1774905017.36776 2787 69c14dc1c68a851cee6306982565061b "pdflatex"
+  "main.aux" 1774990710.20483 2835 6b363dff7aed900984d1a5ed80cee466 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1774905015.86178 "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" "main.pdf" "main" 1774905017.57316 0
-  "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" 1774902170.48485 972 136e110a8f4b78170bd84aa1a6802842 ""
+["pdflatex"] 1774990708.84295 "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" "main.pdf" "main" 1774990710.39374 0
+  "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" 1774986753.16743 973 784b4af367294665e9ab5a14d5d0144a ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -52,6 +52,7 @@
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1248133631 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
+  "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb" 1248133631 40540 ffff783419ea8147938742206b9b7b57 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb" 1248133631 35479 892d27442ef9ef29ce1ee57aa0e8a665 ""
   "/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty" 1748806692 2222 27db7d52163edae53881b71ff62e754e ""
@@ -81,9 +82,9 @@
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1772409757 3636768 9f94d239f422c02416e379a36a852ffd ""
   "/usr/local/texlive/2026/texmf.cnf" 1772409725 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
   "iopconfser.cls" 1774800608.02243 4296 8bda329e2c882c25dadbe03513ff04c0 ""
-  "main.aux" 1774905017.36776 2787 69c14dc1c68a851cee6306982565061b "pdflatex"
-  "main.bbl" 1774904229.88066 490 3832a0bd60fc5c27601187d4494d77b1 "bibtex main"
-  "main.tex" 1774902170.48485 972 136e110a8f4b78170bd84aa1a6802842 ""
+  "main.aux" 1774990710.20483 2835 6b363dff7aed900984d1a5ed80cee466 "pdflatex"
+  "main.bbl" 1774990708.84133 490 3832a0bd60fc5c27601187d4494d77b1 "bibtex main"
+  "main.tex" 1774986753.16743 973 784b4af367294665e9ab5a14d5d0144a ""
   "media/all_errorsN4MSE.png" 1774810774.8636 111076 090f1e80d4d2e2981938779e418f9ab0 ""
   "media/deltaE_vs_N_mse.png" 1774879298.57536 205945 7c464648c447f54a33f0626b4d3c77dd ""
   "media/measure.jpeg" 1774879526.43386 166989 7fe9f170262d8348de87d5fd7c370fb2 ""
@@ -91,15 +92,15 @@
   "media/n10MSETransmission1.png" 1774901713.30023 236756 22813a700b473aeee89676aebd6dbc65 ""
   "media/n10MSEbarRank0.png" 1774901713.29729 53683 fbdbed0548c79183cf1e189b14edf4dd ""
   "media/n10MacbethRank0.png" 1774901713.29801 64870 7c5cf41de9eb49390284979e5edd946d ""
+  "media/n3MSEMacbeth.png" 1774810774.8618 61058 1d6303010b498f147f7fc514a76726e3 ""
   "media/n3MSETransmission1.png" 1774810774.86451 247144 71f61b7fa992e57bc9b28de457eb1fe5 ""
   "media/n3MSEbarRank2.png" 1774810774.86073 45295 e64771d598a34b3594e0f14a5b5541fb ""
   "media/n4MSETransmission1.png" 1774810774.87012 248711 91789019b891c7c696bea8d62932dc19 ""
-  "sections/0_abstract.tex" 1774903501.00573 142 6dbd1c82650a8cbb22ec6245414a52f7 ""
+  "sections/0_abstract.tex" 1774986726.18382 757 8849559ce356901c122af49f89436c81 ""
   "sections/1_intro.tex" 1774818002.83727 870 89a81ecb9ebb85b34584ae9d404c3de7 ""
-  "sections/2_related_work.tex" 1774903553.4049 79 a473b5dad1fa1ec049ae9b2547161f7c ""
-  "sections/3_method.tex" 1774903659.67428 3560 9dee819240f42f49a05bd31cde35e87c ""
-  "sections/4_evaluation.tex" 1774905015.66965 3689 a36c5957bb910e0f14427c397a6a07dd ""
-  "sections/5_conclusion.tex" 1774800608.02435 20 b50204e17c0a475d3d65191e029fdf1d ""
+  "sections/3_method.tex" 1774987000.36171 3617 90ca9f34580cd3f6f5e789be35938c49 ""
+  "sections/4_evaluation.tex" 1774990706.91991 4047 bce5f36dc62c10c9249d0921fad1e41c ""
+  "sections/5_conclusion.tex" 1774986726.29691 419 65c666ca3e1b675d5d27caf1fdb51b83 ""
   (generated)
   "main.aux"
   "main.log"

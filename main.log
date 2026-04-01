@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  30 MAR 2026 22:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  31 MAR 2026 21:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -299,13 +299,15 @@ LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
 (Font)              size <5> substituted on input line 15.
 
-(./sections/0_abstract.tex) (./sections/1_intro.tex) (./sections/2_related_work.tex) (./sections/3_method.tex
+(./sections/0_abstract.tex) (./sections/1_intro.tex) (./sections/3_method.tex
 <media/measure.jpeg, id=1, 180.675pt x 168.63pt>
 File: media/measure.jpeg Graphic file (type jpg)
 <use media/measure.jpeg>
 Package pdftex.def Info: media/measure.jpeg  used on input line 11.
 (pdftex.def)             Requested size: 222.62204pt x 207.7816pt.
+ [1
 
+{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <5.5> not available
 (Font)              size <5> substituted on input line 22.
@@ -323,26 +325,22 @@ Overfull \hbox (6.74544pt too wide) detected at line 23
 [][] [] \OML/cmm/m/it/10.95 F\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 p[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^U\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^@ [][] [][] \OML/cmm/m/it/10.95 I\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^U\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 R\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^U\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 e[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 ^^U\OT1/cmr/m/n/10.95 ) \OML/cmm/m/it/10.95 d^^U\OT1/cmr/m/n/10.95 )
  []
 
-[1
-
-{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./media/measure.jpeg>]
 <media/all_errorsN4MSE.png, id=14, 867.24pt x 433.62pt>
 File: media/all_errorsN4MSE.png Graphic file (type png)
 <use media/all_errorsN4MSE.png>
 Package pdftex.def Info: media/all_errorsN4MSE.png  used on input line 66.
 (pdftex.def)             Requested size: 222.62204pt x 111.30937pt.
-) (./sections/4_evaluation.tex
-<media/deltaE_vs_N_mse.png, id=16, 722.7pt x 433.62pt>
+) (./sections/4_evaluation.tex [2 <./media/measure.jpeg> <./media/all_errorsN4MSE.png>]
+<media/deltaE_vs_N_mse.png, id=27, 722.7pt x 433.62pt>
 File: media/deltaE_vs_N_mse.png Graphic file (type png)
 <use media/deltaE_vs_N_mse.png>
 Package pdftex.def Info: media/deltaE_vs_N_mse.png  used on input line 9.
 (pdftex.def)             Requested size: 166.96652pt x 100.18042pt.
-<media/n3MSETransmission1.png, id=17, 875.4306pt x 730.8906pt>
+<media/n3MSETransmission1.png, id=28, 875.4306pt x 730.8906pt>
 File: media/n3MSETransmission1.png Graphic file (type png)
 <use media/n3MSETransmission1.png>
 Package pdftex.def Info: media/n3MSETransmission1.png  used on input line 19.
 (pdftex.def)             Requested size: 166.96652pt x 139.39482pt.
- [2 <./media/all_errorsN4MSE.png> <./media/deltaE_vs_N_mse.png>]
 <media/n3MSEbarRank2.png, id=29, 860.013pt x 426.393pt>
 File: media/n3MSEbarRank2.png Graphic file (type png)
 <use media/n3MSEbarRank2.png>
@@ -363,18 +361,23 @@ File: media/n10MSEbarRank0.png Graphic file (type png)
 <use media/n10MSEbarRank0.png>
 Package pdftex.def Info: media/n10MSEbarRank0.png  used on input line 51.
 (pdftex.def)             Requested size: 166.96652pt x 82.77869pt.
-<media/n10MacbethRank0.png, id=33, 715.473pt x 468.3096pt>
+ [3 <./media/deltaE_vs_N_mse.png> <./media/n3MSETransmission1.png> <./media/n3MSEbarRank2.png> <./media/n4MSETransmission1.png> <./media/n10MSETransmission1.png>]
+<media/n10MacbethRank0.png, id=41, 715.473pt x 468.3096pt>
 File: media/n10MacbethRank0.png Graphic file (type png)
 <use media/n10MacbethRank0.png>
 Package pdftex.def Info: media/n10MacbethRank0.png  used on input line 59.
 (pdftex.def)             Requested size: 166.96652pt x 109.28102pt.
- [3 <./media/n3MSETransmission1.png> <./media/n3MSEbarRank2.png> <./media/n4MSETransmission1.png> <./media/n10MSETransmission1.png> <./media/n10MSEbarRank0.png> <./media/n10MacbethRank0.png>]
+<media/n3MSEMacbeth.png, id=42, 715.473pt x 468.3096pt>
+File: media/n3MSEMacbeth.png Graphic file (type png)
+<use media/n3MSEMacbeth.png>
+Package pdftex.def Info: media/n3MSEMacbeth.png  used on input line 66.
+(pdftex.def)             Requested size: 166.96652pt x 109.28102pt.
 <media/n10M.png, id=43, 586.1097pt x 188.6247pt>
 File: media/n10M.png Graphic file (type png)
 <use media/n10M.png>
-Package pdftex.def Info: media/n10M.png  used on input line 67.
+Package pdftex.def Info: media/n10M.png  used on input line 74.
 (pdftex.def)             Requested size: 222.62204pt x 71.64645pt.
-) (./sections/5_conclusion.tex) (./main.bbl) [4 <./media/n10M.png>] (./main.aux)
+) (./sections/5_conclusion.tex) (./main.bbl) [4 <./media/n10MSEbarRank0.png> <./media/n10MacbethRank0.png> <./media/n3MSEMacbeth.png> <./media/n10M.png>] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -386,18 +389,18 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 4205 strings out of 467525
- 71985 string characters out of 5418983
- 481370 words of memory out of 5000000
- 33074 multiletter control sequences out of 15000+600000
+ 4206 strings out of 467525
+ 72011 string characters out of 5418983
+ 480370 words of memory out of 5000000
+ 33078 multiletter control sequences out of 15000+600000
  637142 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,12n,65p,392b,491s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (4 pages, 1413750 bytes).
+ 57i,12n,65p,392b,490s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (4 pages, 1473034 bytes).
 PDF statistics:
- 107 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 114 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

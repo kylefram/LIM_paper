@@ -47,13 +47,13 @@ $\boldsymbol{I}$ & integral in optimizer above \\
 \end{tabular}
 \end{center}
 
-To solve this, we can express the problem in matrix form as:
+To solve this, we can express the problem in matrix form for each filter index subset $i$ and each channel $c$:
 \begin{equation}
-    \argmin_{\boldsymbol{M}} ||\boldsymbol{P} - \boldsymbol{M}\boldsymbol{I}||^2
+    \argmin_{\boldsymbol{M_i}} ||\boldsymbol{P} - \boldsymbol{M_i}\boldsymbol{I}||^2
 \end{equation}
 For $F$ as Mean Squared Error (MSE), The optimal weights can be found using the pseudo-inverse:
 \begin{equation}
-    \boldsymbol{M} = \boldsymbol{P}\boldsymbol{I}^T(\boldsymbol{I}\boldsymbol{I}^T)^{-1}
+    \boldsymbol{M_i} = \boldsymbol{P}\boldsymbol{I}^T(\boldsymbol{I}\boldsymbol{I}^T)^{-1}
 \end{equation}  
 
 And for other $F$, such as SMAPE, we use gradient descent to find the optimal weights, informing our initial guess with the MSE solution.

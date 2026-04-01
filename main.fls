@@ -83,9 +83,6 @@ INPUT sections/0_abstract.tex
 INPUT ./sections/1_intro.tex
 INPUT ./sections/1_intro.tex
 INPUT sections/1_intro.tex
-INPUT ./sections/2_related_work.tex
-INPUT ./sections/2_related_work.tex
-INPUT sections/2_related_work.tex
 INPUT ./sections/3_method.tex
 INPUT ./sections/3_method.tex
 INPUT sections/3_method.tex
@@ -96,6 +93,7 @@ INPUT ./media/measure.jpeg
 INPUT ./media/measure.jpeg
 OUTPUT main.pdf
 INPUT ./media/measure.jpeg
+INPUT /usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
@@ -104,7 +102,6 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm
-INPUT /usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT ./media/all_errorsN4MSE.png
 INPUT ./media/all_errorsN4MSE.png
 INPUT ./media/all_errorsN4MSE.png
@@ -153,6 +150,11 @@ INPUT ./media/n10MacbethRank0.png
 INPUT ./media/n10MacbethRank0.png
 INPUT ./media/n10MacbethRank0.png
 INPUT ./media/n10MacbethRank0.png
+INPUT ./media/n3MSEMacbeth.png
+INPUT ./media/n3MSEMacbeth.png
+INPUT ./media/n3MSEMacbeth.png
+INPUT ./media/n3MSEMacbeth.png
+INPUT ./media/n3MSEMacbeth.png
 INPUT ./media/n10M.png
 INPUT ./media/n10M.png
 INPUT ./media/n10M.png
@@ -174,6 +176,7 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.p
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib5.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
