@@ -1,6 +1,6 @@
 \section{Evaluation}
 
-We evaluate our method by comparing the reconstructed XYZ functions from our selected filters to the target XYZ functions, and computing the color difference $\Delta E_{2000}$ under standard illuminants.
+We evaluate our method by comparing the reconstructed XYZ color matching functions from our selected filters to the target XYZ functions, and computing the color difference $\Delta E_{2000}$ under standard reflectance.
 We use the Macbeth Color Checker \cite{Pascale2006RGBCO} as our test set, and evaluate under the D65 illuminant.
 For each number of filters $N$, we compute the minimum $\Delta E_{2000}$ across all combinations of $N$ filters from the Rosco Supergel set, and plot the relationship between $N$ and $\Delta E_{2000}$.
 
@@ -68,7 +68,7 @@ In comparison, the best filter combination for $N=3$ shows visible color differe
 \end{center}
 
 In addition, the $3 \times 10$ $\boldsymbol{M}$ matrix for the best $N=10$ reconstruction is shown below, displaying two important characteristics. 
-First, all 10 filters are 'active' in at least one dimension at all times. 
+First, all 10 filters contribute to at least two of the trichromatic values.
 \begin{center}
     \centering
     \includegraphics[width=\linewidth]{media/n10M.png}
