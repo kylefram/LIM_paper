@@ -3,46 +3,48 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: ieeetr.bst
 Database file #1: document.bib
+Warning--empty booktitle in Filterselection
+Warning--empty institution in bremer2007multispectral
 Warning--empty booktitle in Pascale2006RGBCO
-You've used 3 entries,
+You've used 14 entries,
             1876 wiz_defined-function locations,
-            496 strings with 3843 characters,
-and the built_in function-call counts, 589 in all, are:
-= -- 54
-> -- 16
+            571 strings with 5984 characters,
+and the built_in function-call counts, 3915 in all, are:
+= -- 388
+> -- 133
 < -- 0
-+ -- 7
-- -- 4
-* -- 35
-:= -- 91
-add.period$ -- 4
-call.type$ -- 3
-change.case$ -- 3
++ -- 51
+- -- 37
+* -- 266
+:= -- 539
+add.period$ -- 15
+call.type$ -- 14
+change.case$ -- 15
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 30
-empty$ -- 67
-format.name$ -- 4
-if$ -- 143
+cite$ -- 17
+duplicate$ -- 216
+empty$ -- 382
+format.name$ -- 37
+if$ -- 965
 int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 2
-newline$ -- 13
-num.names$ -- 3
-pop$ -- 16
+int.to.str$ -- 14
+missing$ -- 12
+newline$ -- 46
+num.names$ -- 14
+pop$ -- 58
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 17
+skip$ -- 153
 stack$ -- 0
-substring$ -- 23
-swap$ -- 7
+substring$ -- 255
+swap$ -- 90
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 5
-width$ -- 4
-write$ -- 29
-(There was 1 warning)
+warning$ -- 3
+while$ -- 38
+width$ -- 16
+write$ -- 140
+(There were 3 warnings)

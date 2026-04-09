@@ -1,4 +1,10 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{SCUTELNIC2024e00596}
+D.~Scutelnic, R.~Muradore, and C.~Daffara, ``A multispectral camera in the vis–nir equipped with thermal imaging and environmental sensors for non invasive analysis in precision agriculture,'' {\em HardwareX}, vol.~20, p.~e00596, 2024.
+
+\bibitem{mannheimer1977landsat}
+H.~Mannheimer, ``The {LANDSAT} program,'' in {\em Proceedings of the Conference on Waste Heat Management and Utilization}, vol.~2, NASA, 1977.
 
 \bibitem{rosco_mycolor}
 {Rosco Laboratories}, ``Rosco mycolor.'' \url{https://legacy.rosco.com/mycolor/mycolor.cfm}, 2026.
@@ -6,6 +12,33 @@
 
 \bibitem{1931TrOS...33...73S}
 T.~{Smith} and J.~{Guild}, ``{The C.I.E. colorimetric standards and their use},'' {\em Transactions of the Optical Society}, vol.~33, pp.~73--134, Jan. 1931.
+
+\bibitem{sharpe2005luminous}
+L.~T. Sharpe, A.~Stockman, W.~Jagla, and H.~J{\"a}gle, ``A luminous efficiency function, v*($\lambda$), for daylight adaptation,'' {\em Journal of vision}, vol.~5, no.~11, pp.~3--3, 2005.
+
+\bibitem{von1927gebiet}
+R.~Von~Luther, ``Aus dem gebiet der farbreizmetrik,'' {\em Zeitschrift fur Technishe Physik}, vol.~12, pp.~540--558, 1927.
+
+\bibitem{morales2020multispectral}
+A.~Morales, R.~Guerra, P.~Horstrand, M.~Diaz, A.~Jimenez, J.~Melian, S.~Lopez, and J.~F. Lopez, ``A multispectral camera development: From the prototype assembly until its use in a uav system,'' {\em Sensors}, vol.~20, no.~21, p.~6129, 2020.
+
+\bibitem{berns2005spectral}
+R.~S. Berns, L.~A. Taplin, and M.~Nezamabadi, ``Spectral imaging using a commercial colour-filter array digital camera,'' in {\em ICOM Committee for Conservation 14th Triennial Meeting, The Hague}, pp.~743--750, James \& James/Earthscan, 2005.
+
+\bibitem{Filterselection}
+J.~Y. Hardeberg, ``Filter selection for multispectral color image acquisition,'' pp.~105--110, 03 2004.
+
+\bibitem{lapray2014multispectral}
+P.-J. Lapray, X.~Wang, J.-B. Thomas, and P.~Gouton, ``Multispectral filter arrays: Recent advances and practical implementation,'' {\em Sensors}, vol.~14, no.~11, pp.~21626--21659, 2014.
+
+\bibitem{bremer2007multispectral}
+J.~C. Bremer, ``Multispectral imager with improved filter wheel and optics,'' tech. rep., 2007.
+
+\bibitem{klein2012multispectral}
+J.~Klein and T.~Aach, ``Multispectral filter wheel cameras: Modeling aberrations for filters in front of lens,'' in {\em Digital Photography VIII}, vol.~8299, pp.~226--234, SPIE, 2012.
+
+\bibitem{maitre1996spectrophotometric}
+H.~Ma{\^\i}tre, F.~Schmitt, J.-P. Crettez, Y.~Wu, and J.~Y. Hardeberg, ``Spectrophotometric image analysis of fine art paintings,'' in {\em Color and Imaging Conference}, vol.~4, pp.~50--53, Society of Imaging Science and Technology, 1996.
 
 \bibitem{Pascale2006RGBCO}
 D.~Pascale, ``Rgb coordinates of the macbeth colorchecker,'' 2006.

@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1774990708.76637 "main.aux" "main.bbl" "main" 1774990710.39364 0
-  "./document.bib" 1774879336.45721 3787 06b5ec2a27ceb0d07d5eb1df29dd20b7 ""
+["bibtex main"] 1775745427.93152 "main.aux" "main.bbl" "main" 1775746435.47485 0
+  "./document.bib" 1775745335.87784 8888 8d7e2c451ff82372cac9c179af0c1b23 ""
   "/usr/local/texlive/2026/texmf-dist/bibtex/bst/base/ieeetr.bst" 1292289607 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "main.aux" 1774990710.20483 2835 6b363dff7aed900984d1a5ed80cee466 "pdflatex"
+  "main.aux" 1775746435.28768 4701 71a88d9b43c042195a367401a880f2a7 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1774990708.84295 "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" "main.pdf" "main" 1774990710.39374 0
-  "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" 1774986753.16743 973 784b4af367294665e9ab5a14d5d0144a ""
+["pdflatex"] 1775746433.39832 "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" "main.pdf" "main" 1775746435.47495 0
+  "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" 1775743757.11315 1119 eb63f5c57ebcc15ec6d529b521c9110c ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -82,12 +82,13 @@
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1772409757 3636768 9f94d239f422c02416e379a36a852ffd ""
   "/usr/local/texlive/2026/texmf.cnf" 1772409725 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
   "iopconfser.cls" 1774800608.02243 4296 8bda329e2c882c25dadbe03513ff04c0 ""
-  "main.aux" 1774990710.20483 2835 6b363dff7aed900984d1a5ed80cee466 "pdflatex"
-  "main.bbl" 1774990708.84133 490 3832a0bd60fc5c27601187d4494d77b1 "bibtex main"
-  "main.tex" 1774986753.16743 973 784b4af367294665e9ab5a14d5d0144a ""
+  "main.aux" 1775746435.28768 4701 71a88d9b43c042195a367401a880f2a7 "pdflatex"
+  "main.bbl" 1775745427.99944 2836 979667e16a5747d68366f9ab8c6376ec "bibtex main"
+  "main.tex" 1775743757.11315 1119 eb63f5c57ebcc15ec6d529b521c9110c ""
   "media/all_errorsN4MSE.png" 1774810774.8636 111076 090f1e80d4d2e2981938779e418f9ab0 ""
   "media/deltaE_vs_N_mse.png" 1774879298.57536 205945 7c464648c447f54a33f0626b4d3c77dd ""
-  "media/measure.jpeg" 1774879526.43386 166989 7fe9f170262d8348de87d5fd7c370fb2 ""
+  "media/front_page_plot2.png" 1775743624.92767 629631 834a5c3a20b8ce949a71856b70831603 ""
+  "media/measure2.jpeg" 1775583307.83491 4313877 88da253cffcb34e5164eb08717d0d255 ""
   "media/n10M.png" 1774901713.2965 29279 ce031e13946e019d5fba027b1f1636a8 ""
   "media/n10MSETransmission1.png" 1774901713.30023 236756 22813a700b473aeee89676aebd6dbc65 ""
   "media/n10MSEbarRank0.png" 1774901713.29729 53683 fbdbed0548c79183cf1e189b14edf4dd ""
@@ -96,10 +97,11 @@
   "media/n3MSETransmission1.png" 1774810774.86451 247144 71f61b7fa992e57bc9b28de457eb1fe5 ""
   "media/n3MSEbarRank2.png" 1774810774.86073 45295 e64771d598a34b3594e0f14a5b5541fb ""
   "media/n4MSETransmission1.png" 1774810774.87012 248711 91789019b891c7c696bea8d62932dc19 ""
-  "sections/0_abstract.tex" 1774986726.18382 757 8849559ce356901c122af49f89436c81 ""
-  "sections/1_intro.tex" 1774818002.83727 870 89a81ecb9ebb85b34584ae9d404c3de7 ""
-  "sections/3_method.tex" 1774987000.36171 3617 90ca9f34580cd3f6f5e789be35938c49 ""
-  "sections/4_evaluation.tex" 1774990706.91991 4047 bce5f36dc62c10c9249d0921fad1e41c ""
+  "sections/0_abstract.tex" 1775745425.69968 653 57bb67eafb8f21924882943fc979e45b ""
+  "sections/1_intro.tex" 1775746433.19829 2054 10ade0c42e6421d69c936bc1ff9e5ba4 ""
+  "sections/2_related_work.tex" 1775745335.87766 1838 235c5aad7eaa21460725c584a4e0d030 ""
+  "sections/3_method.tex" 1775745342.53217 4403 bb62812849c2e11a87293a955171db6f ""
+  "sections/4_evaluation.tex" 1775219788.90936 4132 c2619de6d98db3e114f9f3f265aceb58 ""
   "sections/5_conclusion.tex" 1774986726.29691 419 65c666ca3e1b675d5d27caf1fdb51b83 ""
   (generated)
   "main.aux"

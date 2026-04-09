@@ -1,2 +1,19 @@
 \section{Related Work}
-(DO I WANT RELATED WORK? TAKES UP VALUABLE REAL ESTATE)
+A wide literature exists on the topic of multispectral imaging, much of which utilizes the simple filter wheel construct. 
+\subsection{Multispectral Imaging}
+Multispectral image capture requiring high shutter speeds my often be prohibitively expensive.
+However, the spinning filter wheel construct provides an inexpensive solution when unconstrained by capture duration, such as in the imaging of  fine art and agriculture. 
+Morales et al.\cite{morales2020multispectral} demonstrate a filter wheel with bandpass filters mounted on UAV systems for precision agriculture applications.
+Further, Scutelnic et al.\cite{SCUTELNIC2024e00596} use narrow band pass filters in a filter wheel and a camera with significant IR coverage to construct a relatively low cost sensor array, improving on Morales et al. 
+
+\subsection{Color Accurate Image Capture}
+Berns et al.\cite{berns2005spectral} demonstrates a method for evaluating color matching functions against standard CIE XYZ, and then comparing response functions against the Macbeth ColorChecker for validation.
+
+\subsection{Filter Selection}
+Hardeberg\cite{Filterselection} provides an effective filter selection method and a comparison vs. prior methods for discrete filter selection in a filter wheel. 
+
+\subsection{Filter Wheel Design}
+Various works have proposed 3D-printed filter wheel designs, often with raspberry pi control. 
+Lapray et al.\cite{lapray2014multispectral} compares filter wheels to other modern multispecral imaging implementations. 
+Bremer\cite{bremer2007multispectral} proposes an improvement to the traditional model, reducing dead time by removing solid filters in favor of advanced timing synchronization. 
+Klein and Aach\cite{klein2012multispectral} model the camera noise resulting from different optical properties of filters in the wheel.
