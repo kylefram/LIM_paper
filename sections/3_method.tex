@@ -1,8 +1,10 @@
 \section{Method}
 \subsection{Data Collection}
-We take the standard CIE 1931 XYZ color matching functions\cite{1931TrOS...33...73S} as our target spectral response functions for reconstruction.
+We take the standard CIE 1931 XYZ color matching functions \cite{1931TrOS...33...73S} as our target spectral response functions for reconstruction.
 
-For our filter set, we use a standard set of Rosco Supergel\cite{rosco_mycolor} filters and measure their spectral response functions using a spectrophotometer under [FILL IN MODEL] lighting.
+First, we draft a sample set of filters by scraping the  
+
+For our measured filter set, we use a standard set of Rosco Supergel \cite{rosco_mycolor} filters and measure their spectral response functions using a spectrophotometer under an Ianiro Varibeam 800W bulb.
 We construct a dataset spanning $\lambda$ 400-750 at 1nm intervals, and normalize the response functions to a maximum of 1.
 
 %SUPERGEL PHOTO
@@ -22,29 +24,30 @@ We minimize for the distance between the target spectral response functions and 
 \begin{equation}
     \argmin_{\boldsymbol{M},f} \sum_{c \in {X,Y,Z}} \int_{\lambda}  \boldsymbol{L}(p_c(\lambda),G_{c,\boldsymbol{M}}(\lambda))d\lambda
 \end{equation}
+
+
 Where $G_{c,\boldsymbol{M}}(\lambda)$ is the reconstructed spectral response function for color channel $c$ from the selected filters, which can be expressed as:
 \begin{equation}
-    G_{c,\boldsymbol{M}}(\lambda) = \sum_{k}^{N} f_k \boldsymbol{M}_{c,k}I(\lambda)R(\lambda)e_{k}(\lambda) \, d\lambda
+    G_{c,\boldsymbol{M}}(\lambda) = \sum_{k}^{N} f_k M_{c}I(\lambda)R(\lambda)e_{k}(\lambda) \, d\lambda
 \end{equation}
 
-
-
-\begin{center}
-\captionof{table}{Notation and symbols used in the text}
+\begin{center}[t]
+\captionof{table}{Notation and symbols}
 \begin{tabular}{ll}
 \toprule
 Symbol & Description \\
 \midrule
 $N$ & number of filters \\
-$\boldsymbol{L}$ & loss function \\
-$I(\lambda)$ & Illuminant intensity \\
-$e_i(\lambda)$ & Camera Spectral Sensitivity function\\
-$R(\lambda)$ & surface reflectance spectrum \\
-$q_c(\lambda)$ & camera spectral sensitivity \\
-$p_c(\lambda)$ & target color matching function\\
-$c$ & color $c \in \{R,G,B\}$ \\
 $\boldsymbol{M}$ & $3 \times N$ matrix of weights\\
-$f$ & $\in {0,1}$, $N \times 1$ \\
+$M_c$ & row of $\boldsymbol{M}$ corresponding to $c \in \{R,G,B\}$\\
+$f_k$ & $N \times 1$ filter selection vector, items $\in {0,1}$ \\
+$\boldsymbol{L}$ & Loss function \\
+$I(\lambda)$ & Illuminant intensity \\
+$R(\lambda)$ & Surface reflectance spectrum \\
+$e_i(\lambda)$ & Filter Spectral Sensitivity function\\
+$q_c(\lambda)$ & Camera spectral sensitivity \\
+$p_c(\lambda)$ & Target color matching function\\
+
 
 %$p_d(\lambda)$ & CIE XYZ color matching functions, $d \in \{X,Y,Z\}$ \\
 %$\boldsymbol{M}$ & $3 \times 3$ color-correction matrix with elements $m_{c,d}$ \\$\boldsymbol{v}$ & a row vector with RAW linear RGB color values \\
