@@ -3,9 +3,9 @@
 We take the standard CIE 1931 XYZ color matching functions \cite{1931TrOS...33...73S} as our target spectral response functions for reconstruction.
 Further, we run the same analysis on modern XYZ color matching functions, such as those seen in Sharpe et al. \cite{sharpe2005luminous}
 
-First, we draft a sample set of filters by scraping the \cite{rosco_mycolor} website for spectral response functions. These provide a helpful and expansive set of filters. 
+First, we draft a sample set of filters by scraping the Rosco MyColor Tool \cite{rosco_mycolor} for spectral response functions. These provide a helpful and extensive set of filters. 
 
-Then, for our measured filter set, we use a standard set of Rosco Supergel \cite{rosco_mycolor} filters and measure their spectral response functions using a spectrophotometer under an Ianiro Varibeam 800W bulb.
+Then, for our measured filter set, we use a standard set of Rosco Supergel filters and measure their spectral response functions using a spectrophotometer under an Ianiro Varibeam 800W bulb.
 We construct a dataset spanning $\lambda$ 400-750 at 1nm intervals, and normalize the response functions to a maximum of 1.
 
 %SUPERGEL PHOTO
@@ -48,7 +48,7 @@ $\boldsymbol{M}$ & $3 \times N$ matrix of weights\\
 $\boldsymbol{L}$ & Loss function \\
 $\boldsymbol{P}(\lambda)$ & Target color matching function\\
 %$p_c(\lambda)$ & Target color matching function, target $\in {X,Y,Z}$\\
-$\boldsymbol{G}(\lambda)$ & Simulated color matching function as per \ref{eq:2}\\
+$\boldsymbol{G}(\lambda)$ & Simulated color matching function\\
 %$p_c(\lambda)$ & Target color matching function, target $\in {X,Y,Z}$\\
 
 %$M_c$ & row of $\boldsymbol{M}$ corresponding to $c \in \{R,G,B\}$\\
@@ -76,7 +76,7 @@ For $F$ as Mean Squared Error (MSE), the optimal weights can be found using the 
     \boldsymbol{M} = \boldsymbol{P}\boldsymbol{G}^T(\boldsymbol{G}\boldsymbol{G}^T)^{-1}
 \end{equation}  
 
-And for other $F$, such as SMAPE, we use gradient descent to find the optimal weights, informing our initial guess with the MSE solution.
+And for other $F$, such as SMAPE, we use gradient descent to find the optimal weights, informing our initial guess with the MSE pseudoinverse solution.
 
 \subsection{Filter Selection}
 \subsubsection{Brute Force Search}
@@ -89,23 +89,23 @@ We plot the errors across all combinations for N=4:
     \captionof{figure}{MSE Error distribution across all filter combinations for N=4}
 \end{center}
 
-As the search space grows combinatorially with $N$, we cannot feasibly consider all combinations.
-We introduce a 'prune' factor which removes filters based on a cosine similarity metric. 
+As the search space grows combinatorially with $N$, we cannot feasibly consider all combinations for large $N$.
+To alleviate this issue, we introduce a 'prune' factor which removes filters based on a cosine similarity metric. 
 
 \subsubsection{PCA Analysis}
 To find the optimal filter combination for each $N$ without brute force search, we can use PCA analysis to find the optimal weights $M$ for all filters, and then select the top $N$ filters with the highest weights.
 This method effectively creates one $\boldsymbol{M}$ and iteratively reduces weights that can be discarded with minimal loss, until reaching $N$ nonzero entries.  
 
-\subsubsection{Blended Methods}
+\subsubsection{Blended Methods} 
 
 While brute force methods guarantee minimum possible loss by investigating the entire search space, large $N$ implementations render this technique impossible. 
 Crucially, we can decrease the speed of combinatoric explosion by pruning our set of filters, but the problem of which filter to exclude in a pairwise filter pruning decision is not trivial. 
 
 Similarly, PCA and other heuristic methods generally miss the optimal filter combination. 
 
-To address this problem, we use a blended method which finds an ansatz using PCA or another heuristic method for $N-N2$ filters, and then greedily considers the final $N2$ filters from all remaining. 
+To address this problem, we use a blended method which suggests a solution using PCA or another heuristic method for $N-N2$ filters, and then greedily considers the final $N2$ filters from the entire remaining set. 
 This provides a middle ground to the performance-accuracy tradeoff by searching depth and then breadth of the combinatoric tree. 
-We see that a significant shortfall grows with $N$ as $N2=0$, but nearly disappears at $N2>0$.
+We see that a significant MSE shortfall grows with $N$ as $N2=0$, but nearly disappears at $N2>0$.
 
 \begin{center}
     \centering
@@ -113,7 +113,7 @@ We see that a significant shortfall grows with $N$ as $N2=0$, but nearly disappe
     \captionof{figure}{Reduced MSE performance shortfall with Exhaustive Search Layers}
 \end{center}
 
-Further, certain PCA solutions achieve effectively identical deltaE to those achieved by exhaustive search. 
+Further, certain PCA solutions achieve effectively identical deltaE to those achieved by exhaustive search, especially at $N>4$ and $N2 \in {1,2}$.
 
 \begin{center}
     \centering
@@ -121,7 +121,7 @@ Further, certain PCA solutions achieve effectively identical deltaE to those ach
     \captionof{figure}{Comparable $\Delta E_{2000}$ performance between PCA and Exhaustive Search}
 \end{center}
 
-We also compare the time performance of these, and demonstrate the significant improvement afforded by PCA with exhaustive search. 
+We also compare the time performance of these, and demonstrate the significant improvement afforded by PCA with exhaustive search.
 \begin{center}
     \centering
     \includegraphics[width=\linewidth]{media/timing_comparison.png}
