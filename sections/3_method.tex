@@ -19,21 +19,21 @@ We construct a dataset spanning $\lambda$ 400-750 at 1nm intervals, and normaliz
 
 We minimize for the distance between the target spectral response functions and the reconstructed functions from the selected filters:
 \begin{equation}
-    \argmin_{\boldsymbol{M},f} \int_{\lambda}  \boldsymbol{L}(\boldsymbol{P}(\lambda),\boldsymbol{G}_{\boldsymbol{M}}(\lambda))d\lambda
+    \argmin_{\boldsymbol{M},f} \int_{\lambda}  \boldsymbol{L}(\boldsymbol{P}(\lambda),\boldsymbol{G}(\lambda))d\lambda
     \label{eq:1}
 \end{equation}
 
 We consider all color channels equally and decompose target color matching functions $\boldsymbol{P}(\lambda)$ and simulated color matching functions $\boldsymbol{G}(\lambda)$ into $p_c(\lambda)$ and $G_c(\lambda)$, respectively.
 
 \begin{equation}
-    \argmin_{\boldsymbol{M},f} \sum_{c \in {X,Y,Z}} \int_{\lambda}  \boldsymbol{L}(p_c(\lambda),G_{c,\boldsymbol{M}}(\lambda))d\lambda
+    \argmin_{\boldsymbol{M},f} \sum_{c \in {X,Y,Z}} \int_{\lambda}  \boldsymbol{L}(p_c(\lambda),G_{c}(\lambda))d\lambda
     \label{eq:2}
 \end{equation}
 
 
-Where $G_{c,\boldsymbol{M}}(\lambda)$ is the reconstructed spectral response function for color channel $c$ from the selected filters, which can be expressed as:
+Where $G_{c}(\lambda)$ is the reconstructed spectral response function for color channel $c$ from the selected filters, which can be expressed as:
 \begin{equation}
-    G_{c,\boldsymbol{M}}(\lambda) = \sum_{k}^{N} f_k M_{c}I(\lambda)R(\lambda)e_{k}(\lambda) \, d\lambda
+    G_{c}(\lambda) = \sum_{k}^{N} f_k M_{c}I(\lambda)R(\lambda)e_{k}(\lambda) \, d\lambda
     \label{eq:3}
 \end{equation}
 
@@ -48,7 +48,7 @@ $\boldsymbol{M}$ & $3 \times N$ matrix of weights\\
 $\boldsymbol{L}$ & Loss function \\
 $\boldsymbol{P}(\lambda)$ & Target color matching function\\
 %$p_c(\lambda)$ & Target color matching function, target $\in {X,Y,Z}$\\
-$\boldsymbol{G_M}(\lambda)$ & Simulated color matching function as per \ref{eq:2}\\
+$\boldsymbol{G}(\lambda)$ & Simulated color matching function as per \ref{eq:2}\\
 %$p_c(\lambda)$ & Target color matching function, target $\in {X,Y,Z}$\\
 
 %$M_c$ & row of $\boldsymbol{M}$ corresponding to $c \in \{R,G,B\}$\\
@@ -69,11 +69,11 @@ $e_k(\lambda)$ & Filter $k$ Spectral Sensitivity function\\
 For approximations of XYZ, we follow the work of Hardeberg \cite{Filterselection} in using RMSE as our loss function, again equally weighted across each channel. 
 Additionally, with RMSE loss function, the solution to \ref{eq:1} can be achieved in a computationally efficient manner by computing the pseudoinverse.
 \begin{equation}
-    \argmin_{\boldsymbol{M}} ||\boldsymbol{P} - \boldsymbol{M}\boldsymbol{G_M}||^2
+    \argmin_{\boldsymbol{M}} ||\boldsymbol{P} - \boldsymbol{M}\boldsymbol{G}||^2
 \end{equation}
 For $F$ as Mean Squared Error (MSE), the optimal weights can be found using the pseudo-inverse:
 \begin{equation}
-    \boldsymbol{M} = \boldsymbol{P}\boldsymbol{G_M}^T(\boldsymbol{G_M}\boldsymbol{G_M}^T)^{-1}
+    \boldsymbol{M} = \boldsymbol{P}\boldsymbol{G}^T(\boldsymbol{G}\boldsymbol{G}^T)^{-1}
 \end{equation}  
 
 And for other $F$, such as SMAPE, we use gradient descent to find the optimal weights, informing our initial guess with the MSE solution.
@@ -94,7 +94,7 @@ We introduce a 'prune' factor which removes filters based on a cosine similarity
 
 \subsubsection{PCA Analysis}
 To find the optimal filter combination for each $N$ without brute force search, we can use PCA analysis to find the optimal weights $M$ for all filters, and then select the top $N$ filters with the highest weights.
-
+This method effectively creates one $\boldsymbol{M}$ and iteratively reduces weights that can be discarded with minimal loss, until reaching $N$ nonzero entries.  
 
 \subsubsection{Blended Methods}
 
