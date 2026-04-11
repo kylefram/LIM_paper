@@ -1,10 +1,11 @@
 \section{Method}
 \subsection{Data Collection}
 We take the standard CIE 1931 XYZ color matching functions \cite{1931TrOS...33...73S} as our target spectral response functions for reconstruction.
+Further, we run the same analysis on modern XYZ color matching functions, such as those seen in Sharpe et al. \cite{sharpe2005luminous}
 
-First, we draft a sample set of filters by scraping the  
+First, we draft a sample set of filters by scraping the \cite{rosco_mycolor} website for spectral response functions. These provide a helpful and expansive set of filters. 
 
-For our measured filter set, we use a standard set of Rosco Supergel \cite{rosco_mycolor} filters and measure their spectral response functions using a spectrophotometer under an Ianiro Varibeam 800W bulb.
+Then, for our measured filter set, we use a standard set of Rosco Supergel \cite{rosco_mycolor} filters and measure their spectral response functions using a spectrophotometer under an Ianiro Varibeam 800W bulb.
 We construct a dataset spanning $\lambda$ 400-750 at 1nm intervals, and normalize the response functions to a maximum of 1.
 
 %SUPERGEL PHOTO
@@ -70,7 +71,7 @@ Additionally, with RMSE loss function, the solution to \ref{eq:1} can be achieve
 \begin{equation}
     \argmin_{\boldsymbol{M}} ||\boldsymbol{P} - \boldsymbol{M}\boldsymbol{G_M}||^2
 \end{equation}
-For $F$ as Mean Squared Error (MSE), The optimal weights can be found using the pseudo-inverse:
+For $F$ as Mean Squared Error (MSE), the optimal weights can be found using the pseudo-inverse:
 \begin{equation}
     \boldsymbol{M} = \boldsymbol{P}\boldsymbol{G_M}^T(\boldsymbol{G_M}\boldsymbol{G_M}^T)^{-1}
 \end{equation}  
@@ -79,7 +80,7 @@ And for other $F$, such as SMAPE, we use gradient descent to find the optimal we
 
 \subsection{Filter Selection}
 \subsubsection{Brute Force Search}
-In the naiive solution, we find the optimal filter combination for each $N$ by selecting the combination with the lowest loss $F$, considering all combinations of filters.
+In the naive solution, we find the optimal filter combination for each $N$ by selecting the combination with the lowest loss $F$, considering all combinations of filters.
 We plot the errors across all combinations for N=4:
 
 \begin{center}
@@ -88,12 +89,41 @@ We plot the errors across all combinations for N=4:
     \captionof{figure}{MSE Error distribution across all filter combinations for N=4}
 \end{center}
 
-As the search space grows combinatorially with $N$, we consider $N$ up to 10, which is a reasonable number of filters for a filter wheel system.
+As the search space grows combinatorially with $N$, we cannot feasibly consider all combinations.
+We introduce a 'prune' factor which removes filters based on a cosine similarity metric. 
 
-\subsubsection{LASSO Regression}
-To find the optimal filter combination for each $N$ without brute force search, we can use LASSO regression to find the optimal weights $M$ for all filters, and then select the top $N$ filters with the highest weights.
+\subsubsection{PCA Analysis}
+To find the optimal filter combination for each $N$ without brute force search, we can use PCA analysis to find the optimal weights $M$ for all filters, and then select the top $N$ filters with the highest weights.
 
 
-\subsection{$M$ Optimization}
-For each combination of filters $f_k$, we optimize for the weights $M_{c,k}$ to minimize the loss $F$ between the target spectral response functions and the reconstructed functions from the selected filters.
-Following Hardeberg\cite{Filterselection} and Maitre it al.\cite{maitre1996spectrophotometric}, we utilize a PCA decomposition to maximize the orthogonality of the selected filters in relation to an arbitrary target. 
+\subsubsection{Blended Methods}
+
+While brute force methods guarantee minimum possible loss by investigating the entire search space, large $N$ implementations render this technique impossible. 
+Crucially, we can decrease the speed of combinatoric explosion by pruning our set of filters, but the problem of which filter to exclude in a pairwise filter pruning decision is not trivial. 
+
+Similarly, PCA and other heuristic methods generally miss the optimal filter combination. 
+
+To address this problem, we use a blended method which finds an ansatz using PCA or another heuristic method for $N-N2$ filters, and then greedily considers the final $N2$ filters from all remaining. 
+This provides a middle ground to the performance-accuracy tradeoff by searching depth and then breadth of the combinatoric tree. 
+We see that a significant shortfall grows with $N$ as $N2=0$, but nearly disappears at $N2>0$.
+
+\begin{center}
+    \centering
+    \includegraphics[width=\linewidth]{media/mse_comparison_exact_paths.png}
+    \captionof{figure}{Reduced MSE performance shortfall with Exhaustive Search Layers}
+\end{center}
+
+Further, certain PCA solutions achieve effectively identical deltaE to those achieved by exhaustive search. 
+
+\begin{center}
+    \centering
+    \includegraphics[width=\linewidth]{media/deltaE_comparison_exact_paths.png}
+    \captionof{figure}{Comparable $\Delta E_{2000}$ performance between PCA and Exhaustive Search}
+\end{center}
+
+We also compare the time performance of these, and demonstrate the significant improvement afforded by PCA with exhaustive search. 
+\begin{center}
+    \centering
+    \includegraphics[width=\linewidth]{media/timing_comparison.png}
+    \captionof{figure}{Timing Comparison between PCA and Brute Force Selection Methods}
+\end{center}

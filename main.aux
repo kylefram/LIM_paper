@@ -14,6 +14,8 @@
 \citation{bremer2007multispectral}
 \citation{klein2012multispectral}
 \citation{1931TrOS...33...73S}
+\citation{sharpe2005luminous}
+\citation{rosco_mycolor}
 \citation{rosco_mycolor}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{2}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Multispectral Imaging}{2}{}\protected@file@percent }
@@ -31,19 +33,22 @@
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Notation and symbols}}{3}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Filter Selection}{3}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Brute Force Search}{3}{}\protected@file@percent }
-\citation{Filterselection}
-\citation{maitre1996spectrophotometric}
 \citation{Pascale2006RGBCO}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces MSE Error distribution across all filter combinations for N=4}}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}LASSO Regression}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}$M$ Optimization}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Evaluation}{4}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Best $\Delta E_{2000}$ for each number of filters $N$ }}{4}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Camera Spectral Sensitivity for best XYZ Reconstruction for $N=3$ }}{4}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Best $\Delta E_{2000}$ for each number of filters $N=3$ }}{5}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Camera Spectral Sensitivity for best XYZ Reconstruction for $N=4$ }}{5}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Camera Spectral Sensitivity for best XYZ Reconstruction for $N=10$ }}{5}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Best $\Delta E_{2000}$ for each number of filters $N$ }}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}PCA Analysis}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Blended Methods}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Reduced MSE performance shortfall with Exhaustive Search Layers}}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Comparable $\Delta E_{2000}$ performance between PCA and Exhaustive Search}}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Timing Comparison between PCA and Brute Force Selection Methods}}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Evaluation}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Best $\Delta E_{2000}$ for each number of filters $N$ }}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Camera Spectral Sensitivity for best XYZ Reconstruction for $N=3$ }}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Best $\Delta E_{2000}$ for each number of filters $N=3$ }}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Camera Spectral Sensitivity for best XYZ Reconstruction for $N=4$ }}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Camera Spectral Sensitivity for best XYZ Reconstruction for $N=10$ }}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Best $\Delta E_{2000}$ for each number of filters $N$ }}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Macbeth Color Checker Comparison for $N=10$ }}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Macbeth Color Checker Comparison for $N=10$ }}{6}{}\protected@file@percent }
 \bibdata{document.bib}
 \bibcite{SCUTELNIC2024e00596}{1}
 \bibcite{mannheimer1977landsat}{2}
@@ -52,17 +57,15 @@
 \bibcite{sharpe2005luminous}{5}
 \bibcite{von1927gebiet}{6}
 \bibcite{morales2020multispectral}{7}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Macbeth Color Checker Comparison for $N=10$ }}{6}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Macbeth Color Checker Comparison for $N=10$ }}{6}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces $\boldsymbol  {M}$ matrix for $N=10$ reconstruction}}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{References}{6}{}\protected@file@percent }
 \bibcite{berns2005spectral}{8}
 \bibcite{Filterselection}{9}
 \bibcite{lapray2014multispectral}{10}
 \bibcite{bremer2007multispectral}{11}
 \bibcite{klein2012multispectral}{12}
-\bibcite{maitre1996spectrophotometric}{13}
-\bibcite{Pascale2006RGBCO}{14}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces $\boldsymbol  {M}$ matrix for $N=10$ reconstruction}}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{7}{}\protected@file@percent }
+\bibcite{Pascale2006RGBCO}{13}
 \bibstyle{ieeetr}
-\gdef \@abspage@last{7}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Appendix}{8}{}\protected@file@percent }
+\gdef \@abspage@last{8}
