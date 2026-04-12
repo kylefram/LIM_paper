@@ -1,4 +1,7 @@
 \section{Related Work}
+
+{\color{red}. My advice. Write the image formation equation: intergal of light, sensor and surface here. I know you do it later. Better here}.  Mathematically define the problem of colour correction to XYZ (using filters). I don't think you need a review of the wider multispectral literature. A single review paper would suffice. But, if you know filter wheel papers. What did they do (technically). Which filters. How were they chosen. If others have used filters. What is novel about this approach?}
+
 A wide literature exists on the topic of multispectral imaging, much of which utilizes the simple filter wheel construct. 
 \subsection{Multispectral Imaging}
 Multispectral image capture requiring high shutter speeds may often be prohibitively expensive.
@@ -9,11 +12,18 @@ Further, Scutelnic et al. \cite{SCUTELNIC2024e00596} use narrow band pass filter
 \subsection{Color Accurate Image Capture}
 Berns et al. \cite{berns2005spectral} demonstrates a method for evaluating color matching functions against standard CIE XYZ, and then comparing response functions against the Macbeth ColorChecker for validation.
 
+{\color{red}. I don't know what this method is? You are going to have to tell the reader}
+
 \subsection{Filter Selection}
-Hardeberg \cite{Filterselection} provides an effective filter selection method and a comparison vs. prior methods for discrete filter selection in a filter wheel. 
+Hardeberg \cite{Filterselection} provides an effective filter selection method and a comparison vs. prior methods for discrete filter selection in a filter wheel.
+
+{\color{red} Again, if this is relevant you need to say what Hardeberg did?}
 
 \subsection{Filter Wheel Design}
 Various works have proposed 3D-printed filter wheel designs, often with raspberry pi control. 
 Lapray et al. \cite{lapray2014multispectral} compares filter wheels to other modern multispectral imaging implementations. 
 Bremer \cite{bremer2007multispectral} proposes an improvement to the traditional model, reducing dead time by removing solid filters in favor of advanced timing synchronization. 
 Klein and Aach \cite{klein2012multispectral} model the camera noise resulting from different optical properties of filters in the wheel.
+
+
+{\color{red} Normally at the end of the background I know what has been done before. Here I feel I just know that work exists. I think - see earlier comment - that defining image formation and then image formation with a filter wheel would be useful. Then you can show how the multi filter responses could be regressed to XYZ, for example. If other raspberry pi filter wheel solutions exist what was their design aim? Then in the Method section you can recount what we are doing and why it advances the state of the art.}

@@ -1,11 +1,13 @@
 \section{Introduction}
-Multispectral image acquisition systems have uses ranging from agricultural monitoring to fine art analysis to medical scanning. 
+Multispectral image acquisition systems have uses ranging from agricultural monitoring to fine art analysis to medical scanning {\color{red} [references here would be useful]}. 
 State of the art systems are prohibitively costly \cite{SCUTELNIC2024e00596}, and are generally only suitable for their specialized purpose. 
 A comparatively cheaper and more flexible solution lies in the filter wheel, notably employed in terrestrial and geological analysis as early as 1972 \cite{mannheimer1977landsat}, and now provides a useful framework for all uses of multispectral imaging. 
 We can construct an effective system using simple 3D-printed components, microcontrollers such as the Raspberry Pi, and a set of inexpensive gel filters such as stage lights. 
 
 We aim to improve upon the classic filter wheel and monochromatic camera model. 
-To that end, we simulate a system of captures which then reconstructs XYZ trichromatic values with minimal error from a set of filter patches. 
+{\color{red} As a first step} To that end,
+{\color{red} Simulate image capture through a set of coloured filters and then combine these to best approximate the desired XYZ colorimetric values.}
+%we simulate a system of captures  which then reconstructs XYZ trichromatic values with minimal error from a set of filter patches. 
 Prior work has been limited by computational resources, and generally relies on heuristic measures to select filters.
 We provide a minimal error reconstruction for the set of Rosco Supergel \cite{rosco_mycolor} filters, and compute the relationship between number of filters $N$ and minimum $\Delta E_{2000}$ under standard illuminants.
 
@@ -13,6 +15,8 @@ Further, we provide a framework for filter selection for any target spectral res
 By generalizing our target function, we allow for applications beyond RGB reconstruction, such as hyperspectral imaging and multispectral imaging, or even non-imaging applications such as spectral sensing.
 Additionally, we explore the performance of our system under different human eye color matching functions, such as CIE 1931 \cite{1931TrOS...33...73S} and $V^{*}(\lambda)$ \cite{sharpe2005luminous}. 
 In the analysis of human eye color matching functions, we approach Luther Condition Compliance, which is the condition that a camera's spectral sensitivity functions are a linear transformation of the human eye's color matching functions \cite{von1927gebiet}.
+
+{\color{red}. Not essential, but I like to say: 'In section 2 we review the background to our work. Our method is presented in section 3. And so on}
 
 
 

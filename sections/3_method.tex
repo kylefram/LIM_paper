@@ -1,6 +1,11 @@
 \section{Method}
 \subsection{Data Collection}
-We take the standard CIE 1931 XYZ color matching functions \cite{1931TrOS...33...73S} as our target spectral response functions for reconstruction.
+
+{\color{red} I think the next three paras could be replaced with "The aim of our method is to capture multiple images through different colour filters and then combine them to match the colours of an image of  ascene captured with respect to the CIE 1931 Colour matching function. For our filters we will choose of filters drawn from the color Rosco MyColor Tool \cite{rosco_mycolor} or from a Rosco Supergel filters that we measure in our lab. All filters are represented in the domain [400,750] nanometres and are normalised to have a max transmittance od 100\%}.
+
+We take the standard CIE 1931 XYZ  color
+matching functions \cite{} as our target spectral
+response functions for reconstruction. 
 Further, we run the same analysis on modern XYZ color matching functions, such as those seen in Sharpe et al. \cite{sharpe2005luminous}
 
 First, we draft a sample set of filters by scraping the Rosco MyColor Tool \cite{rosco_mycolor} for spectral response functions. These provide a helpful and extensive set of filters. 
@@ -16,6 +21,8 @@ We construct a dataset spanning $\lambda$ 400-750 at 1nm intervals, and normaliz
 \end{center}
 
 \subsection{Formalization}
+
+{\color{red}. Why not use $X(\lambda)$ for XYZ. I don't find this section to be as readable as it could be. Not keen on stating the optimisation first. As a suggestion - given my previous suggestion of putting image formation in the background would be: (i) show image formation in discrete linear algebra sense. Show image formation for linear combination of filters (for one target channel? Here making clear numbers of filters etc (3) show how we might phrase finding the best linear combination (first) as a least-squares fit. Then you show an optimisation that is more general in terms of a loss function. In your symbol table: define P and G as matrices together with their dimesions. Why G. Couldn't we call it, say, F and when we define in the text say 'Filter Combinations denoted '.}
 
 We minimize for the distance between the target spectral response functions and the reconstructed functions from the selected filters:
 \begin{equation}
@@ -76,7 +83,10 @@ For $F$ as Mean Squared Error (MSE), the optimal weights can be found using the 
     \boldsymbol{M} = \boldsymbol{P}\boldsymbol{G}^T(\boldsymbol{G}\boldsymbol{G}^T)^{-1}
 \end{equation}  
 
+{\color{red} Don't know what you are trying to say here. As a general comment [I'll find out] does the loss function make much of a difference. If we just stucl with least-squres would that suffice?}
 And for other $F$, such as SMAPE, we use gradient descent to find the optimal weights, informing our initial guess with the MSE pseudoinverse solution.
+
+{\color{red} Stopping here for this round. In terms of the experiments, If you haven't done so, could you do the optimisation where we assume there is and NIR cutoff filter. This will make things work better. Fewer filters. You are already over space. So, you'll need to be more judicious in selction of ecperimental results. Re the abstract. Does the submission format allow a figure before the abstract? I suspect not. }
 
 \subsection{Filter Selection}
 \subsubsection{Brute Force Search}
