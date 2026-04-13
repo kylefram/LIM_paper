@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1776041690.18234 "main.aux" "main.bbl" "main" 1776041810.80303 0
+["bibtex main"] 1776041690.18234 "main.aux" "main.bbl" "main" 1776041955.41075 0
   "./document.bib" 1776036058.81545 12778 70e0123f14241f51e9e981e1049b7a38 ""
   "/usr/local/texlive/2026/texmf-dist/bibtex/bst/base/ieeetr.bst" 1292289607 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "main.aux" 1776041810.62137 5194 eaf69b0b8a9b2ddbc4a97d4ea9bc46a8 "pdflatex"
+  "main.aux" 1776041955.22979 5194 eaf69b0b8a9b2ddbc4a97d4ea9bc46a8 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1776041808.81016 "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" "main.pdf" "main" 1776041810.80313 0
+["pdflatex"] 1776041953.50744 "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" "main.pdf" "main" 1776041955.41085 0
   "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" 1776032585.90877 1151 cac56f49bde1f5526318cffae42cf6da ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
@@ -87,7 +87,7 @@
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1772409757 3636768 9f94d239f422c02416e379a36a852ffd ""
   "/usr/local/texlive/2026/texmf.cnf" 1772409725 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
   "iopconfser.cls" 1774800608.02243 4296 8bda329e2c882c25dadbe03513ff04c0 ""
-  "main.aux" 1776041810.62137 5194 eaf69b0b8a9b2ddbc4a97d4ea9bc46a8 "pdflatex"
+  "main.aux" 1776041955.22979 5194 eaf69b0b8a9b2ddbc4a97d4ea9bc46a8 "pdflatex"
   "main.bbl" 1776041690.25703 4612 f448c21e31400c15b53cec163768fa8e "bibtex main"
   "main.tex" 1776032585.90877 1151 cac56f49bde1f5526318cffae42cf6da ""
   "media/all_errorsN4MSE.png" 1774810774.8636 111076 090f1e80d4d2e2981938779e418f9ab0 ""
@@ -103,9 +103,9 @@
   "media/n4MSETransmission1.png" 1774810774.87012 248711 91789019b891c7c696bea8d62932dc19 ""
   "media/timing_comparison.png" 1775863506.74557 80488 12546cfa5ff42572868e7d5c225162a4 ""
   "sections/0_abstract.tex" 1776013295.1087 676 87566932e76d6d8b2dbee32524b0d5c7 ""
-  "sections/1_intro.tex" 1776036327.17635 2411 a7b6b730ef3606797b6e0ba16048db6c ""
+  "sections/1_intro.tex" 1776041845.18844 2394 81d3b8d1b7da9cf6aa95a95830a15ef7 ""
   "sections/2_related_work.tex" 1776041489.80307 4720 276283445fa7ec8234e424711542f979 ""
-  "sections/3_method.tex" 1776041808.59844 9727 6b6edc35eef0285ffa33769f957073cd ""
+  "sections/3_method.tex" 1776041953.30236 9726 40880d1ec434048517e36462981a558d ""
   "sections/4_evaluation.tex" 1776040247.11838 4161 43e9b2ee232e6d1b7c37accb43f454f2 ""
   "sections/5_conclusion.tex" 1775864989.38827 419 65c666ca3e1b675d5d27caf1fdb51b83 ""
   "sections/6_appendix.tex" 1775864221.06249 2170 ae9455ebd71c17e85898187a1a590b03 ""

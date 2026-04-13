@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  13 APR 2026 01:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  13 APR 2026 01:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -340,34 +340,34 @@ LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <5.5> not available
 <media/measure2.jpeg, id=14, 728.4816pt x 971.3088pt>
 File: media/measure2.jpeg Graphic file (type jpg)
 <use media/measure2.jpeg>
-Package pdftex.def Info: media/measure2.jpeg  used on input line 18.
+Package pdftex.def Info: media/measure2.jpeg  used on input line 20.
 (pdftex.def)             Requested size: 222.62204pt x 296.81937pt.
  [2 <./media/measure2.jpeg>]
 <media/all_errorsN4MSE.png, id=22, 867.24pt x 433.62pt>
 File: media/all_errorsN4MSE.png Graphic file (type png)
 <use media/all_errorsN4MSE.png>
-Package pdftex.def Info: media/all_errorsN4MSE.png  used on input line 108.
+Package pdftex.def Info: media/all_errorsN4MSE.png  used on input line 110.
 (pdftex.def)             Requested size: 222.62204pt x 111.30937pt.
 
-Underfull \hbox (badness 6268) in paragraph at lines 121--123
+Underfull \hbox (badness 6268) in paragraph at lines 123--125
  \OT1/cmr/m/it/10.95 3.3.3 Blended Meth-ods[] \OT1/cmr/m/n/10.95 While brute force
  []
 
 <media/mse_comparison_exact_paths.png, id=24, 867.24pt x 578.16pt>
 File: media/mse_comparison_exact_paths.png Graphic file (type png)
 <use media/mse_comparison_exact_paths.png>
-Package pdftex.def Info: media/mse_comparison_exact_paths.png  used on input line 132.
+Package pdftex.def Info: media/mse_comparison_exact_paths.png  used on input line 134.
 (pdftex.def)             Requested size: 222.62204pt x 148.41249pt.
 <media/deltaE_comparison_exact_paths.png, id=25, 867.24pt x 578.16pt>
 File: media/deltaE_comparison_exact_paths.png Graphic file (type png)
 <use media/deltaE_comparison_exact_paths.png>
-Package pdftex.def Info: media/deltaE_comparison_exact_paths.png  used on input line 140.
+Package pdftex.def Info: media/deltaE_comparison_exact_paths.png  used on input line 142.
 (pdftex.def)             Requested size: 222.62204pt x 148.41249pt.
 [3 <./media/all_errorsN4MSE.png> <./media/mse_comparison_exact_paths.png>]
 <media/timing_comparison.png, id=34, 1011.78pt x 505.89pt>
 File: media/timing_comparison.png Graphic file (type png)
 <use media/timing_comparison.png>
-Package pdftex.def Info: media/timing_comparison.png  used on input line 147.
+Package pdftex.def Info: media/timing_comparison.png  used on input line 149.
 (pdftex.def)             Requested size: 222.62204pt x 111.31157pt.
 ) (./sections/4_evaluation.tex
 <media/deltaE_vs_N_mse.png, id=35, 722.7pt x 433.62pt>
@@ -426,7 +426,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  57i,8n,65p,891b,495s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (8 pages, 5955603 bytes).
+Output written on main.pdf (8 pages, 5955568 bytes).
 PDF statistics:
  135 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream
