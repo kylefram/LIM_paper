@@ -1,5 +1,29 @@
 \begin{thebibliography}{10}
 
+\bibitem{peyghambari2021lithological}
+S.~Peyghambari and Y.~Zhang, ``Hyperspectral remote sensing in lithological mapping, mineral exploration, and environmental geology: an updated review,'' {\em Journal of Applied Remote Sensing}, 2021.
+
+\bibitem{ortega2019gastroenterology}
+S.~Ortega, H.~Fabelo, D.~K. Iakovidis, A.~Koulaouzidis, and G.~M. Callico, ``Use of hyperspectral/multispectral imaging in gastroenterology. shedding some-different-light into the dark,'' {\em Journal of Clinical Medicine}, vol.~8, no.~1, p.~36, 2019.
+
+\bibitem{mariotti2023forensics}
+K.~d.~C. Mariotti, R.~S. Ortiz, and M.~F. Ferr{\~a}o, ``Hyperspectral imaging in forensic science: An overview of major application areas,'' {\em Science \& Justice}, vol.~63, pp.~387--395, 2023.
+
+\bibitem{qin2013foodsafety}
+J.~Qin, K.~Chao, M.~S. Kim, R.~Lu, and T.~F. Burks, ``Hyperspectral and multispectral imaging for evaluating food safety and quality,'' {\em Journal of Food Engineering}, vol.~118, pp.~157--171, 2013.
+
+\bibitem{wu2013foodfundamentals}
+D.~Wu and D.-W. Sun, ``Advanced applications of hyperspectral imaging technology for food quality and safety analysis and assessment: A review - part i: Fundamentals,'' {\em Innovative Food Science and Emerging Technologies}, vol.~19, pp.~1--14, 2013.
+
+\bibitem{lee2020colorluminance}
+K.~R. Lee, A.~J. Richardson, E.~Walowit, M.~A. Crognale, and M.~A. Webster, ``Predicting color matches from luminance matches,'' {\em Journal of the Optical Society of America A (JOSA A)}, vol.~37, no.~4, pp.~A35--A43, 2020.
+
+\bibitem{wu2024headneckcancer}
+I.-C. Wu, Y.-C. Chen, R.~Karmakar, A.~Mukundan, G.~Gabriel, C.-C. Wang, and H.-C. Wang, ``Advancements in hyperspectral imaging and computer-aided diagnostic methods for the enhanced detection and diagnosis of head and neck cancer,'' {\em Biomedicines}, vol.~12, p.~2315, 2024.
+
+\bibitem{lu2020agriculture}
+B.~Lu, P.~D. Dao, J.~Liu, Y.~He, and J.~Shang, ``Recent advances of hyperspectral imaging technology and applications in agriculture,'' {\em Remote Sensing}, 2020.
+
 \bibitem{SCUTELNIC2024e00596}
 D.~Scutelnic, R.~Muradore, and C.~Daffara, ``A multispectral camera in the vis–nir equipped with thermal imaging and environmental sensors for non invasive analysis in precision agriculture,'' {\em HardwareX}, vol.~20, p.~e00596, 2024.
 
@@ -22,20 +46,20 @@ R.~Von~Luther, ``Aus dem gebiet der farbreizmetrik,'' {\em Zeitschrift fur Techn
 \bibitem{morales2020multispectral}
 A.~Morales, R.~Guerra, P.~Horstrand, M.~Diaz, A.~Jimenez, J.~Melian, S.~Lopez, and J.~F. Lopez, ``A multispectral camera development: From the prototype assembly until its use in a uav system,'' {\em Sensors}, vol.~20, no.~21, p.~6129, 2020.
 
-\bibitem{berns2005spectral}
-R.~S. Berns, L.~A. Taplin, and M.~Nezamabadi, ``Spectral imaging using a commercial colour-filter array digital camera,'' in {\em ICOM Committee for Conservation 14th Triennial Meeting, The Hague}, pp.~743--750, James \& James/Earthscan, 2005.
-
-\bibitem{Filterselection}
-J.~Y. Hardeberg, ``Filter selection for multispectral color image acquisition,'' pp.~105--110, 03 2004.
-
 \bibitem{lapray2014multispectral}
 P.-J. Lapray, X.~Wang, J.-B. Thomas, and P.~Gouton, ``Multispectral filter arrays: Recent advances and practical implementation,'' {\em Sensors}, vol.~14, no.~11, pp.~21626--21659, 2014.
 
-\bibitem{bremer2007multispectral}
-J.~C. Bremer, ``Multispectral imager with improved filter wheel and optics,'' tech. rep., 2007.
+\bibitem{gao2024color}
+H.~Gao, R.~K. Mantiuk, and G.~D. Finlayson, ``Color-accurate camera capture with multispectral illumination and multiple exposures,'' in {\em Computer Graphics Forum}, vol.~43, p.~e15252, Wiley Online Library, 2024.
 
-\bibitem{klein2012multispectral}
-J.~Klein and T.~Aach, ``Multispectral filter wheel cameras: Modeling aberrations for filters in front of lens,'' in {\em Digital Photography VIII}, vol.~8299, pp.~226--234, SPIE, 2012.
+\bibitem{ives1915transformation}
+H.~E. Ives, ``The transformation of color-mixture equations from one system to another,'' {\em Journal of the Franklin Institute}, vol.~180, no.~6, pp.~673--701, 1915.
+
+\bibitem{finlayson2020designing}
+G.~D. Finlayson and Y.~Zhu, ``Designing color filters that make cameras more colorimetric,'' {\em IEEE Transactions on Image Processing}, vol.~30, pp.~853--867, 2020.
+
+\bibitem{Filterselection}
+J.~Y. Hardeberg, ``Filter selection for multispectral color image acquisition,'' pp.~105--110, 03 2004.
 
 \bibitem{Pascale2006RGBCO}
 D.~Pascale, ``Rgb coordinates of the macbeth colorchecker,'' 2006.

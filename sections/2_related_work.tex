@@ -1,29 +1,50 @@
 \section{Related Work}
 
-{\color{red}. My advice. Write the image formation equation: intergal of light, sensor and surface here. I know you do it later. Better here}.  Mathematically define the problem of colour correction to XYZ (using filters). I don't think you need a review of the wider multispectral literature. A single review paper would suffice. But, if you know filter wheel papers. What did they do (technically). Which filters. How were they chosen. If others have used filters. What is novel about this approach?}
+%{\color{red}. My advice. Write the image formation equation: intergal of light, sensor and surface here. I know you do it later. Better here.  Mathematically define the problem of colour correction to XYZ (using filters). I don't think you need a review of the wider multispectral literature. A single review paper would suffice. But, if you know filter wheel papers. What did they do (technically). Which filters. How were they chosen. If others have used filters. What is novel about this approach?}
 
-A wide literature exists on the topic of multispectral imaging, much of which utilizes the simple filter wheel construct. 
-\subsection{Multispectral Imaging}
-Multispectral image capture requiring high shutter speeds may often be prohibitively expensive.
-However, the spinning filter wheel construct provides an inexpensive solution when unconstrained by capture duration, such as in the imaging of  fine art and agriculture. 
-Morales et al. \cite{morales2020multispectral} demonstrate a filter wheel with bandpass filters mounted on UAV systems for precision agriculture applications.
-Further, Scutelnic et al. \cite{SCUTELNIC2024e00596} use narrow band pass filters in a filter wheel and a camera with significant IR coverage to construct a relatively low cost sensor array, improving on Morales et al. 
-
-\subsection{Color Accurate Image Capture}
-Berns et al. \cite{berns2005spectral} demonstrates a method for evaluating color matching functions against standard CIE XYZ, and then comparing response functions against the Macbeth ColorChecker for validation.
-
-{\color{red}. I don't know what this method is? You are going to have to tell the reader}
-
-\subsection{Filter Selection}
-Hardeberg \cite{Filterselection} provides an effective filter selection method and a comparison vs. prior methods for discrete filter selection in a filter wheel.
-
-{\color{red} Again, if this is relevant you need to say what Hardeberg did?}
-
+%A wide literature exists on the topic of multispectral imaging, much of which utilizes the simple filter wheel construct. 
 \subsection{Filter Wheel Design}
-Various works have proposed 3D-printed filter wheel designs, often with raspberry pi control. 
-Lapray et al. \cite{lapray2014multispectral} compares filter wheels to other modern multispectral imaging implementations. 
-Bremer \cite{bremer2007multispectral} proposes an improvement to the traditional model, reducing dead time by removing solid filters in favor of advanced timing synchronization. 
-Klein and Aach \cite{klein2012multispectral} model the camera noise resulting from different optical properties of filters in the wheel.
+Multispectral image capture may often be prohibitively expensive.
+However, the spinning filter wheel construct provides an inexpensive solution when unconstrained by capture duration, such as in the imaging of  fine art and agriculture. 
+Morales et al. \cite{morales2020multispectral} demonstrate a bandpass filter wheel utilized for precision agriculture applications, and Scutelnic et al. \cite{SCUTELNIC2024e00596} a similar filter wheel construct to construct a relatively low cost sensor array. 
+Lapray et al. \cite{lapray2014multispectral} provides an overview of multispectral imaging technologies as well as their costs, providing a benchmark for our work. 
 
+%\subsection{Color Accurate Image Capture}
+%Berns et al. \cite{berns2005spectral} demonstrates a method for evaluating color matching functions against standard CIE XYZ, and then comparing response functions against the Macbeth ColorChecker for validation.
 
-{\color{red} Normally at the end of the background I know what has been done before. Here I feel I just know that work exists. I think - see earlier comment - that defining image formation and then image formation with a filter wheel would be useful. Then you can show how the multi filter responses could be regressed to XYZ, for example. If other raspberry pi filter wheel solutions exist what was their design aim? Then in the Method section you can recount what we are doing and why it advances the state of the art.}
+%{\color{red}. I don't know what this method is? You are going to have to tell the reader}
+
+%\subsection{Filter Selection}
+%Hardeberg \cite{Filterselection} provides an effective filter selection method and a comparison vs. prior methods for discrete filter selection in a filter wheel.
+
+%{\color{red} Again, if this is relevant you need to say what Hardeberg did?}
+
+%\subsection{Filter Wheel Design}
+%Various works have proposed 3D-printed filter wheel designs, often with raspberry pi control. 
+%Lapray et al.  compares filter wheels to other modern multispectral imaging implementations. 
+%Bremer \cite{bremer2007multispectral} proposes an improvement to the traditional model, reducing dead time by removing solid filters in favor of advanced timing synchronization. 
+%Klein and Aach \cite{klein2012multispectral} model the camera noise resulting from different optical properties of filters in the wheel.
+
+%{\color{red} Normally at the end of the background I know what has been done before.
+%Here I feel I just know that work exists. 
+%I think - see earlier comment - that defining image formation and then image formation with a filter wheel would be useful. 
+%Then you can show how the multi filter responses could be regressed to XYZ, for example. If other raspberry pi filter wheel solutions exist what was their design aim? Then in the Method section you can recount what we are doing and why it advances the state of the art.}
+\subsection{Multispectral Reconstruction}
+Much of the existing literature on simulation of color matching functions relates to the CIE XYZ models of the human eye. 
+We follow the work of Gao et al. \cite{gao2024color} in matching our simulated camera's spectral sensitivity function to the human eye by optimizing our color correction matrix $\boldsymbol{M}$. 
+This method achieves feasibility only when we approach Luther Condition compliant capture \cite{ives1915transformation}, specifically that our spectral sensitivity functions be linearly related to our chosen $XYZ$ color matching function. 
+We follow the work of Finlayson and Zhu \cite{finlayson2020designing} in their analysis of Luther-condition compliant filters. 
+However, rather than designing a specialized filter, we investigate whether we can approach Luther compliance by adding incrementally more generic filters to our filter wheel. 
+
+We borrow their formulation of $\rho_{c}(\lambda)$ as the reconstructed spectral response function for color channel $c$, which can be expressed as:
+\begin{equation}
+    \rho_{c} = \int_{\omega} Q_c(\lambda)E(\lambda)S(\lambda) d\lambda
+    \label{eq:1}
+\end{equation}
+With spectral power denoted as $E(\lambda)$ and reflectance as $S(\Lambda)$. 
+We define our camera as a dot product over the row corresponding to color $c\in \{R,G,B\}$ of $\boldsymbol{M}$ as $M_c$ and our 'selected' filters' transmission functions $f_k(\lambda)$, then decomposing our camera's sensitivity function over the $c$'th color channel $Q_c(\lambda)$ we have: 
+\begin{equation}
+    \rho_{c} = \int_{\omega} M_cf_k(\lambda)E(\lambda)S(\lambda) d\lambda
+    \label{eq:2}
+\end{equation}
+

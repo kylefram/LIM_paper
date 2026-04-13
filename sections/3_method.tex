@@ -1,17 +1,16 @@
 \section{Method}
 \subsection{Data Collection}
 
-{\color{red} I think the next three paras could be replaced with "The aim of our method is to capture multiple images through different colour filters and then combine them to match the colours of an image of  ascene captured with respect to the CIE 1931 Colour matching function. For our filters we will choose of filters drawn from the color Rosco MyColor Tool \cite{rosco_mycolor} or from a Rosco Supergel filters that we measure in our lab. All filters are represented in the domain [400,750] nanometres and are normalised to have a max transmittance od 100\%}.
+%{\color{red} I think the next three paras could be replaced with "`The aim of our method is to capture multiple images through different colour filters and then combine them to match the colours of an image of  ascene captured with respect to the CIE 1931 Colour matching function. For our filters we will choose of filters drawn from the color Rosco MyColor Tool \cite{rosco_mycolor} or from a Rosco Supergel filters that we measure in our lab. All filters are represented in the domain [400,750] nanometres and are normalised to have a max transmittance od 100\%}.
+The aim of our method is to capture multiple images through different colour filters and then combine them to match the colours of an image of  ascene captured with respect to specified CIE XYZ Color matching functions. For our filters we will choose of filters drawn from the color Rosco MyColor Tool \cite{rosco_mycolor} or from a Rosco Supergel filters that we measure in our lab. All filters are represented in the domain [400,750] nm and are normalized to have a max transmittance of 100\%
 
-We take the standard CIE 1931 XYZ  color
-matching functions \cite{} as our target spectral
-response functions for reconstruction. 
-Further, we run the same analysis on modern XYZ color matching functions, such as those seen in Sharpe et al. \cite{sharpe2005luminous}
+%We take the standard CIE 1931 XYZ  color matching functions \cite{} as our target spectral response functions for reconstruction. 
+%Further, we run the same analysis on modern XYZ color matching functions, such as those seen in Sharpe et al. \cite{sharpe2005luminous}
 
-First, we draft a sample set of filters by scraping the Rosco MyColor Tool \cite{rosco_mycolor} for spectral response functions. These provide a helpful and extensive set of filters. 
+%First, we draft a sample set of filters by scraping the Rosco MyColor Tool \cite{rosco_mycolor} for spectral response functions. These provide a helpful and extensive set of filters. 
 
-Then, for our measured filter set, we use a standard set of Rosco Supergel filters and measure their spectral response functions using a spectrophotometer under an Ianiro Varibeam 800W bulb.
-We construct a dataset spanning $\lambda$ 400-750 at 1nm intervals, and normalize the response functions to a maximum of 1.
+%Then, for our measured filter set, we use a standard set of Rosco Supergel filters and measure their spectral response functions using a spectrophotometer under an Ianiro Varibeam 800W bulb.
+%We construct a dataset spanning $\lambda$ 400-750 at 1nm intervals, and normalize the response functions to a maximum of 1.
 
 %SUPERGEL PHOTO
 \begin{center}
@@ -22,71 +21,82 @@ We construct a dataset spanning $\lambda$ 400-750 at 1nm intervals, and normaliz
 
 \subsection{Formalization}
 
-{\color{red}. Why not use $X(\lambda)$ for XYZ. I don't find this section to be as readable as it could be. Not keen on stating the optimisation first. As a suggestion - given my previous suggestion of putting image formation in the background would be: (i) show image formation in discrete linear algebra sense. Show image formation for linear combination of filters (for one target channel? Here making clear numbers of filters etc (3) show how we might phrase finding the best linear combination (first) as a least-squares fit. Then you show an optimisation that is more general in terms of a loss function. In your symbol table: define P and G as matrices together with their dimesions. Why G. Couldn't we call it, say, F and when we define in the text say 'Filter Combinations denoted '.}
+%{\color{red}. Why not use $X(\lambda)$ for XYZ. I don't find this section to be as readable as it could be. Not keen on stating the optimisation first. As a suggestion - given my previous suggestion of putting image formation in the background would be: (i) show image formation in discrete linear algebra sense. Show image formation for linear combination of filters (for one target channel? Here making clear numbers of filters etc (3) show how we might phrase finding the best linear combination (first) as a least-squares fit. Then you show an optimisation that is more general in terms of a loss function. In your symbol table: define P and G as matrices together with their dimesions. Why G. Couldn't we call it, say, F and when we define in the text say 'Filter Combinations denoted '.}
 
-We minimize for the distance between the target spectral response functions and the reconstructed functions from the selected filters:
+We define the distance in terms of a loss function $L(x,y)$ between the target spectral response $t(\lambda)$ and the reconstruction from the selected filters, where $t\in \{X,Y,Z\}$ is a target color matching function:
 \begin{equation}
-    \argmin_{\boldsymbol{M},f} \int_{\lambda}  \boldsymbol{L}(\boldsymbol{P}(\lambda),\boldsymbol{G}(\lambda))d\lambda
-    \label{eq:1}
-\end{equation}
-
-We consider all color channels equally and decompose target color matching functions $\boldsymbol{P}(\lambda)$ and simulated color matching functions $\boldsymbol{G}(\lambda)$ into $p_c(\lambda)$ and $G_c(\lambda)$, respectively.
-
-\begin{equation}
-    \argmin_{\boldsymbol{M},f} \sum_{c \in {X,Y,Z}} \int_{\lambda}  \boldsymbol{L}(p_c(\lambda),G_{c}(\lambda))d\lambda
-    \label{eq:2}
-\end{equation}
-
-
-Where $G_{c}(\lambda)$ is the reconstructed spectral response function for color channel $c$ from the selected filters, which can be expressed as:
-\begin{equation}
-    G_{c}(\lambda) = \sum_{k}^{N} f_k M_{c}I(\lambda)R(\lambda)e_{k}(\lambda) \, d\lambda
+    L_c(t(\lambda),\frac{d \rho_c}{d\lambda})
     \label{eq:3}
 \end{equation}
 
-\begin{center}
-\captionof{table}{Notation and symbols}
-\begin{tabular}{ll}
-\toprule
-Symbol & Description \\
-\midrule
-$N$ & number of filters \\
-$\boldsymbol{M}$ & $3 \times N$ matrix of weights\\
-$\boldsymbol{L}$ & Loss function \\
-$\boldsymbol{P}(\lambda)$ & Target color matching function\\
+We consider loss from all color channels equally.
+
+%, adopting the vector notation $\boldsymbol{T}$ and $\boldsymbol{\rho}$ to refer to the $3 \times 1$ vectors of target and simulated tristimulus values, respectively.
+
+%\begin{equation}
+%    L(\boldsymbol{T},\boldsymbol{\rho})
+%    \label{eq:4}
+%\end{equation}
+
+We minimize loss by selection of $k$ representing our $N$ 'active' filters each having transmission functions $f_k(\lambda)$ (thus comprising an $N\times1$ vector of functions), and $\boldsymbol{M}$, a $3\times N$ color correction matrix:
+
+\begin{equation}
+    \argmin_{\boldsymbol{M},k} \sum_{\frac{c \in {R,G,B}}{t \in {X,Y,Z}}}L(t(\lambda),\boldsymbol{M}f_k(\lambda)E(\lambda)S(\lambda))
+    \label{eq:5}
+\end{equation}
+
+%\begin{equation}
+%    \rho_{c}(\lambda) = \sum_{k}^{N} f_k M_{c}I(\lambda)R(\lambda)e_{k}(\lambda) \, d\lambda
+%    \label{eq:1}
+%\end{equation}
+
+%\begin{center}
+%\captionof{table}{Notation and symbols}
+%\begin{tabular}{ll}
+%\toprule
+%Symbol & Description \\
+%\midrule
+%$N$ & number of filters \\
+%$\boldsymbol{M}$ & $3 \times N$ matrix of weights\\
+%$L$ & Loss function \\
+%$T(\lambda)$ & $T\in{X,Y,Z}$, Target Response\\
+%$t(\lambda)$ & $t\in{X,Y,Z}$, Target CMFs\\
+
+
 %$p_c(\lambda)$ & Target color matching function, target $\in {X,Y,Z}$\\
-$\boldsymbol{G}(\lambda)$ & Simulated color matching function\\
+%$\boldsymbol{G}(\lambda)$ & Simulated color matching function\\
 %$p_c(\lambda)$ & Target color matching function, target $\in {X,Y,Z}$\\
 
 %$M_c$ & row of $\boldsymbol{M}$ corresponding to $c \in \{R,G,B\}$\\
-$f_k$ & $N \times 1$ filter selection vector, items $\in {0,1}$ \\
-$I(\lambda)$ & Illuminant intensity \\
-$R(\lambda)$ & Surface reflectance spectrum \\
-$e_k(\lambda)$ & Filter $k$ Spectral Sensitivity function\\
+%$f_k$ & $N \times 1$ filter selection vector, items $\in {0,1}$ \\
+%$I(\lambda)$ & Illuminant intensity \\
+%$R(\lambda)$ & Surface reflectance spectrum \\
+%$e_k(\lambda)$ & Filter $k$ Spectral Sensitivity function\\
 %$q(\lambda)$ & Camera spectral sensitivity \\
 
 
 %$p_d(\lambda)$ & CIE XYZ color matching functions, $d \in \{X,Y,Z\}$ \\
 %$\boldsymbol{M}$ & $3 \times 3$ color-correction matrix with elements $m_{c,d}$ \\$\boldsymbol{v}$ & a row vector with RAW linear RGB color values \\
 %$\boldsymbol{u}$ & a row vector with CIE 1931 XYZ tristimulus values \\
-\bottomrule
-\end{tabular}
-\end{center}
+%\bottomrule
+%\end{tabular}
+%\end{center}
 
-For approximations of XYZ, we follow the work of Hardeberg \cite{Filterselection} in using RMSE as our loss function, again equally weighted across each channel. 
-Additionally, with RMSE loss function, the solution to \ref{eq:1} can be achieved in a computationally efficient manner by computing the pseudoinverse.
+For approximations of XYZ, we follow the work of Hardeberg \cite{Filterselection} in using RMSE as the loss function.
+In this case, the optimal weights can be found using the pseudo-inverse as follows. 
+We discretize $f_k(\lambda)$ into 1nm steps along 400-750nm wavelengths, and define $\boldsymbol{F}$ as the $N\times 350$ matrix representing $f_k(\lambda)E(\lambda)S(\lambda)$ and $T$ as the $3\times 350$ matrix representing the $X,Y$, and $Z$ color matching functions:
 \begin{equation}
-    \argmin_{\boldsymbol{M}} ||\boldsymbol{P} - \boldsymbol{M}\boldsymbol{G}||^2
-\end{equation}
-For $F$ as Mean Squared Error (MSE), the optimal weights can be found using the pseudo-inverse:
-\begin{equation}
-    \boldsymbol{M} = \boldsymbol{P}\boldsymbol{G}^T(\boldsymbol{G}\boldsymbol{G}^T)^{-1}
+    T = \boldsymbol{M}\boldsymbol{F}
 \end{equation}  
+Where $M$ has the solution:
+\begin{equation}
+    \boldsymbol{M} = T\boldsymbol{F}^+
+\end{equation} 
 
-{\color{red} Don't know what you are trying to say here. As a general comment [I'll find out] does the loss function make much of a difference. If we just stucl with least-squres would that suffice?}
-And for other $F$, such as SMAPE, we use gradient descent to find the optimal weights, informing our initial guess with the MSE pseudoinverse solution.
+%{\color{red} Don't know what you are trying to say here. As a general comment [I'll find out] does the loss function make much of a difference. If we just stucl with least-squres would that suffice?}
+%And for other $F$, such as SMAPE, we use gradient descent to find the optimal weights, informing our initial guess with the MSE pseudoinverse solution.
 
-{\color{red} Stopping here for this round. In terms of the experiments, If you haven't done so, could you do the optimisation where we assume there is and NIR cutoff filter. This will make things work better. Fewer filters. You are already over space. So, you'll need to be more judicious in selction of ecperimental results. Re the abstract. Does the submission format allow a figure before the abstract? I suspect not. }
+%{\color{red} Stopping here for this round. In terms of the experiments, If you haven't done so, could you do the optimisation where we assume there is and NIR cutoff filter. This will make things work better. Fewer filters. You are already over space. So, you'll need to be more judicious in selction of ecperimental results. Re the abstract. Does the submission format allow a figure before the abstract? I suspect not. }
 
 \subsection{Filter Selection}
 \subsubsection{Brute Force Search}
