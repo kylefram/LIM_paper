@@ -30,6 +30,12 @@ D.~Scutelnic, R.~Muradore, and C.~Daffara, ``A multispectral camera in the visâ€
 \bibitem{mannheimer1977landsat}
 H.~Mannheimer, ``The {LANDSAT} program,'' in {\em Proceedings of the Conference on Waste Heat Management and Utilization}, vol.~2, NASA, 1977.
 
+\bibitem{Filterselection}
+J.~Y. Hardeberg, ``Filter selection for multispectral color image acquisition,'' pp.~105--110, 03 2004.
+
+\bibitem{vrhel1994filter}
+M.~J. Vrhel and H.~J. Trussell, ``Filter considerations in color correction,'' {\em IEEE Transactions on image processing}, vol.~3, no.~2, pp.~147--161, 1994.
+
 \bibitem{rosco_mycolor}
 {Rosco Laboratories}, ``Rosco mycolor.'' \url{https://legacy.rosco.com/mycolor/mycolor.cfm}, 2026.
 \newblock Accessed: 2026-03-29.
@@ -58,8 +64,19 @@ H.~E. Ives, ``The transformation of color-mixture equations from one system to a
 \bibitem{finlayson2020designing}
 G.~D. Finlayson and Y.~Zhu, ``Designing color filters that make cameras more colorimetric,'' {\em IEEE Transactions on Image Processing}, vol.~30, pp.~853--867, 2020.
 
-\bibitem{Filterselection}
-J.~Y. Hardeberg, ``Filter selection for multispectral color image acquisition,'' pp.~105--110, 03 2004.
+\bibitem{arducam_ov9281}
+{Arducam}, ``1mp ov9281/ov9282 global shutter camera,'' n.d.
+\newblock Accessed: 2026-04-13.
+
+\bibitem{coligh_ircut_650nm}
+{Coligh}, ``Shortpass filter ir cut 650nm,'' n.d.
+\newblock Accessed: 2026-04-13.
+
+\bibitem{greville1960some}
+T.~N. Greville, ``Some applications of the pseudoinverse of a matrix,'' {\em SIAM review}, vol.~2, no.~1, pp.~15--22, 1960.
+
+\bibitem{BEUTLER1965451}
+F.~J. Beutler, ``The operator theory of the pseudo-inverse i. bounded operators,'' {\em Journal of Mathematical Analysis and Applications}, vol.~10, no.~3, pp.~451--470, 1965.
 
 \bibitem{Pascale2006RGBCO}
 D.~Pascale, ``Rgb coordinates of the macbeth colorchecker,'' 2006.
