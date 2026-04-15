@@ -10,7 +10,7 @@ For each number of filters $N$, we compute the minimum $\Delta E_{2000}$ across 
     \captionof{figure}{Best $\Delta E_{2000}$ for each number of filters $N$ }
 \end{center}
 
-We also plot the resultant reconstructed XYZ functions for the best filter combination for various results at $N$ filters, and compare it to the target XYZ functions.
+We also plot the resultant reconstructed XYZ functions for the best filter combination for various results at $N$ filters, and compare it to the target XYZ functions, CIE 1931 in this case.
 In the $N=3$ case, we can see visible artifacts in the transmission functions. 
 Note that the best MSE solution does not necessarily correspond to the best $\Delta E_{2000}$ solution, and this is most evident at $N=3$ where the 3'rd best MSE achieves the low $\Delta E_{2000}$ of 6.75.
 
@@ -29,14 +29,16 @@ The best filter combination for $N=3$  achieves a $\Delta E_{2000}$ of 6.7, whic
 %\end{center}
 
 However, $N=4$ achieves a $\Delta E_{2000}$ of 1.7, which is below the just noticeable difference threshold, indicating that the reconstructed colors are likely indistinguishable from the target colors under typical viewing conditions.
+We demonstrate that this same methodology can be used with CIE 2015 standard observer, with or without NOIR filter. 
 
 \begin{center}
     \centering
-    \includegraphics[width=\linewidth]{media/n4MSETransmission1.png}
-    \captionof{figure}{Camera Spectral Sensitivity for best XYZ Reconstruction for $N=4$ }
+    \includegraphics[width=\linewidth]{media/n4MSETransNOIR.png}
+    \captionof{figure}{$N=4$, Reconstruction of CIE 2015 Standard Observer using NOIR filter}
 \end{center}
-Further, $N=10$ achieves a $\Delta E_{2000}$ of 0.08, virtually identical to the target patches. 
 
+Further, $N=10$ achieves a $\Delta E_{2000}$ of 0.08, virtually identical to the target patches. 
+Performance is comprable for CIE 2015 or 1931 standard observer. 
 
 \begin{center}
     \centering
@@ -52,23 +54,23 @@ The distribution of $\Delta E_{2000}$ across the 24 Macbeth Color Checker patche
 %    \captionof{figure}{Best $\Delta E_{2000}$ for each number of filters $N$ }
 %\end{center}
 
-We show a render of the 24 Macbeth Color Checker patches under the D65 illuminant, reconstructed from the best filter combination for $N=10$, and compare it to the target Macbeth Color Checker render (upper left/lower right corners respectively). 
+We show a render of the 24 Macbeth Color Checker patches under the D65 illuminant, reconstructed from the best filter combination for $N=5$, and compare it to the target Macbeth Color Checker render (upper left/lower right corners respectively). 
 
 \begin{center}
     \centering
-    \includegraphics[width=\linewidth]{media/n10MacbethRank0.png}
-    \captionof{figure}{Macbeth Color Checker Comparison for $N=10$ }
+    \includegraphics[width=\linewidth]{media/n5MSEMacbethRank0.png}
+    \captionof{figure}{Macbeth Color Checker Comparison for $N=5$ }
 \end{center}
 
 In comparison, the best filter combination for $N=3$ shows visible color differences in the render of the Macbeth Color Checker patches, particularly in the red and blue patches.
 \begin{center}
     \centering
     \includegraphics[width=\linewidth]{media/n3MSEMacbeth.png}
-    \captionof{figure}{Macbeth Color Checker Comparison for $N=10$ }
+    \captionof{figure}{Macbeth Color Checker Comparison for $N=3$ }
 \end{center}
 
-In addition, the $3 \times 10$ $\boldsymbol{M}$ matrix for the best $N=10$ reconstruction is shown below, displaying two important characteristics. 
-First, all 10 filters contribute to at least two of the trichromatic values.
+In addition, the $3 \times 10$ $\boldsymbol{M}$ matrix for the best $N=10$ reconstruction is shown below.
+We note that all 10 filters contribute to at least two of the trichromatic values.
 \begin{center}
     \centering
     \includegraphics[width=\linewidth]{media/n10M.png}

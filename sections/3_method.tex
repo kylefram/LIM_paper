@@ -28,12 +28,12 @@ For approximations of XYZ which we will study in the following work, we follow t
 We define the loss function $L(x(\lambda),y(\lambda))$ for arbitrary target $x$ and simulation $y$ defined over the domain $\lambda \in D$. 
 
 \begin{equation}
-    L(x,y) = \int_{D}\|x(\lambda)-y(\lambda)\| d\lambda
+    L(x,y) = \int_{\omega}\|x(\lambda)-y(\lambda)\| d\lambda
     \label{eq:5}
 \end{equation}
 
 We take $t \in \{X,Y,Z\}$ as our target color matching functions and $\rho'_c(\lambda)$ with $c\in \{R,G,B\}$ as our simulated functions. 
-We consider loss from all color channels equally and take the sum of losses across each channel. Thus we compute pairwise losses amongst $(t,c) \in \{(X,R),(Y,G),(Z,B)\}$.
+We consider loss from all color channels equally and take the sum of losses across each channel. Thus we compute losses amongst $(t,c) \in \{(X,R),(Y,G),(Z,B)\}$.
 
 Given that we are limited by 1nm steps in measurement, we discretize the above, taking $\omega_d = \{400,401...750\}$:
 
@@ -57,8 +57,8 @@ We define $\boldsymbol{F}$ as the $N\times 351$ matrix representing $f_k(\lambda
 \begin{equation}
     \boldsymbol{T} = \boldsymbol{M}\boldsymbol{F}
 \end{equation}  
-Note that for algorithmic stability of the pseudoinverse, we must truncate to $\lambda \in {400,401...650}$ when using the $NOIR$ filter. 
-Where $M$ has the solution:
+Note that for algorithmic stability of the pseudoinverse, we must truncate to $\lambda \in \{400,401...650\}$ when using the $NOIR$ filter. 
+$M$ has the solution:
 \begin{equation}
     \boldsymbol{M} = \boldsymbol{T}\boldsymbol{F}^+
 \end{equation} 
@@ -70,17 +70,18 @@ Where $M$ has the solution:
 
 \subsection{Filter Selection}
 \subsubsection{Brute Force Search}
-In the naive solution, we find the optimal filter combination for each $N$ by selecting the combination with the lowest loss $F$, considering all combinations of filters.
+In the naive solution, we find the optimal filter combination for each $N$ by selecting the combination with the lowest loss, considering all combinations of filters.
 We plot the errors across all combinations for N=4:
 
 \begin{center}
     \centering
-    \includegraphics[width=\linewidth]{media/all_errorsN4MSE.png}
-    \captionof{figure}{MSE Error distribution across all filter combinations for N=4}
+    \includegraphics[width=1.05\linewidth]{media/all_errors.png}
+    \captionof{figure}{MSE Error distribution across all filter combinations for N=5}
 \end{center}
 
-As the search space grows combinatorially with $N$, we cannot feasibly consider all combinations for large $N$.
-To alleviate this issue, we introduce a 'prune' factor which removes filters based on a cosine similarity metric. 
+%not super relevant:
+%As the search space grows combinatorially with $N$, we cannot feasibly consider all combinations for large $N$.
+%To alleviate this issue, we introduce a 'prune' factor which removes filters based on a cosine similarity metric. 
 
 \subsubsection{PCA Analysis}
 To find the optimal filter combination for each $N$ without brute force search, we can use PCA analysis to find the optimal weights $M$ for all filters, and then select the top $N$ filters with the highest weights.
@@ -91,19 +92,11 @@ This method effectively creates one $\boldsymbol{M}$ and iteratively reduces wei
 While brute force methods guarantee minimum possible loss by investigating the entire search space, large $N$ implementations render this technique impossible. 
 Crucially, we can decrease the speed of combinatoric explosion by pruning our set of filters, but the problem of which filter to exclude in a pairwise filter pruning decision is not trivial. 
 
-Similarly, PCA and other heuristic methods generally miss the optimal filter combination. 
+To address this problem, we use a blended method which suggests a solution using PCA or another heuristic method for $N$ filters, and then greedily considers another set of $N_2$ filters from the remaining set. 
+This provides a middle ground to the performance-accuracy tradeoff.
+We see that a significant MSE shortfall grows with $N$ as $N_2=0$, but nearly disappears at $N_2>0$ for most practical values of $N$.
 
-To address this problem, we use a blended method which suggests a solution using PCA or another heuristic method for $N-N2$ filters, and then greedily considers the final $N2$ filters from the entire remaining set. 
-This provides a middle ground to the performance-accuracy tradeoff by utilizing our PCA-based search to a depth of $N$ filters and then an exhaustive search of a further $N2$ filters. 
-We see that a significant MSE shortfall grows with $N$ as $N2=0$, but nearly disappears at $N2>0$.
-
-\begin{center}
-    \centering
-    \includegraphics[width=\linewidth]{media/mse_comparison_exact_paths.png}
-    \captionof{figure}{Reduced MSE performance shortfall with Exhaustive Search Layers}
-\end{center}
-
-Further, certain PCA solutions achieve effectively identical deltaE to those achieved by exhaustive search, especially at $N>4$ and $N2 \in {1,2}$.
+Further, certain PCA solutions achieve effectively identical $\Delta E_{2000}$ to those achieved by exhaustive search, especially at $N>4$ and $N_2 \in \{1,2\}$.
 
 \begin{center}
     \centering
@@ -111,7 +104,7 @@ Further, certain PCA solutions achieve effectively identical deltaE to those ach
     \captionof{figure}{Comparable $\Delta E_{2000}$ performance between PCA and Exhaustive Search}
 \end{center}
 
-We also compare the time performance of these, and demonstrate the significant improvement afforded by PCA with exhaustive search.
+We also compare the time performance of these, and demonstrate the significant improvement afforded by PCA, as well as the relative speed of adding 2 layers of brute force searching.
 \begin{center}
     \centering
     \includegraphics[width=\linewidth]{media/timing_comparison.png}
