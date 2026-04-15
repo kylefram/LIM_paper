@@ -1,9 +1,8 @@
 \section{Method}
 \subsection{Data Collection}
-
 %{\color{red} I think the next three paras could be replaced with "`The aim of our method is to capture multiple images through different colour filters and then combine them to match the colours of an image of  ascene captured with respect to the CIE 1931 Colour matching function. For our filters we will choose of filters drawn from the color Rosco MyColor Tool \cite{rosco_mycolor} or from a Rosco Supergel filters that we measure in our lab. All filters are represented in the domain [400,750] nanometres and are normalised to have a max transmittance od 100\%}.
 The aim of our method is to capture multiple images through different color filters and then combine them to match the colors of an image of a scene captured with respect to specified CIE XYZ Color matching functions. 
-For our filters we will choose of filters drawn from the color Rosco MyColor Tool \cite{rosco_mycolor} or from a Rosco Supergel filters that we measure in our lab. 
+We will choose filters drawn from a set of Rosco Supergel filters that we measure in our lab. 
 We model our camera's and optional NOIR filter's spectral response function as per the manufacturer's specifications \cite{arducam_ov9281, coligh_ircut_650nm}
 All filters are represented in the domain $\omega = [400,750]$ nm. 
 
@@ -15,11 +14,7 @@ All filters are represented in the domain $\omega = [400,750]$ nm.
 %Then, for our measured filter set, we use a standard set of Rosco Supergel filters and measure their spectral response functions using a spectrophotometer under an Ianiro Varibeam 800W bulb.
 %We construct a dataset spanning $\lambda$ 400-750 at 1nm intervals, and normalize the response functions to a maximum of 1.
 
-%SUPERGEL PHOTO
-\begin{figure}[H]
-    \includegraphics[width=\linewidth]{media/measure2.jpeg}
-    \caption{Filter measurement setup with spectrophotometer and Rosco Supergel filters.}
-\end{figure}
+
 
 \subsection{Formalization}
 

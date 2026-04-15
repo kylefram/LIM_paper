@@ -6,8 +6,8 @@
 \subsection{Filter Wheel Design}
 Multispectral image capture may often be prohibitively expensive.
 However, the spinning filter wheel construct provides an inexpensive solution when unconstrained by capture duration, such as in the imaging of  fine art and agriculture. 
-Morales et al. \cite{morales2020multispectral} demonstrate a bandpass filter wheel utilized for precision agriculture applications, and Scutelnic et al. \cite{SCUTELNIC2024e00596} a similar filter wheel construct to construct a relatively low cost sensor array. 
-Lapray et al. \cite{lapray2014multispectral} provides an overview of multispectral imaging technologies as well as their costs, providing a benchmark for our work. 
+Morales et al. \cite{morales2020multispectral} demonstrate a bandpass filter wheel utilized for precision agriculture applications, and Scutelnic et al. \cite{SCUTELNIC2024e00596} propose a similar filter wheel construct to build a relatively low cost sensor array. 
+Lapray et al. \cite{lapray2014multispectral} provide an overview of multispectral imaging technologies as well as their costs, providing a benchmark for our work. 
 
 %\subsection{Color Accurate Image Capture}
 %Berns et al. \cite{berns2005spectral} demonstrates a method for evaluating color matching functions against standard CIE XYZ, and then comparing response functions against the Macbeth ColorChecker for validation.
@@ -42,18 +42,25 @@ We borrow their formulation of $\rho_{c}(\lambda)$ as the reconstructed spectral
     \label{eq:1}
 \end{equation}
 With spectral power denoted as $E(\lambda)$ and reflectance as $S(\Lambda)$. 
-We define our camera as a dot product over the row corresponding to color $c\in \{R,G,B\}$ of $\boldsymbol{M}$ as $M_c$ and our 'selected' filters' transmission functions $f_k(\lambda)$, then decomposing our camera's sensitivity function over the $c$'th color channel $Q_c(\lambda)$ we have: 
+We define our camera's response for color channel $c\in \{R,G,B\}$ as the dot product between the corresponding row of $\boldsymbol{M}$ (defined $M_c$) and our selected filters' transmission functions $f_k(\lambda)$.
+Decomposing our camera's sensitivity function over the $c$'th color channel $Q_c(\lambda)$ we have: 
 \begin{equation}
     \rho_{c} = \int_{\omega} M_cf_k(\lambda)E(\lambda)S(\lambda) d\lambda
     \label{eq:2}
 \end{equation}
-We have the integrand as:
+And we define the integrand $\rho'_c$ as:
 \begin{equation}
     \rho'_{c}(\lambda) = M_cf_k(\lambda)E(\lambda)S(\lambda)
     \label{eq:3}
 \end{equation}
 
+%SUPERGEL PHOTO
+\begin{figure}[H]
+    \includegraphics[width=\linewidth]{media/measure2.jpeg}
+    \caption{Filter measurement setup with spectrophotometer and Rosco Supergel filters.}
+\end{figure}
 \subsection{Following Work}
+
 In the following section, we describe our methodology, from data collection to mathematical formalization to designing an optimized filter selection procedure. 
-Next, we evaluate the performance of our procedure in context of our loss function as well as $\Delta E_2000$, for the CIE 1931 and CIE 2015 XYZ standard observers. 
+Next, we evaluate the performance of our procedure in context of our loss function as well as $\Delta E_{2000}$, for the CIE 1931 and CIE 2015 XYZ standard observers. 
 We conclude with a discussion on the tradeoff between timing and performance for various use cases. 
