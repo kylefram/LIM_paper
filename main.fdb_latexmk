@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1776552993.46202 "main.aux" "main.bbl" "main" 1776554987.53573 0
+["bibtex main"] 1776552993.46202 "main.aux" "main.bbl" "main" 1776555062.98436 0
   "./document.bib" 1776552282.37517 14187 02ed1296ef675b594a7a09836e4cebe8 ""
   "/usr/local/texlive/2026/texmf-dist/bibtex/bst/base/ieeetr.bst" 1292289607 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "main.aux" 1776554987.36022 6020 8d407cdea5b27fcc301607de96f1ffc8 "pdflatex"
+  "main.aux" 1776555062.80057 6020 8d407cdea5b27fcc301607de96f1ffc8 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1776554985.71203 "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" "main.pdf" "main" 1776554987.53583 0
+["pdflatex"] 1776555061.09412 "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" "main.pdf" "main" 1776555062.98446 0
   "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" 1776104371.92855 1171 a6fc67b4cad22496747752237f5dcc63 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
@@ -89,7 +89,7 @@
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1772409757 3636768 9f94d239f422c02416e379a36a852ffd ""
   "/usr/local/texlive/2026/texmf.cnf" 1772409725 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
   "iopconfser.cls" 1774800608.02243 4296 8bda329e2c882c25dadbe03513ff04c0 ""
-  "main.aux" 1776554987.36022 6020 8d407cdea5b27fcc301607de96f1ffc8 "pdflatex"
+  "main.aux" 1776555062.80057 6020 8d407cdea5b27fcc301607de96f1ffc8 "pdflatex"
   "main.bbl" 1776552993.53492 5556 3e21ca7b028fa5757fa9f6644fbfef3c "bibtex main"
   "main.tex" 1776104371.92855 1171 a6fc67b4cad22496747752237f5dcc63 ""
   "media/all_errors.png" 1776553439.53891 133400 ce5b674e96d20163233cedd7880f9480 ""
@@ -97,7 +97,7 @@
   "media/deltaE_vs_N_mse.png" 1776554855.48546 270975 016bb1fb89524874a51ba0e88e83d8f8 ""
   "media/measure2.jpeg" 1775583307.83491 4313877 88da253cffcb34e5164eb08717d0d255 ""
   "media/n10M.png" 1774901713.2965 29279 ce031e13946e019d5fba027b1f1636a8 ""
-  "media/n3MSEMacbeth.png" 1774810774.8618 61058 1d6303010b498f147f7fc514a76726e3 ""
+  "media/n3MSEMacbeth.png" 1776555061.05975 60107 95dfb7a5247b01dabe44403c8f5f8a6a ""
   "media/n3MSETransmission1.png" 1776552513.04393 273803 e33ca755a9a4bf44ca9bb2933eade03e ""
   "media/n5MSEMacbethRank0.png" 1776218043.70491 61737 9e8540d81f9c196d5ba166de4fce2539 ""
   "media/n5MSETransNOIR.png" 1776552831.56867 274747 3a6ab2b97a8be8f7d232038ab5184b0c ""
@@ -105,7 +105,7 @@
   "media/timing_comparison.png" 1776549404.12426 121834 7285e0e09beb0be2ac0e5487dd14e37a ""
   "sections/0_abstract.tex" 1776480718.07845 719 73fb8eff5e04aed394ea27e4d584c324 ""
   "sections/1_intro.tex" 1776548983.39971 2310 527e8229448d4f78384842cdb8a63278 ""
-  "sections/2_related_work.tex" 1776554985.51013 3994 66922573b1b9c1275e1c844c7d1dd7ce ""
+  "sections/2_related_work.tex" 1776555062.69629 3994 66922573b1b9c1275e1c844c7d1dd7ce ""
   "sections/3_method.tex" 1776554215.23401 6670 d58c9ddf83292ad3b03ee146236a11af ""
   "sections/4_evaluation.tex" 1776554878.44381 4337 104f2c260139e5f4a5eca24d17198581 ""
   "sections/5_conclusion.tex" 1776477465.88574 427 bd17bc03dd9d7c4cd916588148bd8d80 ""

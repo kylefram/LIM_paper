@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  18 APR 2026 19:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  18 APR 2026 19:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -413,11 +413,11 @@ File: media/n5MSEMacbethRank0.png Graphic file (type png)
 Package pdftex.def Info: media/n5MSEMacbethRank0.png  used on input line 61.
 (pdftex.def)             Requested size: 222.62204pt x 146.7537pt.
  [5 <./media/n3MSETransmission1.png> <./media/n5MSETransNOIR.png> <./media/n6_2MSETransmission1.png>]
-<media/n3MSEMacbeth.png, id=51, 715.473pt x 468.3096pt>
+<media/n3MSEMacbeth.png, id=51, 710.4141pt x 468.3096pt>
 File: media/n3MSEMacbeth.png Graphic file (type png)
 <use media/n3MSEMacbeth.png>
 Package pdftex.def Info: media/n3MSEMacbeth.png  used on input line 68.
-(pdftex.def)             Requested size: 222.62204pt x 145.7104pt.
+(pdftex.def)             Requested size: 222.62204pt x 146.7537pt.
 <media/n10M.png, id=52, 586.1097pt x 188.6247pt>
 File: media/n10M.png Graphic file (type png)
 <use media/n10M.png>
@@ -446,7 +446,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  57i,10n,65p,497b,492s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (10 pages, 5929499 bytes).
+Output written on main.pdf (10 pages, 5928906 bytes).
 PDF statistics:
  144 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream
