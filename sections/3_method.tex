@@ -10,10 +10,10 @@ All filters are represented in the domain $\omega = [400,750]$ nm.
 For approximations of XYZ,
 %which we will study in the following work, 
 we follow the work of Hardeberg \cite{Filterselection} in adopting MSE as the loss function.
-We denote the loss function $L(x(\lambda),y(\lambda))$ for arbitrary target $x$ (to be approximate) and simulation $y$ (to be solved for) defined over the domain $\lambda \in \omega$. 
+We denote the loss function $L(\boldsymbol{x}(\lambda),\boldsymbol{y}(\lambda))$ for arbitrary target $\boldsymbol{x}(\lambda)$ (to be approximate) and simulation $\boldsymbol{y}(\lambda)$ (to be solved for) defined over the domain $\lambda \in \omega$. 
 
 \begin{equation}
-    L(x,y) = \int_{\omega}\|x(\lambda)-y(\lambda)\| d\lambda
+    L(\boldsymbol{x}(\lambda),\boldsymbol{y}(\lambda)) = \int_{\omega}\|\boldsymbol{x}(\lambda)-\boldsymbol{x}(\lambda)\| d\lambda
     \label{eq:5}
 \end{equation}
 
@@ -28,47 +28,45 @@ We consider loss from all color channels equally and take the sum of losses acro
 Given that we are limited by 1nm steps in measurement, we discretize the above, taking $\omega_d = \{400,401...750\}$:
 
 \begin{equation}
-    L(x,y) = \sum_{(t,c) \in \atop \{(X,R),(Y,G),(Z,B)\}} \sum_{\lambda \in \omega_d}\|x-y\|
+    L_d(\boldsymbol{x},\boldsymbol{y}) = \sum_{(t,c) \in \atop \{(X,R),(Y,G),(Z,B)\}} \sum_{\lambda \in \omega_d}\|\boldsymbol{x}-\boldsymbol{y}\|
     \label{eq:6}
 \end{equation}
 
-We minimize loss by selection of $k$ representing our $N$ 'active' filters (which incorporate the intrinsic sensitivity of a grey-scale sensor) each having transmission functions $f_k(\lambda)$ (thus comprising an $N\times1$ vector of functions), and $\boldsymbol{M}$, a $3\times N$ color correction matrix:
+We minimize loss by selection of $k$ representing our $N$ 'active' filters (which incorporate the intrinsic sensitivity of a grey-scale sensor) each having transmission functions $\underline{f}(\lambda)$ (thus comprising an $N\times1$ vector of functions), and $\boldsymbol{M}$, a $3\times N$ color correction matrix. 
+We also define $\boldsymbol{T}(\lambda)$ as the stacked $X,Y,$ and $Z$ functions. 
 
 \begin{equation}
-    \argmin_{\mathbf{M},k} L(t(\lambda),\mathbf{M}_c \underline{f}(\lambda)E(\lambda)S(\lambda))
+    \argmin_{\mathbf{M}} L_d(\boldsymbol{T}(\lambda),\mathbf{M}\underline{f}(\lambda)E(\lambda)S(\lambda))
     \label{eq:7}
 \end{equation}
 
-\noindent
-where $\mathbf{M}_c$ denotes the $c$th row of $\mathbf{M}$.
 
-
-In this case, the optimal weights can be found using the pseudo-inverse \cite{greville1960some, BEUTLER1965451} denoted $A^+$ for a matrix $A$. 
-We define $\boldsymbol{F}$ as the $N\times 351$ matrix where the $k$ the row is $f_k(\lambda)E(\lambda)S(\lambda)$ at each $\lambda \in \omega_d$ and $\boldsymbol{T}$ as the $3\times 351$ matrix representing the $X,Y$, and $Z$ color matching functions:
+In this case, the optimal weights can be found using the pseudo-inverse \cite{greville1960some, BEUTLER1965451, macausland2014moore} denoted $A^+$ for a matrix $A$. 
+We define $\boldsymbol{F}$ as the $N\times 351$ matrix $\underline{f}(\lambda)E(\lambda)S(\lambda)$ at each $\lambda \in \omega_d$:
 \begin{equation}
-    \boldsymbol{T} \approx \boldsymbol{M}\boldsymbol{F}
+    \boldsymbol{T}(\lambda) = \boldsymbol{M}\boldsymbol{F}
 \end{equation}  
 Note that for algorithmic stability of the pseudoinverse, we must truncate to $\lambda \in \{400,401...650\}$ when using the $NOIR$ filter. 
 $M$ has the solution:
 \begin{equation}
-    \boldsymbol{M} = \boldsymbol{T}\boldsymbol{F}^+
+    \boldsymbol{M} = \boldsymbol{T}(\lambda)\boldsymbol{F}^+
 \end{equation} 
 
 %Kyle: either expand the pseudo inverse or give a reference
 
 \subsection{Filter Selection}
 
-While the number of filters $N$ may be large we, ideally, would posit a filter wheel with fewer filters.
+While the number of filters $M$ may be large we, ideally, would posit a filter wheel with fewer filters.
 
 \subsubsection{Brute Force Search}
-In the naive solution, we find the optimal filter combination for every subset of $M$ filters (where $M$ is small) drawn from the $N$ filter set by selecting the combination with the lowest loss, considering all combinations of filters.
-We plot the errors across all combinations for M=5:
+In the naive solution, we find the optimal filter combination for every subset of $N$ filters (where $N$ is small) drawn from the $M$ filter set by selecting the combination with the lowest loss, considering all combinations of filters.
+We plot the errors across all combinations for N=5:
 %% Kyle N=5?
 
 \begin{center}
     \centering
     \includegraphics[width=1.05\linewidth]{media/all_errors.png}
-    \captionof{figure}{MSE Error distribution across all filter combinations for M=5}
+    \captionof{figure}{MSE Error distribution across all filter combinations for N=5}
 \end{center}
 
 %not super relevant:
@@ -78,13 +76,12 @@ We plot the errors across all combinations for M=5:
 \subsubsection{PCA Analysis}
 To find the optimal filter combination
 %for each $N$ 
-without brute force search, we can use PCA analysis to find the optimal weights $\mathbf{M}$ for all filters, and then select the top $M$ filters with the highest weights.
+without brute force search, we can use PCA analysis to find the optimal weights $\mathbf{M}$ for all filters, and then select the top $N$ filters with the highest weights.
 
 %% Kyle I am hoping I am not changing the sense of what your are doing. I commented the next out because I couldn't make it square with the text (as I see it)
 %% KYLE: this is fairly accurate. I initially did use N and M for my 'numbers' but it was a very similar statement that caused me to rethink that notation as 'capital M' is overloaded here. 
 %% unless you think the bold is clear enough.
-This method effectively creates one $3\times N$ matrix $\boldsymbol{M}$ and iteratively reduces weights that can be discarded with minimal loss, until reaching $M$ nonzero entries.
-
+This method effectively creates one $3\times M$ matrix $\boldsymbol{M}$ and iteratively reduces weights that can be discarded with minimal loss, until reaching $N$ nonzero entries and thus a $3 \times N$ matrix of weights.
 
 %%% Graham GOT TO HERE
 
@@ -108,6 +105,6 @@ Further, certain PCA solutions achieve effectively identical $\Delta E_{2000}$ t
 We also compare the time performance of these, and demonstrate the significant improvement afforded by PCA, as well as the relative speed of adding 2 layers of brute force searching.
 \begin{center}
     \centering
-    \includegraphics[width=\linewidth]{media/timing_comparison.png}
+    \includegraphics[width=1.05\linewidth]{media/timing_comparison.png}
     \captionof{figure}{Timing Comparison between PCA and Brute Force Selection Methods}
 \end{center}

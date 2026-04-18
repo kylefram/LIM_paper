@@ -25,15 +25,15 @@ In the discussion that follows $\rho'_c(\lambda)$ denotes a single estimated cam
 
 %%%%%% end of alternate math 
 
-We define our camera's response for color channel $c\in \{R,G,B\}$ as the integral dot product between the corresponding row of $\boldsymbol{M}$ (defined $M_c$) and our selected filters' transmission functions $f_k(\lambda)$.
+We define our camera's response for color channel $c\in \{R,G,B\}$ as the integral dot product between the corresponding row of $\boldsymbol{M}$ (defined $M_c$) and our selected filters' transmission functions $\underline{f}(\lambda)$.
 Decomposing our camera's sensitivity function over the $c$'th color channel $Q_c(\lambda)$ we have: 
 \begin{equation}
-    \rho_{c} = \int_{\omega} M_cf_k(\lambda)E(\lambda)S(\lambda) d\lambda
+    \rho_{c} = \int_{\omega} M_c\underline{f}(\lambda)E(\lambda)S(\lambda) d\lambda
     \label{eq:2}
 \end{equation}
 And we define the integrand $\rho'_c$ as:
 \begin{equation}
-    \rho'_{c}(\lambda) = M_cf_k(\lambda)E(\lambda)S(\lambda)
+    \rho'_{c}(\lambda) = M_c\underline{f}(\lambda)E(\lambda)S(\lambda)
     \label{eq:3}
 \end{equation}
 
