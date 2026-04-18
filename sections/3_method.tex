@@ -19,15 +19,21 @@ All filters are represented in the domain $\omega = [400,750]$ nm.
 \subsection{Formalization}
 
 %{\color{red}. Why not use $X(\lambda)$ for XYZ. I don't find this section to be as readable as it could be. Not keen on stating the optimisation first. As a suggestion - given my previous suggestion of putting image formation in the background would be: (i) show image formation in discrete linear algebra sense. Show image formation for linear combination of filters (for one target channel? Here making clear numbers of filters etc (3) show how we might phrase finding the best linear combination (first) as a least-squares fit. Then you show an optimisation that is more general in terms of a loss function. In your symbol table: define P and G as matrices together with their dimesions. Why G. Couldn't we call it, say, F and when we define in the text say 'Filter Combinations denoted '.}
-For approximations of XYZ which we will study in the following work, we follow the work of Hardeberg \cite{Filterselection} in using MSE as the loss function.
-We define the loss function $L(x(\lambda),y(\lambda))$ for arbitrary target $x$ and simulation $y$ defined over the domain $\lambda \in D$. 
+For approximations of XYZ,
+%which we will study in the following work, 
+we follow the work of Hardeberg \cite{Filterselection} in {\color{red} adopting} MSE as the loss function.
+We {\color{red} denote} the loss function $L(x(\lambda),y(\lambda))$ for arbitrary target $x$ {\color{red} (to be approximate)} and simulation $y$ {\color{red} (to be solved for)} defined over the domain $\lambda \in \omega$. 
 
 \begin{equation}
     L(x,y) = \int_{\omega}\|x(\lambda)-y(\lambda)\| d\lambda
     \label{eq:5}
 \end{equation}
 
-We take $t \in \{X,Y,Z\}$ as our target color matching functions and $\rho'_c(\lambda)$ with $c\in \{R,G,B\}$ as our simulated functions. 
+
+%% Kyle, why not put x rather than t
+We take $t \in \{X,Y,Z\}$ as our target color matching functions and 
+%% Kyle added y(\lambda)=
+$y(\lambda)=\rho'_c(\lambda)$ with $c\in \{R,G,B\}$ as our simulated functions. 
 We consider loss from all color channels equally and take the sum of losses across each channel. Thus we compute losses amongst $(t,c) \in \{(X,R),(Y,G),(Z,B)\}$.
 
 Given that we are limited by 1nm steps in measurement, we discretize the above, taking $\omega_d = \{400,401...750\}$:
@@ -39,18 +45,21 @@ Given that we are limited by 1nm steps in measurement, we discretize the above, 
 
 %, adopting the vector notation $\boldsymbol{T}$ and $\boldsymbol{\rho}$ to refer to the $3 \times 1$ vectors of target and simulated tristimulus values, respectively.
 
-We minimize loss by selection of $k$ representing our $N$ 'active' filters each having transmission functions $f_k(\lambda)$ (thus comprising an $N\times1$ vector of functions), and $\boldsymbol{M}$, a $3\times N$ color correction matrix:
+We minimize loss by selection of $k$ representing our $N$ 'active' filters {\color{red} (which incorporate the intrinsic sensitivity of a grey-scale sensor)} each having transmission functions $f_k(\lambda)$ (thus comprising an $N\times1$ vector of functions), and $\boldsymbol{M}$, a $3\times N$ color correction matrix:
 
 \begin{equation}
-    \argmin_{\boldsymbol{M},k} L(t(\lambda),M_c f_k(\lambda)E(\lambda)S(\lambda))
+    \argmin_{\mathbf{M},k} L(t(\lambda),{\mathbf{M}_c \underline{f}(\lambda)E(\lambda)S(\lambda))
     \label{eq:7}
 \end{equation}
 
+\noindent
+where $\mathbf{M}_c$ denotes the $c$th row of $\mathbf{M}$.
+
 
 In this case, the optimal weights can be found using the pseudo-inverse \cite{greville1960some, BEUTLER1965451} denoted $A^+$ for a matrix $A$. 
-We define $\boldsymbol{F}$ as the $N\times 351$ matrix representing $f_k(\lambda)E(\lambda)S(\lambda)$ at each $\lambda \in \omega_d$ and $\boldsymbol{T}$ as the $3\times 351$ matrix representing the $X,Y$, and $Z$ color matching functions:
+We define $\boldsymbol{F}$ as the $N\times 351$ matrix where the $k$ the row is $f_k(\lambda)E(\lambda)S(\lambda)$ at each $\lambda \in \omega_d$ and $\boldsymbol{T}$ as the $3\times 351$ matrix representing the $X,Y$, and $Z$ color matching functions:
 \begin{equation}
-    \boldsymbol{T} = \boldsymbol{M}\boldsymbol{F}
+    \boldsymbol{T} \approx \boldsymbol{M}\boldsymbol{F}
 \end{equation}  
 Note that for algorithmic stability of the pseudoinverse, we must truncate to $\lambda \in \{400,401...650\}$ when using the $NOIR$ filter. 
 $M$ has the solution:
@@ -58,20 +67,27 @@ $M$ has the solution:
     \boldsymbol{M} = \boldsymbol{T}\boldsymbol{F}^+
 \end{equation} 
 
+%Kyle: either expand the pseudo inverse or give a reference
+
+
 %{\color{red} Don't know what you are trying to say here. As a general comment [I'll find out] does the loss function make much of a difference. If we just stucl with least-squres would that suffice?}
 %And for other $F$, such as SMAPE, we use gradient descent to find the optimal weights, informing our initial guess with the MSE pseudoinverse solution.
 
 %{\color{red} Stopping here for this round. In terms of the experiments, If you haven't done so, could you do the optimisation where we assume there is and NIR cutoff filter. This will make things work better. Fewer filters. You are already over space. So, you'll need to be more judicious in selction of ecperimental results. Re the abstract. Does the submission format allow a figure before the abstract? I suspect not. }
 
 \subsection{Filter Selection}
+
+While the number of filters $N$ may be large we, ideally, would posit a filter wheel with fewer filters.
+
 \subsubsection{Brute Force Search}
-In the naive solution, we find the optimal filter combination for each $N$ by selecting the combination with the lowest loss, considering all combinations of filters.
-We plot the errors across all combinations for N=4:
+In the naive solution, we find the optimal filter combination for every {\color{red} subset of $M$ filters (where $M$ is small) drawn from the $N$ filter} set by selecting the combination with the lowest loss, considering all combinations of filters.
+We plot the errors across all combinations for M=4:
+%% Kyle N=5?
 
 \begin{center}
     \centering
     \includegraphics[width=1.05\linewidth]{media/all_errors.png}
-    \captionof{figure}{MSE Error distribution across all filter combinations for N=5}
+    \captionof{figure}{MSE Error distribution across all filter combinations for {\color{red} M}=5}
 \end{center}
 
 %not super relevant:
@@ -79,8 +95,15 @@ We plot the errors across all combinations for N=4:
 %To alleviate this issue, we introduce a 'prune' factor which removes filters based on a cosine similarity metric. 
 
 \subsubsection{PCA Analysis}
-To find the optimal filter combination for each $N$ without brute force search, we can use PCA analysis to find the optimal weights $M$ for all filters, and then select the top $N$ filters with the highest weights.
-This method effectively creates one $\boldsymbol{M}$ and iteratively reduces weights that can be discarded with minimal loss, until reaching $N$ nonzero entries.  
+To find the optimal filter combination
+%for each $N$ 
+without brute force search, we can use PCA analysis to find the optimal weights $\mathbf{M}$ for all filters, and then select the top $M$ filters with the highest weights.
+
+%% Kyle I am hoping I am not changing the sense of what your are doing. I commented the next out because I couldn't make it square with the text (as I see it)
+%This method effectively creates one $\boldsymbol{M}$ and iteratively reduces weights that can be discarded with minimal loss, until reaching $N$ nonzero entries.  
+
+
+%%% Graham GOT TO HERE
 
 \subsubsection{Blended Methods} 
 

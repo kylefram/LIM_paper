@@ -4,8 +4,10 @@
 
 %A wide literature exists on the topic of multispectral imaging, much of which utilizes the simple filter wheel construct. 
 \subsection{Filter Wheel Design}
-Multispectral image capture may often be prohibitively expensive.
-However, the spinning filter wheel construct provides an inexpensive solution when unconstrained by capture duration, such as in the imaging of  fine art and agriculture. 
+%Multispectral image capture may often be prohibitively expensive.
+%Kyle, removed as it is not needed (repetitious).
+%However, t
+The spinning filter wheel construct provides an inexpensive solution when unconstrained by capture duration, such as in the imaging of  fine art and agriculture. 
 Morales et al. \cite{morales2020multispectral} demonstrate a bandpass filter wheel utilized for precision agriculture applications, and Scutelnic et al. \cite{SCUTELNIC2024e00596} propose a similar filter wheel construct to build a relatively low cost sensor array. 
 Lapray et al. \cite{lapray2014multispectral} provide an overview of multispectral imaging technologies as well as their costs, providing a benchmark for our work. 
 
@@ -31,7 +33,8 @@ Lapray et al. \cite{lapray2014multispectral} provide an overview of multispectra
 %Then you can show how the multi filter responses could be regressed to XYZ, for example. If other raspberry pi filter wheel solutions exist what was their design aim? Then in the Method section you can recount what we are doing and why it advances the state of the art.}
 \subsection{Multispectral Reconstruction}
 Much of the existing literature on simulation of color matching functions relates to the CIE XYZ models of the human eye. 
-We follow the work of Gao et al. \cite{gao2024color} in matching our simulated camera's spectral sensitivity function to the human eye by optimizing our color correction matrix $\boldsymbol{M}$. 
+We follow the work of Gao et al. \cite{gao2024color} in matching our simulated camera's spectral sensitivity function to the human eye by optimizing %our
+{\color{red} for a } color correction matrix $\boldsymbol{M}$ {\color{red} best matching the set of filtered camera sensitivities to the XYZ colour matching functions}. 
 This method achieves feasibility only when we approach Luther Condition compliant capture \cite{ives1915transformation}, specifically that our spectral sensitivity functions be linearly related to our chosen $XYZ$ color matching function. 
 We follow the work of Finlayson and Zhu \cite{finlayson2020designing} in their analysis of Luther-condition compliant filters. 
 However, rather than designing a specialized filter, we investigate whether we can approach Luther compliance by adding incrementally more generic filters to our filter wheel. 
@@ -41,8 +44,21 @@ We borrow their formulation of $\rho_{c}(\lambda)$ as the reconstructed spectral
     \rho_{c} = \int_{\omega} Q_c(\lambda)E(\lambda)S(\lambda) d\lambda
     \label{eq:1}
 \end{equation}
-With spectral power denoted as $E(\lambda)$ and reflectance as $S(\Lambda)$. 
-We define our camera's response for color channel $c\in \{R,G,B\}$ as the dot product between the corresponding row of $\boldsymbol{M}$ (defined $M_c$) and our selected filters' transmission functions $f_k(\lambda)$.
+With spectral power denoted as $E(\lambda)$ and reflectance as $S(\lambda)$. 
+
+%%%% Alternate Math
+In our model we have a single grey-scale camera (only a brightness channel). Thus, our estimated new camera sensitivities are a function of the intrinsic sensitivities of this single channel camera multiplied by the filter transmittances.
+Let $\underline{f}(\lambda)$ and $\boldsymbol{M}$ respectively denote $N-$ filter functions multiplied by the camera sensor response and an  $3 \times N$ matrix that linearly combines these filter functions (e.g. to best approximate the XYZ colour matching functions). Then the 3-component filtered colour response, $\underline{\rho}$ is written as:
+
+\begin{equation}
+\underline{\rho}'=\int_\omega \mathbf{M}\underline{f}(\lambda)E(\lambda)S(\lambda)d\lambda
+\end{equation}
+
+In the discussion that follows $\rho'_c(\lambda)$ denotes a single estimated camera sensor where $c\in \{R,G,B\}$. In the optimisations that follows we will solve for the R, G and B sensors that best approximate the actual X, Y and Z color matching function sensitivities.
+
+%%%%%% end of alternate math 
+
+We define our camera's response for color channel $c\in \{R,G,B\}$ as the {\color{red} integral} dot product between the corresponding row of $\boldsymbol{M}$ (defined $M_c$) and our selected filters' transmission functions $f_k(\lambda)$.
 Decomposing our camera's sensitivity function over the $c$'th color channel $Q_c(\lambda)$ we have: 
 \begin{equation}
     \rho_{c} = \int_{\omega} M_cf_k(\lambda)E(\lambda)S(\lambda) d\lambda
