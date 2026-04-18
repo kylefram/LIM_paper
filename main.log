@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  14 APR 2026 22:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  17 APR 2026 22:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -334,52 +334,51 @@ LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
 {/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 34.
+(Font)              size <5> substituted on input line 11.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <5.5> not available
-(Font)              size <5> substituted on input line 34.
+(Font)              size <5> substituted on input line 11.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 34.
+(Font)              size <5> substituted on input line 11.
 
 <media/measure2.jpeg, id=14, 728.4816pt x 971.3088pt>
 File: media/measure2.jpeg Graphic file (type jpg)
 <use media/measure2.jpeg>
-Package pdftex.def Info: media/measure2.jpeg  used on input line 59.
+Package pdftex.def Info: media/measure2.jpeg  used on input line 42.
 (pdftex.def)             Requested size: 222.62204pt x 296.81937pt.
 ) (./sections/3_method.tex [2 <./media/measure2.jpeg>]
 
 Package amsmath Warning: Foreign command \atop;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 36.
+(amsmath)                 on input line 31.
 
 <media/all_errors.png, id=22, 867.24pt x 433.62pt>
 File: media/all_errors.png Graphic file (type png)
 <use media/all_errors.png>
-Package pdftex.def Info: media/all_errors.png  used on input line 73.
+Package pdftex.def Info: media/all_errors.png  used on input line 70.
 (pdftex.def)             Requested size: 233.75381pt x 116.87384pt.
 
-Overfull \hbox (11.13177pt too wide) in paragraph at lines 73--74
+Overfull \hbox (11.13177pt too wide) in paragraph at lines 70--71
  [] 
  []
 
-
-Underfull \hbox (badness 6268) in paragraph at lines 87--89
+[3 <./media/all_errors.png>]
+Underfull \hbox (badness 6268) in paragraph at lines 93--95
  \OT1/cmr/m/it/10.95 3.3.3 Blended Meth-ods[] \OT1/cmr/m/n/10.95 While brute force
  []
 
-[3 <./media/all_errors.png>]
 <media/deltaE_comparison_exact_paths.png, id=32, 867.24pt x 578.16pt>
 File: media/deltaE_comparison_exact_paths.png Graphic file (type png)
 <use media/deltaE_comparison_exact_paths.png>
-Package pdftex.def Info: media/deltaE_comparison_exact_paths.png  used on input line 98.
+Package pdftex.def Info: media/deltaE_comparison_exact_paths.png  used on input line 104.
 (pdftex.def)             Requested size: 222.62204pt x 148.41249pt.
 <media/timing_comparison.png, id=33, 1011.78pt x 505.89pt>
 File: media/timing_comparison.png Graphic file (type png)
 <use media/timing_comparison.png>
-Package pdftex.def Info: media/timing_comparison.png  used on input line 105.
+Package pdftex.def Info: media/timing_comparison.png  used on input line 111.
 (pdftex.def)             Requested size: 222.62204pt x 111.31157pt.
 ) (./sections/4_evaluation.tex
 <media/deltaE_vs_N_mse.png, id=34, 722.7pt x 433.62pt>
@@ -387,41 +386,39 @@ File: media/deltaE_vs_N_mse.png Graphic file (type png)
 <use media/deltaE_vs_N_mse.png>
 Package pdftex.def Info: media/deltaE_vs_N_mse.png  used on input line 9.
 (pdftex.def)             Requested size: 222.62204pt x 133.5739pt.
-<media/n3MSETransmission1.png, id=35, 875.4306pt x 730.8906pt>
+ [4 <./media/deltaE_comparison_exact_paths.png> <./media/timing_comparison.png> <./media/deltaE_vs_N_mse.png>]
+<media/n3MSETransmission1.png, id=41, 875.4306pt x 730.8906pt>
 File: media/n3MSETransmission1.png Graphic file (type png)
 <use media/n3MSETransmission1.png>
 Package pdftex.def Info: media/n3MSETransmission1.png  used on input line 19.
 (pdftex.def)             Requested size: 222.62204pt x 185.85605pt.
- [4 <./media/deltaE_comparison_exact_paths.png> <./media/timing_comparison.png> <./media/deltaE_vs_N_mse.png> <./media/n3MSETransmission1.png>]
-<media/n4MSETransNOIR.png, id=43, 875.4306pt x 730.8906pt>
+<media/n4MSETransNOIR.png, id=42, 875.4306pt x 730.8906pt>
 File: media/n4MSETransNOIR.png Graphic file (type png)
 <use media/n4MSETransNOIR.png>
 Package pdftex.def Info: media/n4MSETransNOIR.png  used on input line 36.
 (pdftex.def)             Requested size: 222.62204pt x 185.85605pt.
-<media/n10MSETransmission1.png, id=44, 875.4306pt x 730.8906pt>
+<media/n10MSETransmission1.png, id=43, 875.4306pt x 730.8906pt>
 File: media/n10MSETransmission1.png Graphic file (type png)
 <use media/n10MSETransmission1.png>
 Package pdftex.def Info: media/n10MSETransmission1.png  used on input line 45.
 (pdftex.def)             Requested size: 222.62204pt x 185.85605pt.
-<media/n5MSEMacbethRank0.png, id=45, 710.4141pt x 468.3096pt>
+<media/n5MSEMacbethRank0.png, id=44, 710.4141pt x 468.3096pt>
 File: media/n5MSEMacbethRank0.png Graphic file (type png)
 <use media/n5MSEMacbethRank0.png>
 Package pdftex.def Info: media/n5MSEMacbethRank0.png  used on input line 61.
 (pdftex.def)             Requested size: 222.62204pt x 146.7537pt.
-<media/n3MSEMacbeth.png, id=46, 715.473pt x 468.3096pt>
+ [5 <./media/n3MSETransmission1.png> <./media/n4MSETransNOIR.png> <./media/n10MSETransmission1.png>]
+<media/n3MSEMacbeth.png, id=51, 715.473pt x 468.3096pt>
 File: media/n3MSEMacbeth.png Graphic file (type png)
 <use media/n3MSEMacbeth.png>
 Package pdftex.def Info: media/n3MSEMacbeth.png  used on input line 68.
 (pdftex.def)             Requested size: 222.62204pt x 145.7104pt.
-<media/n10M.png, id=47, 586.1097pt x 188.6247pt>
+<media/n10M.png, id=52, 586.1097pt x 188.6247pt>
 File: media/n10M.png Graphic file (type png)
 <use media/n10M.png>
 Package pdftex.def Info: media/n10M.png  used on input line 76.
 (pdftex.def)             Requested size: 222.62204pt x 71.64645pt.
- [5 <./media/n4MSETransNOIR.png> <./media/n10MSETransmission1.png> <./media/n5MSEMacbethRank0.png> <./media/n3MSEMacbeth.png>]) (./sections/5_conclusion.tex) (./main.bbl [6 <./media/n10M.png>]) (./sections/6_appendix.tex [7]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8]) [9] (./main.aux)
+) (./sections/5_conclusion.tex) (./main.bbl [6 <./media/n5MSEMacbethRank0.png> <./media/n3MSEMacbeth.png> <./media/n10M.png>] [7]) (./sections/6_appendix.tex [8]) [9] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -433,15 +430,15 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 4871 strings out of 467525
- 82122 string characters out of 5418983
- 502616 words of memory out of 5000000
- 33720 multiletter control sequences out of 15000+600000
+ 4870 strings out of 467525
+ 82116 string characters out of 5418983
+ 505616 words of memory out of 5000000
+ 33719 multiletter control sequences out of 15000+600000
  637142 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,10n,65p,891b,493s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (9 pages, 5811072 bytes).
+ 57i,10n,65p,497b,492s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (9 pages, 5812002 bytes).
 PDF statistics:
  141 PDF objects out of 1000 (max. 8388607)
  74 compressed objects within 1 object stream

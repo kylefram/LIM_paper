@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1776220156.2108 "main.aux" "main.bbl" "main" 1776220313.68631 0
+["bibtex main"] 1776480443.74944 "main.aux" "main.bbl" "main" 1776480720.74912 0
   "./document.bib" 1776170126.0686 13934 7ee7fbf36f1525f18912b590fed35f69 ""
   "/usr/local/texlive/2026/texmf-dist/bibtex/bst/base/ieeetr.bst" 1292289607 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "main.aux" 1776220313.50895 6023 aac334e0c6d7a0cf0def09bc9c437677 "pdflatex"
+  "main.aux" 1776480720.57112 5964 6619b9dbd2f4cb608b47f76680b7368c "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1776220311.9412 "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" "main.pdf" "main" 1776220313.6864 0
+["pdflatex"] 1776480718.996 "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" "main.pdf" "main" 1776480720.74922 0
   "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" 1776104371.92855 1171 a6fc67b4cad22496747752237f5dcc63 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
@@ -40,6 +40,7 @@
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
+  "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb" 1248133631 32166 b0c356b15f19587482a9217ce1d8fa67 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1248133631 37912 77d683123f92148345f3fc36a38d9ab1 ""
@@ -55,7 +56,6 @@
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1248133631 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
-  "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb" 1248133631 35479 892d27442ef9ef29ce1ee57aa0e8a665 ""
   "/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty" 1748806692 2222 27db7d52163edae53881b71ff62e754e ""
   "/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty" 1748806692 4173 1b3e76addfb8afcb47db4811d66e1dc6 ""
@@ -89,8 +89,8 @@
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1772409757 3636768 9f94d239f422c02416e379a36a852ffd ""
   "/usr/local/texlive/2026/texmf.cnf" 1772409725 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
   "iopconfser.cls" 1774800608.02243 4296 8bda329e2c882c25dadbe03513ff04c0 ""
-  "main.aux" 1776220313.50895 6023 aac334e0c6d7a0cf0def09bc9c437677 "pdflatex"
-  "main.bbl" 1776220156.27972 5383 bc13beb9cb01c15fd3386303bb7cfc0c "bibtex main"
+  "main.aux" 1776480720.57112 5964 6619b9dbd2f4cb608b47f76680b7368c "pdflatex"
+  "main.bbl" 1776480443.81713 5383 bc13beb9cb01c15fd3386303bb7cfc0c "bibtex main"
   "main.tex" 1776104371.92855 1171 a6fc67b4cad22496747752237f5dcc63 ""
   "media/all_errors.png" 1776209749.27577 117742 f10d38d6b1ed1f668e92a745b0290013 ""
   "media/deltaE_comparison_exact_paths.png" 1775867365.11041 213492 f478b6d83c82798b7c60aa46a8f01bae ""
@@ -103,13 +103,13 @@
   "media/n4MSETransNOIR.png" 1776219137.73622 283791 2744e3c74499e3247c7fc72196be5e19 ""
   "media/n5MSEMacbethRank0.png" 1776218043.70491 61737 9e8540d81f9c196d5ba166de4fce2539 ""
   "media/timing_comparison.png" 1776217614.377 73535 229022484e67caacac9730a84238a8f5 ""
-  "sections/0_abstract.tex" 1776171575.47009 713 68268016d567632473435a5c5914f67e ""
-  "sections/1_intro.tex" 1776170763.47424 2443 eec4c9b3d9c2af18dad41489c01351ab ""
-  "sections/2_related_work.tex" 1776220265.53898 5555 a87a0a14a955cb71941c4128dd196175 ""
-  "sections/3_method.tex" 1776219988.06138 8485 c26d66a85a38c493d74876087910c85f ""
-  "sections/4_evaluation.tex" 1776220288.95396 4335 19e4d3414561d8d4ae8a9ec2c3bdbd32 ""
-  "sections/5_conclusion.tex" 1776220311.73907 427 bd17bc03dd9d7c4cd916588148bd8d80 ""
-  "sections/6_appendix.tex" 1776217063.64962 4026 aef80700dbc42b51a69fdb806ff59069 ""
+  "sections/0_abstract.tex" 1776480718.07845 719 73fb8eff5e04aed394ea27e4d584c324 ""
+  "sections/1_intro.tex" 1776480718.89429 2310 527e8229448d4f78384842cdb8a63278 ""
+  "sections/2_related_work.tex" 1776480718.89411 3964 2ba31e1f01cc77f67157b8c28ed9603c ""
+  "sections/3_method.tex" 1776480664.39974 6486 4f3ca15b76cf2afabd08388cd47a774f ""
+  "sections/4_evaluation.tex" 1776477453.90043 4335 dddb04b86c9440e92f787a45a3b53226 ""
+  "sections/5_conclusion.tex" 1776477465.88574 427 bd17bc03dd9d7c4cd916588148bd8d80 ""
+  "sections/6_appendix.tex" 1776477453.90066 4040 98ebeb89fd6c14d62b630b29448b836a ""
   (generated)
   "main.aux"
   "main.log"
