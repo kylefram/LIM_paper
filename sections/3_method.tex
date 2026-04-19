@@ -7,32 +7,27 @@ All filters are represented in the domain $\omega = [400,750]$ nm.
 
 \subsection{Problem Formulation}
 
-For approximations of XYZ,
-%which we will study in the following work, 
-we follow the work of Hardeberg \cite{Filterselection} in adopting MSE as the loss function.
-{\color{red} Abstractly,} we denote the loss function $L(\boldsymbol{x}(\lambda),\boldsymbol{y}(\lambda))$ for arbitrary target $\boldsymbol{x}(\lambda)$ to be approximated by the estimation (i.e. combination of filter wheel sensitivities) as $\boldsymbol{y}(\lambda)$ (to be solved for) defined over the domain $\lambda \in \omega$. 
+For approximations of XYZ, we follow the work of Hardeberg \cite{Filterselection} in adopting MSE between target and simulation over the visible spetrum as the loss function and minimizing loss via search for an optimal $\boldsymbol{M}$.
+%Abstractly, we denote the loss function $L(\boldsymbol{x}(\lambda),\boldsymbol{y}(\lambda))$ for arbitrary target $\boldsymbol{x}(\lambda)$ to be approximated by the estimation (i.e. combination of filter wheel sensitivities) as $\boldsymbol{y}(\lambda)$ (to be solved for) defined over the domain $\lambda \in \omega$. 
 
 \begin{equation}
-    L(\boldsymbol{x}(\lambda),\boldsymbol{y}(\lambda)) = \int_{\omega}\|\boldsymbol{x}(\lambda)-\boldsymbol{x}(\lambda)\| d\lambda
+    L(\boldsymbol{x}(\lambda),\boldsymbol{y}(\lambda)) = \sum_{X,Y,Z} \int_{\omega}\|\boldsymbol{x}(\lambda)-\boldsymbol{x}(\lambda)\| d\lambda
     \label{eq:5}
 \end{equation}
-
 
 %% Kyle, why not put x rather than t
 %%% - KYLE: this statement is redundant and adds confusion, likely easier to omit.
 %%%We take $t \in \{X,Y,Z\}$ as our target color matching functions and 
 %% Kyle added y(\lambda)=
 %%%$y(\lambda)=\rho'_c(\lambda)$ with $c\in \{R,G,B\}$ as our simulated functions. 
-We consider loss from all color channels equally and take the sum of losses across each channel. Thus we compute losses between pairs of sensors $(t,c) \in \{(X,R),(Y,G),(Z,B)\}$.
-
-Given that we are limited by 1nm steps in measurement, we discretize the above, taking $\omega_d = \{400,401...750\}$. In discrete form the loss function becomes:
+We consider loss from all color channels equally. Given that we are limited by 1nm steps in measurement, we discretize over $\omega$, taking $\omega_d = \{400,401...750\}$. We sum $MSE$ over $\omega_d$ to compute our total error, and then sum over each response function:
 
 \begin{equation}
-    L_d(\boldsymbol{x},\boldsymbol{y}) = \sum_{(t,c) \in \atop \{(X,R),(Y,G),(Z,B)\}} \sum_{\lambda \in \omega_d}\|\boldsymbol{x}-\boldsymbol{y}\|
+    L_d(\boldsymbol{x}(\lambda),\boldsymbol{y}(\lambda)) = \sum_{X,Y,Z} \sum_{\lambda \in \omega_d}\|\boldsymbol{x}(\lambda)-\boldsymbol{y}(\lambda)\|
     \label{eq:6}
 \end{equation}
 
-We minimize loss by selection of $k$ representing our $N$ `active' filters (which incorporate the intrinsic sensitivity of a grey-scale sensor) each having transmission functions $\underline{f}(\lambda)$ (thus comprising an $N-$vector of functions), and $\boldsymbol{M}$, a $3\times N$ color correction matrix. 
+We minimize loss by selection of $k$ representing our $N$ `active' filters (which incorporate the intrinsic sensitivity of a grey-scale sensor) each having transmission functions $\underline{f}_k(\lambda)$ (thus comprising a $k$ length vector of functions), and $\boldsymbol{M}$, a $3\times k$ color correction matrix. 
 We also define $\underline{X}(\lambda)$ as the $X,Y,$ and $Z$ functions. 
 
 \begin{equation}
@@ -42,36 +37,37 @@ We also define $\underline{X}(\lambda)$ as the $X,Y,$ and $Z$ functions.
 
 
 %In this case, the optimal weights can be found using the pseudo-inverse \cite{greville1960some, BEUTLER1965451, macausland2014moore}.
-%denoted $A^+$ for a matrix $A$. 
-We define $\boldsymbol{F}$ as the $N\times 351$ matrix $\underline{f}(\lambda)E(\lambda)S(\lambda)$ at each $\lambda \in \omega_d$. And the discrete set of $3 \times 351$ XYZ functions as $\mathbf{X}$. If we find a good minimization according to our loss function, then
+We define $\boldsymbol{F}$ as the $k\times 351$ matrix $\underline{f}(\lambda)E(\lambda)S(\lambda)$ at each $\lambda \in \omega_d$. And the discrete set of $3 \times 351$ XYZ functions as $\mathbf{X}$. If we find a good minimization according to our loss function, then
 
 \begin{equation}
-    \boldsymbol{X} \approx \boldsymbol{M}\boldsymbol{F}
+    \boldsymbol{X} = \boldsymbol{M}\boldsymbol{F}
 \end{equation}  
 
-Using a least-squares loss we can solve for $\boldsymbol{M}$, in closed form, using the pseudo inverse:
+Using a least-squares loss we can solve for $\boldsymbol{M}$, in closed form, using the pseudo-inverse \cite{greville1960some, BEUTLER1965451}, denoted $A^+$ for a matrix $A$. 
+The unique $351 \times k$ Moore-Penrose pseudo-inverse solution $\boldsymbol{F}^+$ has the desirable property that while we may not exactly satisfy the Luther condition, it provides the closest possible approximation given filter set $k$ \cite{macausland2014moore}:
 \begin{equation}
-    \boldsymbol{M} = \boldsymbol{X}\boldsymbol{F}^+
+    \boldsymbol{M} \approx \boldsymbol{X}\boldsymbol{F}^+
 \end{equation} 
 
 %Kyle: either expand the pseudo inverse or give a reference
-Finally, as a point of detail we must alter this optimisation if any of our filters have 0 transmission in a part of the assumed wavelength interval. The NOIR filter only has non zero transmittance in [400,650] nanometres. So, when this filter is used we can only optimise within this wavelength interval.
+Finally, as a point of detail we must alter this optimization if any of our filters have 0 transmission in a part of the assumed wavelength interval. The NOIR filter only has non zero transmittance in [400,650] nanometres. So, when this filter is used we can only optimize within this wavelength interval.
 %Note that for algorithmic stability of the pseudoinverse, we must truncate to $\lambda \in \{400,401...650\}$ when using the $NOIR$ filter. 
-$M$ has the solution:
 
 \subsection{Filter Selection}
 
 While the number of filters $M$ may be large we, ideally, would posit a filter wheel with fewer filters.
 
 \subsubsection{Brute Force Search}
-In the naive solution, we find the optimal filter combination for every subset of $N$ filters (where $N$ is small) drawn from the $M$ filter set by selecting the combination with the lowest loss, considering all combinations of filters (there are over 100,000 of these). In Figure \reg{fig:errors}
- plot the errors across all sets of 5 filters (multiplied by the camera sensitivity) from the worst to best performing quintuple.
+In the naive solution, we find the optimal filter combination for every subset of $k$ filters (where $k$ is small) drawn from the $M$ filter set by selecting the combination with the lowest loss, considering all combinations of filters (there are nearly 10,000,000 of these for $k=5$). 
+In Figure \ref{fig:errors} we plot the errors across all sets of 5 filters (multiplied by the camera sensitivity) from the worst to best performing quintuple. 
+We compute the Moore-Penrose pseudo-inverse for each set of filters. 
+Our implementation is parallelized over 8 NVIDIA L4 GPUs, with a combined pool of up to 192GB VRAM, enabling us to compute brute-force searches of $k=5$ approximately 3 minutes. 
 %% Kyle N=5?
 
 \begin{center}
-\label{fig:errors}
+    \label{fig:errors}
     \centering
-    \includegraphics[width=1.05\linewidth]{media/all_errors.png}
+    \includegraphics[width=\linewidth]{media/all_errors.png}
     \captionof{figure}{MSE Error distribution across all filter combinations for N=5}
 \end{center}
 
@@ -92,19 +88,22 @@ without brute force search, we can use PCA analysis to find the optimal weights 
 %% KYLE: this is fairly accurate. I initially did use N and M for my 'numbers' but it was a very similar statement that caused me to rethink that notation as 'capital M' is overloaded here. 
 %% unless you think the bold is clear enough.
 
-This method effectively creates one $3\times M$ matrix $\boldsymbol{M}$ and iteratively reduces weights that can be discarded with minimal loss, until reaching $N$ nonzero entries and thus a $3 \times N$ matrix of weights.
+This method effectively creates one $3\times M$ matrix $\boldsymbol{M}$ and iteratively reduces weights that can be discarded with minimal loss, until reaching $k$ nonzero entries and thus our final $3 \times k$ matrix of weights. 
+Specifically, the selection is performed by projecting $\boldsymbol{F}$ onto the space spanned by the target $\boldsymbol{X}$ matrix, finding the most relevant entries as per the Matching Pursuit method outlined in Mallat and Zhang \cite{mallat1993matching}.
+We iteratively apply this methodology $k$ times, each time on a subset of the resultant orthonormal basis formed by subtracting the prior filter's projection.
 
+This method is comparatively instant, able to compute the $k=5$ case in 19 seconds on a single L4 GPU. 
 %%% Graham GOT TO HERE
 
 \subsubsection{Blended Methods} 
 
-$\;$ While brute force methods guarantee minimum possible loss by investigating the entire search space, large $N$ implementations render this technique impractical. 
-Crucially, we can decrease the speed of combinatoric explosion by pruning our set of filters, but the problem of which filter to exclude in a pairwise filter pruning decision is not trivial. 
+$\;$\newline While brute force methods guarantee minimum possible loss by investigating the entire search space, large $k$ implementations render this technique impractical. 
+%Crucially, we can decrease the speed of combinatoric explosion by pruning our set of filters, but the problem of which filter to exclude in a pairwise filter pruning decision is not trivial. 
 
 %% Kyle, no, I don't understand what you did here
-To address this problem, we use a blended method which suggests a solution using PCA or another heuristic method for $N$ filters, and then greedily considers another set of $N_2$ filters from the remaining set. 
+To address this problem, we use a blended method which suggests a solution using PCA or another heuristic method for $k$ filters, and then greedily considers another set of $N_2$ filters from the remaining set. 
 This provides a middle ground to the performance-accuracy tradeoff.
-We see that a significant MSE shortfall grows with $N$ as $N_2=0$, but nearly disappears at $N_2>0$ for most practical values of $N$.
+We see that a significant MSE shortfall grows with $k$ as $k_2=0$, but nearly disappears at $k_2>0$ for most practical values of $k$.
 
 %% Kyle, first time you have mentioned $\Delta E_{2000}$
 
