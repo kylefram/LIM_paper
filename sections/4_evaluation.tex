@@ -1,23 +1,30 @@
 \section{Evaluation}
 
-We evaluate our method by comparing the reconstructed XYZ color matching functions from our selected filters to the target XYZ functions, and computing the color difference $\Delta E_{2000}$ under standard reflectance.
-We use the Macbeth Color Checker \cite{Pascale2006RGBCO} as our test set, and evaluate under the D65 illuminant.
-For each number of filters $N$, we compute the minimum $\Delta E_{2000}$ across all combinations of $N$ filters from the Rosco Supergel set, and plot the relationship between $N$ and $\Delta E_{2000}$.
+We evaluate our method by comparing the reconstructed XYZ color matching functions from our selected filters to the target XYZ functions, and by computing the color difference $\Delta E_{2000}$ for a set of reflectances.
+For the latter evaluation, we use the Macbeth Color Checker \cite{Pascale2006RGBCO} as our test set, and render XYZs and our RGBs  (found from our method to best approximate XYZs) under a D65 illuminant. In Figure \ref{fig:DeltaE}, we show the performance of our approximation when we find the best $k$ filter subset of the Rosco Supergel set, where $k\in [1,8]$.
+%For each number of filters $N$, we compute the minimum $\Delta E_{2000}$ across all combinations of $N$ filters from the Rosco Supergel set, and plot the relationship between $N$ and $\Delta E_{2000}$.
 
 \begin{center}
+\label{fid:DeltaE}
     \centering
     \includegraphics[width=\linewidth]{media/deltaE_vs_N_mse.png}
     \captionof{figure}{Best $\Delta E_{2000}$ for each number of filters $N$ }
 \end{center}
 
-We also plot the resultant reconstructed XYZ functions for the best filter combination for various results at $N$ filters, and compare it to the target XYZ functions, CIE 1931 in this case.
-In the $N=3$ case, we can see visible artifacts in the transmission functions. 
-Note that the best MSE solution does not necessarily correspond to the best $\Delta E_{2000}$ solution, and this is most evident at $N=3$ where the third best MSE achieves the low $\Delta E_{2000}$ of 6.75.
+We also plot the resultant reconstructed XYZ functions for the best $k-$filter combination ofr $k\in\{3,4,5\}$, see respectively Figures 6, 7 and 8. 
+In the $k=3$ case, we can see visible artifacts in the transmission functions. 
+
+{\color{red}. REMOVE ALL THI PARA? Suggest you take this out. You haven't discussed minimizinge Delta ENote that the best MSE solution does not necessarily correspond to the best $\Delta E_{2000}$ solution, and this is most evident at $N=3$ where the third best MSE achieves the low $\Delta E_{2000}$ of 6.75.}
+
+%Kyle it's too confusion to talk about choosing N filter subset and then labelling the best subset as an N-filter set. In the text, I 'have called the best subset a k-filter. I fyou think this is a good idea, you need to change the headers for Figures 6,7, and 8. In all figures make sure axes are readable and are there (6, 7 and 8 the x-axis is not labelled).
+
+%%% GRAHAM GOT TO HERE 19/4/26
+
 
 \begin{center}
     \centering
     \includegraphics[width=\linewidth]{media/n3MSETransmission1.png}
-    \captionof{figure}{Camera Spectral Sensitivity for best XYZ Reconstruction for $N=3$ }
+    \captionof{figure}{Camera Spectral Sensitivity for best XYZ Reconstruction for $k=3$ }
 \end{center}
 
 The best filter combination for $N=3$  achieves a $\Delta E_{2000}$ of 6.7, which is above the just noticeable difference threshold of 2.3, indicating that the reconstructed colors may be distinguishable from the target colors under certain conditions.

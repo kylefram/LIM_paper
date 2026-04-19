@@ -2,10 +2,10 @@
 Multispectral image acquisition systems have uses ranging from agricultural monitoring to fine art analysis to medical scanning \cite{peyghambari2021lithological, ortega2019gastroenterology, mariotti2023forensics, qin2013foodsafety, wu2013foodfundamentals, lee2020colorluminance, wu2024headneckcancer, lu2020agriculture} 
 State of the art systems are prohibitively costly \cite{SCUTELNIC2024e00596}, and are generally only suitable for their specialized purpose.
 A comparatively cheaper and more flexible solution lies in the filter wheel, notably employed in terrestrial and geological analysis as early as 1972 \cite{mannheimer1977landsat}, and now provides a useful framework for all uses of multispectral imaging. 
-We can construct an effective system using simple 3D-printed components, microcontrollers such as the Raspberry Pi, and a set of inexpensive gel filters such as those used for stage lights. 
+{\color{red}In this paper,} we construct an effective system using simple 3D-printed components, microcontrollers such as the Raspberry Pi, and a set of inexpensive gel filters such as those used for stage lights. 
 
-We aim to improve upon the classic filter wheel used with a monochromatic camera. 
-As a first step, we simulate image capture through a set of colored filters and then combine these to best approximate the desired XYZ colorimetric values.
+{\color{red} However,} we aim to improve upon the classic {\color}{red} apriori {\it fixed}{ filter wheel used with a monochromatic camera. 
+{\color{red} Here,} we simulate image capture through a set of colored filters and then combine these to best approximate the desired XYZ colorimetric values, {\color{red} effectively solving for a new colour wheel}. .
 
 Prior work has been limited by computational resources, and generally relies on heuristic measures to select filters \cite{Filterselection, vrhel1994filter}.
 We provide a minimal error reconstruction for the set of Rosco Supergel \cite{rosco_mycolor} filters, and compute the relationship between number of filters $N$ and minimum $\Delta E_{2000}$ under standard illuminants.
