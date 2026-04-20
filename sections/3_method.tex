@@ -27,8 +27,8 @@ We consider loss from all color channels equally. Given that we are limited by 1
     \label{eq:6}
 \end{equation}
 
-We minimize loss by selection of $k$ representing our $N$ `active' filters (which incorporate the intrinsic sensitivity of a grey-scale sensor) each having transmission functions $\underline{f}_k(\lambda)$ (thus comprising a $k$ length vector of functions), and $\boldsymbol{M}$, a $3\times k$ color correction matrix. 
-We also define $\underline{X}(\lambda)$ as the $X,Y,$ and $Z$ functions, and $\underline{\rho}$ as the corresponding simulated response functions. 
+We minimize loss by selection of $k$ representing our $N$ `active' filters (which incorporate the intrinsic sensitivity of a grey-scale sensor) each having transmission functions ${f}_k(\lambda)$ (thus comprising a $k$ length vector of functions), and $\boldsymbol{M}$, a $3\times k$ color correction matrix. 
+We also define $\underline{X}(\lambda)$ as the $X,Y,$ and $Z$ functions, and $\underline{\rho}$ as the corresponding simulated response functions, with $\underline{f}(\lambda)$ as the stacked $f_k(\lambda)$ functions. 
 
 \begin{equation}
     \argmin_{\mathbf{M}} \sum_{\{X,Y,Z\}} L_d(\underline{X}(\lambda),\underline{\rho}(\lambda))
@@ -46,7 +46,7 @@ If we find a good minimization according to our loss function, then
 \end{equation}  
 
 Using a least-squares loss we can solve for $\boldsymbol{M}$, in closed form, using the Moore-Penrose pseudo-inverse \cite{greville1960some, BEUTLER1965451}, denoted $A^+$ for a matrix $A$. 
-The unique $351 \times k$ Moore-Penrose pseudo-inverse solution $\boldsymbol{F}^+$ has the desirable property that while we may not exactly satisfy the Luther condition, it provides the closest possible approximation given filter set $k$ \cite{macausland2014moore}:
+The unique $351 \times k$ Moore-Penrose pseudo-inverse solution $\boldsymbol{F}^+$ has the desirable property that while we may not exactly satisfy the Luther condition, it provides the closest possible approximation for a given filter set $k$ \cite{macausland2014moore}:
 \begin{equation}
     \boldsymbol{M} \approx \boldsymbol{X}\boldsymbol{F}^+
 \end{equation} 
@@ -63,9 +63,9 @@ While the number of filters $M$ may be large, we ideally would posit a filter wh
 
 \subsubsection{Brute Force Search}
 In the naive solution, we find the optimal filter combination for every subset of $k$ filters (where $k$ is small) drawn from the $M$ filter set by selecting the combination with the lowest loss, considering all combinations of filters (there are nearly 10,000,000 of these for $k=5$). 
-In Figure \ref{fig:errors} we plot the errors across all sets of 5 filters (multiplied by the camera sensitivity) from the worst to best performing quintuple. 
+In Figure 2 we plot the errors across all sets of 5 filters (multiplied by the camera sensitivity) from the worst to best performing quintuple. 
 We compute the Moore-Penrose pseudo-inverse for each set of filters. 
-Our implementation is parallelized over 8 NVIDIA L4 GPUs, with a combined pool of up to 192GB VRAM, enabling us to compute brute force searches of $k=5$ in approximately 2 minutes. 
+Our implementation is parallelized over 8 NVIDIA L4 GPUs, with a combined pool of up to 192GB VRAM, enabling us to compute brute force searches of $k=5$ in approximately 7 minutes. 
 %% Kyle N=5?
 
 \begin{center}
@@ -109,13 +109,13 @@ However, we note the improved MSE result for the brute force selection methodolo
 \begin{center}
     \centering
     \includegraphics[width=1\linewidth]{media/mse_comparison_exact_paths.png}
-    \captionof{figure}{MSE Comparison between PCA and Brute Force Selection Methods}
+    \captionof{figure}{MSE Comparison between PCA and Brute Force Selection Methods, $k_2=0$}
 \end{center}
 
 \subsubsection{Brute Force Search Augmented PCA} 
 
 $\;$\newline While brute force methods guarantee minimum possible error by investigating the entire search space, large $k$ implementations render this technique impractical. 
-Additionally, our PCA method outlined above cannot always identify the optimal filter set, and has a nonnegligible MSE shortfall vs. exhaustive search for all $k$.
+Additionally, our PCA method outlined above cannot always identify the optimal filter set, and has a nonnegligible MSE shortfall vs. exhaustive search for all $k>1$.
 
 To address this problem, we use a blended method which finds a PCA solution for $k_1$ filters, and then considers all further possible combinations from a further $k_2$ filters, for a total $k=k_1+k_2$. 
 This provides a middle ground to the performance-accuracy tradeoff.
@@ -126,5 +126,5 @@ Further, for $k_2<4$, the added time from the exhaustive search step is between 
 \begin{center}
     \centering
     \includegraphics[width=\linewidth]{media/mse_comparison_exact_paths_n2_2.png}
-    \captionof{figure}{MSE Comparison between PCA and Brute Force Selection Methods}
+    \captionof{figure}{MSE Comparison between PCA and Brute Force Selection Methods, $k_2=2$}
 \end{center}

@@ -14,7 +14,7 @@ However, rather than designing a specialized filter, we investigate whether we c
 
 %%%% Alternate Math - Graham
 In our model we have a single grey-scale camera (only a brightness channel). Thus, our estimated new camera sensitivities are a function of the intrinsic sensitivities of this single channel camera multiplied by the filter transmittances.
-Let $\underline{f}_k(\lambda)$ and $\boldsymbol{M}_c$ respectively denote $k$ filter functions multiplied by the camera sensor response and the $c$'th row of a $3 \times k$ matrix that linearly combines these filter functions (e.g. to best approximate the XYZ color matching functions). 
+Let ${f}_k(\lambda)$ and $\boldsymbol{M}_c$ respectively denote $k$ filter functions multiplied by the camera sensor response and the $c$'th row of a $3 \times k$ matrix that linearly combines these filter functions (e.g. to best approximate the XYZ color matching functions). 
 Then the filtered color response, ${\rho}_{c,k}$ is written as:
 
 %SUPERGEL PHOTO
@@ -24,7 +24,7 @@ Then the filtered color response, ${\rho}_{c,k}$ is written as:
 \end{figure}
 
 \begin{equation}
-{\rho}_{c,k}=\int_\omega \mathbf{M}_c\underline{f}_k(\lambda)E(\lambda)S(\lambda)d\lambda
+{\rho}_{c,k}=\int_\omega \mathbf{M}_c{f}_k(\lambda)E(\lambda)S(\lambda)d\lambda
 \end{equation}
 
 %The function $\rho'_c(\lambda)$ denotes a single estimated camera sensor where $c\in \{R,G,B\}$, $\rho'_c(\lambda)=\mathbf{M}_c\underline{f}(\lambda)$, where ${M}_c$ denotes the corresponding row of $\mathbf{M}$.

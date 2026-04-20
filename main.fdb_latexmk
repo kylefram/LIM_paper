@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1776693988.66533 "main.aux" "main.bbl" "main" 1776693990.92585 0
+["bibtex main"] 1776696482.58462 "main.aux" "main.bbl" "main" 1776696554.69279 0
   "./document.bib" 1776693788.4875 15010 904c3b0cf273af88326efdcfaff84d7b ""
   "/usr/local/texlive/2026/texmf-dist/bibtex/bst/base/ieeetr.bst" 1292289607 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "main.aux" 1776693990.74648 5705 ad2fc9b2e707718c1482f7650854823d "pdflatex"
+  "main.aux" 1776696554.51489 5753 197d16c9a34626387736fe0cebca4694 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1776693988.73787 "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" "main.pdf" "main" 1776693990.92595 0
-  "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" 1776693421.58212 1211 89ede55d88983171c7d309f3d0f1cb8f ""
+["pdflatex"] 1776696552.46078 "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" "main.pdf" "main" 1776696554.69289 0
+  "/Users/kylefram/Desktop/Cambridge/ACS/Project/LIM_paper/main.tex" 1776696552.24953 1242 2bede2e5985af9bd90c4c0524219de01 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1246382020 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -45,7 +45,6 @@
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb" 1248133631 36912 b448ef9ad9d7228ec3c6e71005136d55 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
-  "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb" 1248133631 28902 2f5c04fd2884d1878057baa5aad22765 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
@@ -91,9 +90,9 @@
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1772409757 3636768 9f94d239f422c02416e379a36a852ffd ""
   "/usr/local/texlive/2026/texmf.cnf" 1772409725 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
   "iopconfser.cls" 1774800608.02243 4296 8bda329e2c882c25dadbe03513ff04c0 ""
-  "main.aux" 1776693990.74648 5705 ad2fc9b2e707718c1482f7650854823d "pdflatex"
-  "main.bbl" 1776693988.73622 6172 d7fe89cc31e04babae9a35dca80d7388 "bibtex main"
-  "main.tex" 1776693421.58212 1211 89ede55d88983171c7d309f3d0f1cb8f ""
+  "main.aux" 1776696554.51489 5753 197d16c9a34626387736fe0cebca4694 "pdflatex"
+  "main.bbl" 1776696482.66007 6172 d7fe89cc31e04babae9a35dca80d7388 "bibtex main"
+  "main.tex" 1776696552.24953 1242 2bede2e5985af9bd90c4c0524219de01 ""
   "media/all_errors.png" 1776613365.77011 127827 7d0d6d6ac98016493ab9524834525cd8 ""
   "media/deltaE_vs_k_mse.png" 1776635743.71836 281490 895b24b69d8c178bdab33a024f28b45f ""
   "media/k3top1_spectra.png" 1776636441.0459 321357 a00d1c19b624c5d5d132b787077cef78 ""
@@ -108,10 +107,10 @@
   "media/timing_comparison.png" 1776613346.47493 109674 41889bfa32e958db9240ea94203d6298 ""
   "sections/0_abstract.tex" 1776480718.07845 719 73fb8eff5e04aed394ea27e4d584c324 ""
   "sections/1_intro.tex" 1776692728.57291 2589 cc531d37d2857d73d4392d80eada1b6f ""
-  "sections/2_related_work.tex" 1776680527.1828 4146 91f144c00fce3ccbada652e542ef5bfd ""
-  "sections/3_method.tex" 1776693508.50115 9013 6ac6989f792f5f07b8d123ba05264440 ""
-  "sections/4_evaluation.tex" 1776693983.92138 4907 6254d08d43a70c9174ebc6b6c2ea1848 ""
-  "sections/5_conclusion.tex" 1776640883.62262 438 e4cda8b1e4adb84710d4f6e9d1ec1f99 ""
+  "sections/2_related_work.tex" 1776694178.39394 4126 8231632646fe8c3e3ae0a84dcc62d964 ""
+  "sections/3_method.tex" 1776695134.25461 9085 4b412947244f3daf587f7df825d7b572 ""
+  "sections/4_evaluation.tex" 1776694915.46731 4939 ea2515c3f12c6b39e3641deacd7dd3ff ""
+  "sections/5_conclusion.tex" 1776694985.70252 438 81c8233fd47f211873831d891d8c3757 ""
   (generated)
   "main.aux"
   "main.log"
