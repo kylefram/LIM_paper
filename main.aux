@@ -42,21 +42,23 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Filter Selection}{3}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Brute Force Search}{3}{}\protected@file@percent }
 \newlabel{fig:errors}{{3.3.1}{3}{}{subsubsection.3.3.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces MSE Error distribution across all filter combinations for N=5}}{3}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces MSE Error distribution across all filter combinations for k=5}}{3}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}PCA Analysis}{3}{}\protected@file@percent }
+\citation{farnand2003using}
 \citation{Pascale2006RGBCO}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Blended Methods}{4}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Comparable $\Delta E_{2000}$ performance between PCA and Exhaustive Search}}{4}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Timing Comparison between PCA and Brute Force Selection Methods}}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Timing Comparison between PCA and Brute Force Selection Methods}}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces MSE Comparison between PCA and Brute Force Selection Methods}}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Brute Force Search Augmented PCA}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces MSE Comparison between PCA and Brute Force Selection Methods}}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4}Evaluation}{4}{}\protected@file@percent }
-\newlabel{fid:DeltaE}{{4}{4}{}{section.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Best $\Delta E_{2000}$ for each number of filters $N$ }}{4}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Camera Spectral Sensitivity for best XYZ Reconstruction for $k=3$ }}{5}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces $N=5$, Reconstruction of CIE 2006 Standard Observer}}{5}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Camera Spectral Sensitivity for best XYZ Reconstruction for $N=6, N_2=2$ }}{5}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Macbeth Color Checker Comparison for $N=5$ }}{6}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Macbeth Color Checker Comparison for $N=3$ }}{6}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces $\boldsymbol  {M}$ matrix for $N=10$ reconstruction}}{6}{}\protected@file@percent }
+\newlabel{fig:DeltaE}{{4}{5}{}{section.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Best $\Delta E_{2000}$ for each number of filters $k$ }}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Camera Spectral Sensitivity for best XYZ Reconstruction for $k=3$ }}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Macbeth Color Checker Comparison for $k=3$}}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Camera Spectral Sensitivity for best XYZ Reconstruction for $k=4$}}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Camera Spectral Sensitivity for best XYZ Reconstruction for $k=5$ }}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Macbeth Color Checker Comparison for $k=5$ }}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Camera Spectral Sensitivity for best XYZ Reconstruction for $k=6$ }}{6}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{6}{}\protected@file@percent }
 \bibdata{document.bib}
 \bibcite{peyghambari2021lithological}{1}
@@ -87,12 +89,13 @@
 \bibcite{BEUTLER1965451}{25}
 \bibcite{macausland2014moore}{26}
 \bibcite{mallat1993matching}{27}
-\bibcite{Pascale2006RGBCO}{28}
+\bibcite{farnand2003using}{28}
+\bibcite{Pascale2006RGBCO}{29}
 \bibstyle{ieeetr}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Appendix}{8}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Timing Comparison: PCA vs. Brute Force}}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Appendix}{9}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Timing Comparison: PCA vs. Brute Force, up to $k_1=8$, $k_2=2$}}{9}{}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{tab:timing_comparison}{{1}{9}{}{table.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Minimum MSE and $\Delta E$ Comparison: PCA vs. Brute Force, up to $N=6$, $N_2=2$}}{10}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Minimum MSE and $\Delta E$ Comparison: PCA vs. Brute Force, up to $k_1=6$, $k_2=2$}}{10}{}\protected@file@percent }
 \newlabel{tab:mse_deltae_comparison}{{2}{10}{}{table.2}{}}
 \gdef \@abspage@last{10}

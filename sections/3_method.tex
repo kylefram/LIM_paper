@@ -11,7 +11,7 @@ For approximations of XYZ, we follow the work of Hardeberg \cite{Filterselection
 %Abstractly, we denote the loss function $L(\boldsymbol{x}(\lambda),\boldsymbol{y}(\lambda))$ for arbitrary target $\boldsymbol{x}(\lambda)$ to be approximated by the estimation (i.e. combination of filter wheel sensitivities) as $\boldsymbol{y}(\lambda)$ (to be solved for) defined over the domain $\lambda \in \omega$. 
 
 \begin{equation}
-    L(\boldsymbol{x}(\lambda),\boldsymbol{y}(\lambda)) = \sum_{X,Y,Z} \int_{\omega}\|\boldsymbol{x}(\lambda)-\boldsymbol{x}(\lambda)\| d\lambda
+    L({X_c}(\lambda),{\rho}_{c,k}(\lambda)) = \int_{\omega}\|{X_c}(\lambda)-{\rho}_{c,k}(\lambda)\| d\lambda
     \label{eq:5}
 \end{equation}
 
@@ -20,30 +20,32 @@ For approximations of XYZ, we follow the work of Hardeberg \cite{Filterselection
 %%%We take $t \in \{X,Y,Z\}$ as our target color matching functions and 
 %% Kyle added y(\lambda)=
 %%%$y(\lambda)=\rho'_c(\lambda)$ with $c\in \{R,G,B\}$ as our simulated functions. 
-We consider loss from all color channels equally. Given that we are limited by 1nm steps in measurement, we discretize over $\omega$, taking $\omega_d = \{400,401...750\}$. We sum $MSE$ over $\omega_d$ to compute our total error, and then sum over each response function:
+We consider loss from all color channels equally. Given that we are limited by 1nm steps in measurement, we discretize over $\omega$, taking $\omega_d = \{400,401...750\}$. We sum MSE over $\omega_d$ to compute our total error, and then sum over each response function:
 
 \begin{equation}
-    L_d(\boldsymbol{x}(\lambda),\boldsymbol{y}(\lambda)) = \sum_{X,Y,Z} \sum_{\lambda \in \omega_d}\|\boldsymbol{x}(\lambda)-\boldsymbol{y}(\lambda)\|
+    L_d({X_c}(\lambda),\rho_{c,k}(\lambda)) = \sum_{\lambda \in \omega_d}\|{X_c}(\lambda)-{\rho}_{c,k}(\lambda)\|
     \label{eq:6}
 \end{equation}
 
 We minimize loss by selection of $k$ representing our $N$ `active' filters (which incorporate the intrinsic sensitivity of a grey-scale sensor) each having transmission functions $\underline{f}_k(\lambda)$ (thus comprising a $k$ length vector of functions), and $\boldsymbol{M}$, a $3\times k$ color correction matrix. 
-We also define $\underline{X}(\lambda)$ as the $X,Y,$ and $Z$ functions. 
+We also define $\underline{X}(\lambda)$ as the $X,Y,$ and $Z$ functions, and $\underline{\rho}$ as the corresponding simulated response functions. 
 
 \begin{equation}
-    \argmin_{\mathbf{M}} L_d(\underline{X}(\lambda),\mathbf{M}\underline{f}(\lambda)E(\lambda)S(\lambda))
+    \argmin_{\mathbf{M}} \sum_{\{X,Y,Z\}} L_d(\underline{X}(\lambda),\underline{\rho}(\lambda))
     \label{eq:7}
 \end{equation}
 
 
 %In this case, the optimal weights can be found using the pseudo-inverse \cite{greville1960some, BEUTLER1965451, macausland2014moore}.
-We define $\boldsymbol{F}$ as the $k\times 351$ matrix $\underline{f}(\lambda)E(\lambda)S(\lambda)$ at each $\lambda \in \omega_d$. And the discrete set of $3 \times 351$ XYZ functions as $\mathbf{X}$. If we find a good minimization according to our loss function, then
+We define $\boldsymbol{F}$ as the $k\times 351$ matrix $\underline{f}(\lambda)E(\lambda)S(\lambda)$ at each $\lambda \in \omega_d$. 
+And the discrete set of $3 \times 351$ XYZ functions as $\mathbf{X}$. 
+If we find a good minimization according to our loss function, then
 
 \begin{equation}
     \boldsymbol{X} = \boldsymbol{M}\boldsymbol{F}
 \end{equation}  
 
-Using a least-squares loss we can solve for $\boldsymbol{M}$, in closed form, using the pseudo-inverse \cite{greville1960some, BEUTLER1965451}, denoted $A^+$ for a matrix $A$. 
+Using a least-squares loss we can solve for $\boldsymbol{M}$, in closed form, using the Moore-Penrose pseudo-inverse \cite{greville1960some, BEUTLER1965451}, denoted $A^+$ for a matrix $A$. 
 The unique $351 \times k$ Moore-Penrose pseudo-inverse solution $\boldsymbol{F}^+$ has the desirable property that while we may not exactly satisfy the Luther condition, it provides the closest possible approximation given filter set $k$ \cite{macausland2014moore}:
 \begin{equation}
     \boldsymbol{M} \approx \boldsymbol{X}\boldsymbol{F}^+
@@ -61,14 +63,14 @@ While the number of filters $M$ may be large we, ideally, would posit a filter w
 In the naive solution, we find the optimal filter combination for every subset of $k$ filters (where $k$ is small) drawn from the $M$ filter set by selecting the combination with the lowest loss, considering all combinations of filters (there are nearly 10,000,000 of these for $k=5$). 
 In Figure \ref{fig:errors} we plot the errors across all sets of 5 filters (multiplied by the camera sensitivity) from the worst to best performing quintuple. 
 We compute the Moore-Penrose pseudo-inverse for each set of filters. 
-Our implementation is parallelized over 8 NVIDIA L4 GPUs, with a combined pool of up to 192GB VRAM, enabling us to compute brute-force searches of $k=5$ approximately 3 minutes. 
+Our implementation is parallelized over 8 NVIDIA L4 GPUs, with a combined pool of up to 192GB VRAM, enabling us to compute brute-force searches of $k=5$ approximately 2 minutes. 
 %% Kyle N=5?
 
 \begin{center}
     \label{fig:errors}
     \centering
     \includegraphics[width=\linewidth]{media/all_errors.png}
-    \captionof{figure}{MSE Error distribution across all filter combinations for N=5}
+    \captionof{figure}{MSE Error distribution across all filter combinations for k=5}
 \end{center}
 
 %not super relevant:
@@ -77,47 +79,50 @@ Our implementation is parallelized over 8 NVIDIA L4 GPUs, with a combined pool o
 
 \subsubsection{PCA Analysis}
 
-
 %%% Kyle, I think I know what you did here. But I am not sure. In any case I don't think what you write would make clear what you did to a skilled-in-the-art reader.
 
 To find the optimal filter combination
 %for each $N$ 
-without brute force search, we can use PCA analysis to find the optimal weights $\mathbf{M}$ for all filters, and then select the top $N$ filters with the highest weights.
+without brute force search, we can use PCA analysis find approximate solutions. 
 
 %% Kyle I am hoping I am not changing the sense of what your are doing. I commented the next out because I couldn't make it square with the text (as I see it)
 %% KYLE: this is fairly accurate. I initially did use N and M for my 'numbers' but it was a very similar statement that caused me to rethink that notation as 'capital M' is overloaded here. 
 %% unless you think the bold is clear enough.
 
-This method effectively creates one $3\times M$ matrix $\boldsymbol{M}$ and iteratively reduces weights that can be discarded with minimal loss, until reaching $k$ nonzero entries and thus our final $3 \times k$ matrix of weights. 
-Specifically, the selection is performed by projecting $\boldsymbol{F}$ onto the space spanned by the target $\boldsymbol{X}$ matrix, finding the most relevant entries as per the Matching Pursuit method outlined in Mallat and Zhang \cite{mallat1993matching}.
-We iteratively apply this methodology $k$ times, each time on a subset of the resultant orthonormal basis formed by subtracting the prior filter's projection.
+This method initially creates one $3\times M$ matrix $\boldsymbol{M}$ and iteratively selects until reaching $k$ filters and thus our final $3 \times k$ matrix of weights. 
+Specifically, the selection is performed by projecting $\boldsymbol{F}$ onto the space spanned by the target $\boldsymbol{X}$ matrix, finding the filter with the highest norm as per the Matching Pursuit method outlined in Mallat and Zhang \cite{mallat1993matching}.
+We iteratively apply this methodology $k$ times, each time on a subset of the resultant orthonormal basis formed by subtracting the selected filter's projection.
 
-This method is comparatively instant, able to compute the $k=5$ case in 19 seconds on a single L4 GPU. 
-%%% Graham GOT TO HERE
+This method is comparatively fast, able to compute the $k=5$ case in 19 seconds on a single L4 GPU. 
+This method also scales well, with $k=8$ runtime at only 20 seconds. 
 
-\subsubsection{Blended Methods} 
-
-$\;$\newline While brute force methods guarantee minimum possible loss by investigating the entire search space, large $k$ implementations render this technique impractical. 
-%Crucially, we can decrease the speed of combinatoric explosion by pruning our set of filters, but the problem of which filter to exclude in a pairwise filter pruning decision is not trivial. 
-
-%% Kyle, no, I don't understand what you did here
-To address this problem, we use a blended method which suggests a solution using PCA or another heuristic method for $k$ filters, and then greedily considers another set of $N_2$ filters from the remaining set. 
-This provides a middle ground to the performance-accuracy tradeoff.
-We see that a significant MSE shortfall grows with $k$ as $k_2=0$, but nearly disappears at $k_2>0$ for most practical values of $k$.
-
-%% Kyle, first time you have mentioned $\Delta E_{2000}$
-
-Further, certain PCA solutions achieve effectively identical $\Delta E_{2000}$ to those achieved by exhaustive search, especially at $N>4$ and $N_2 \in \{1,2\}$.
-
-\begin{center}
-    \centering
-    \includegraphics[width=\linewidth]{media/deltaE_comparison_exact_paths.png}
-    \captionof{figure}{Comparable $\Delta E_{2000}$ performance between PCA and Exhaustive Search}
-\end{center}
-
-We also compare the time performance of these, and demonstrate the significant improvement afforded by PCA, as well as the relative speed of adding 2 layers of brute force searching.
+We show the relative timings for Brute Force and PCA algorithms below. 
 \begin{center}
     \centering
     \includegraphics[width=1.05\linewidth]{media/timing_comparison.png}
     \captionof{figure}{Timing Comparison between PCA and Brute Force Selection Methods}
+\end{center}
+
+However, we note that the impeoved MSE result for the brute force selection methodology.
+\begin{center}
+    \centering
+    \includegraphics[width=1\linewidth]{media/mse_comparison_exact_paths.png}
+    \captionof{figure}{MSE Comparison between PCA and Brute Force Selection Methods}
+\end{center}
+
+\subsubsection{Brute Force Search Augmented PCA} 
+
+$\;$\newline While brute force methods guarantee minimum possible error by investigating the entire search space, large $k$ implementations render this technique impractical. 
+Additionally, our PCA method outlined above cannot always identify the optimal filter set, and has a nonnegligible MSE shortfall vs. exhaustive search for all $k$.
+
+To address this problem, we use a blended method which finds a PCA solution for $k_1$ filters, and then considers all further possible combinations from a further $k_2$ filters, for a total $k=k_1+k_2$. 
+This provides a middle ground to the performance-accuracy tradeoff.
+The observed MSE shortfall using PCA selection disappears at $k_2>1$.
+
+We note here that the MSE shortfall observed above has mostly disappeared, with PCA having a significant performance improvement over Brute Force. 
+A full performance overview is included in the Appendix (\ref{tab:timing_comparison}).
+\begin{center}
+    \centering
+    \includegraphics[width=\linewidth]{media/mse_comparison_exact_paths_n2_2.png}
+    \captionof{figure}{MSE Comparison between PCA and Brute Force Selection Methods}
 \end{center}

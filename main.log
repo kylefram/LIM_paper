@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  19 APR 2026 10:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  19 APR 2026 22:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -262,42 +262,156 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box101
 \@float@everytoks=\toks25
 \@floatcapt=\box102
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/breqn/breqn.sty (/usr/local/texlive/2026/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2026-01-19 L3 programming layer (loader) 
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count314
+))
+Package: breqn 2021/10/28 v0.98l Breaking equations
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/breqn/flexisym.sty
+Package: flexisym 2021/10/28 v0.98l Make math characters macros
+LaTeX Info: Redefining \textprime on input line 299.
+LaTeX Info: Redefining \not on input line 357.
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/breqn/cmbase.sym
+File: cmbase.sym 2007/12/19 v0.92
+LaTeX Info: Redefining \hbar on input line 324.
+LaTeX Info: Redefining \surd on input line 326.
+LaTeX Info: Redefining \angle on input line 334.
+LaTeX Info: Redefining \neq on input line 335.
+LaTeX Info: Redefining \mapsto on input line 336.
+LaTeX Info: Redefining \cong on input line 337.
+LaTeX Info: Redefining \notin on input line 340.
+LaTeX Info: Redefining \rightleftharpoons on input line 341.
+LaTeX Info: Redefining \doteq on input line 342.
+LaTeX Info: Redefining \hookrightarrow on input line 343.
+LaTeX Info: Redefining \hookleftarrow on input line 344.
+LaTeX Info: Redefining \bowtie on input line 345.
+LaTeX Info: Redefining \models on input line 346.
+LaTeX Info: Redefining \Longrightarrow on input line 347.
+LaTeX Info: Redefining \longrightarrow on input line 348.
+LaTeX Info: Redefining \Longleftarrow on input line 349.
+LaTeX Info: Redefining \longleftarrow on input line 350.
+LaTeX Info: Redefining \longmapsto on input line 351.
+LaTeX Info: Redefining \longleftrightarrow on input line 352.
+LaTeX Info: Redefining \Longleftrightarrow on input line 353.
+LaTeX Info: Redefining \cdots on input line 357.
+LaTeX Info: Redefining \vdots on input line 360.
+LaTeX Info: Redefining \ddots on input line 365.
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/breqn/mathstyle.sty
+Package: mathstyle 2021/10/28 v0.98l Tracking mathstyle implicitly
+LaTeX Info: Redefining \displaystyle on input line 95.
+LaTeX Info: Redefining \textstyle on input line 97.
+LaTeX Info: Redefining \scriptstyle on input line 99.
+LaTeX Info: Redefining \scriptscriptstyle on input line 101.
+LaTeX Info: Redefining \genfrac on input line 149.
+)) (/usr/local/texlive/2026/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count315
+\calc@Bcount=\count316
+\calc@Adimen=\dimen191
+\calc@Bdimen=\dimen192
+\calc@Askip=\skip72
+\calc@Bskip=\skip73
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count317
+\calc@Cskip=\skip74
+)
+\inf@bad=\count318
+\maxint=\count319
+\listwidth=\dimen193
+\eqnumsep=\dimen194
+\eqmargin=\dimen195
+\eqlinespacing=\skip75
+\eqlineskip=\skip76
+\eqlineskiplimit=\dimen196
+\eqbinoffset=\muskip19
+\eqdelimoffset=\muskip20
+\eqindentstep=\dimen197
+\eqstyle=\toks26
+\eqbreakdepth=\count320
+\eqinterlinepenalty=\count321
+\intereqpenalty=\count322
+\intereqskip=\skip77
+\prerelpenalty=\count323
+\prebinoppenalty=\count324
+\Dmedmuskip=\muskip21
+\Dthickmuskip=\muskip22
+\eqleftskip=\skip78
+\eqrightskip=\skip79
+\eq@vspan=\skip80
+\eq@binoffset=\muskip23
+\EQ@box=\box103
+\EQ@copy=\box104
+\EQ@numbox=\box105
+\eq@wdNum=\dimen198
+\GRP@numbox=\box106
+\grp@wdNum=\dimen199
+\eq@lines=\count325
+\eq@curline=\count326
+\eq@badness=\count327
+\EQ@vims=\count328
+\eq@dp=\dimen256
+\eq@wdL=\dimen257
+\eq@wdT=\dimen258
+\eq@wdMin=\dimen259
+\grp@wdL=\dimen260
+\grp@wdR=\dimen261
+\grp@wdT=\dimen262
+\eq@wdRmax=\dimen263
+\eq@firstht=\dimen264
+\eq@wdCond=\dimen265
+\eq@indentstep=\dimen266
+\eq@linewidth=\dimen267
+\grp@linewidth=\dimen268
+\eq@hshift=\dimen269
+\eq@given@sidespace=\dimen270
+\mathindent=\dimen271
+\eq@final@linecount=\count329
+\eq@wdR=\dimen272
+\EQ@continue=\toks27
+\lr@level=\count330
+\GRP@queue=\toks28
+\GRP@box=\box107
+\GRP@wholebox=\box108
+\darraycolsep=\skip81
+\cur@row=\count331
+\cur@col=\count332
+\conditionsep=\skip82
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count315
-\scratchdimen=\dimen191
-\scratchbox=\box103
-\nofMPsegments=\count316
-\nofMParguments=\count317
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count318
-\MPscratchDim=\dimen192
-\MPnumerator=\count319
-\makeMPintoPDFobject=\count320
-\everyMPtoPDFconversion=\toks27
+\scratchcounter=\count333
+\scratchdimen=\dimen273
+\scratchbox=\box109
+\nofMPsegments=\count334
+\nofMParguments=\count335
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count336
+\MPscratchDim=\dimen274
+\MPnumerator=\count337
+\makeMPintoPDFobject=\count338
+\everyMPtoPDFconversion=\toks30
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -306,28 +420,28 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <18> not available
-(Font)              size <17.28> substituted on input line 17.
+(Font)              size <17.28> substituted on input line 19.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <18> not available
-(Font)              size <17.28> substituted on input line 17.
+(Font)              size <17.28> substituted on input line 19.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/n' in size <18> not available
-(Font)              size <17.28> substituted on input line 17.
+(Font)              size <17.28> substituted on input line 19.
 
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 19.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 21.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 19.
+(Font)              size <5> substituted on input line 21.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
-(Font)              size <5> substituted on input line 19.
+(Font)              size <5> substituted on input line 21.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 19.
+(Font)              size <5> substituted on input line 21.
 
 (./sections/0_abstract.tex) (./sections/1_intro.tex) (./sections/2_related_work.tex [1
 
@@ -344,78 +458,76 @@ LaTeX Font Warning: Font shape `OML/cmm/b/it' in size <5.5> not available
 LaTeX Font Warning: Font shape `OMS/cmsy/b/n' in size <5.5> not available
 (Font)              size <5> substituted on input line 10.
 
-<media/measure2.jpeg, id=13, 728.4816pt x 971.3088pt>
-File: media/measure2.jpeg Graphic file (type jpg)
-<use media/measure2.jpeg>
-Package pdftex.def Info: media/measure2.jpeg  used on input line 42.
-(pdftex.def)             Requested size: 222.62204pt x 296.81937pt.
-) (./sections/3_method.tex [2 <./media/measure2.jpeg>]
+<media/measure2labeled.jpeg, id=13, 3035.34pt x 4047.12pt>
+File: media/measure2labeled.jpeg Graphic file (type jpg)
+<use media/measure2labeled.jpeg>
+Package pdftex.def Info: media/measure2labeled.jpeg  used on input line 22.
+(pdftex.def)             Requested size: 222.62204pt x 296.78972pt.
+) (./sections/3_method.tex [2 <./media/measure2labeled.jpeg>]
 <media/all_errors.png, id=22, 867.24pt x 433.62pt>
 File: media/all_errors.png Graphic file (type png)
 <use media/all_errors.png>
-Package pdftex.def Info: media/all_errors.png  used on input line 70.
+Package pdftex.def Info: media/all_errors.png  used on input line 72.
 (pdftex.def)             Requested size: 222.62204pt x 111.30937pt.
  [3 <./media/all_errors.png>]
-<media/deltaE_comparison_exact_paths.png, id=30, 867.24pt x 578.16pt>
-File: media/deltaE_comparison_exact_paths.png Graphic file (type png)
-<use media/deltaE_comparison_exact_paths.png>
-Package pdftex.def Info: media/deltaE_comparison_exact_paths.png  used on input line 114.
-(pdftex.def)             Requested size: 222.62204pt x 148.41249pt.
-<media/timing_comparison.png, id=31, 1011.78pt x 505.89pt>
+<media/timing_comparison.png, id=30, 1011.78pt x 505.89pt>
 File: media/timing_comparison.png Graphic file (type png)
 <use media/timing_comparison.png>
-Package pdftex.def Info: media/timing_comparison.png  used on input line 121.
+Package pdftex.def Info: media/timing_comparison.png  used on input line 102.
 (pdftex.def)             Requested size: 233.75381pt x 116.87715pt.
 
-Overfull \hbox (11.13177pt too wide) in paragraph at lines 121--122
+Overfull \hbox (11.13177pt too wide) in paragraph at lines 102--103
  [] 
  []
 
-) (./sections/4_evaluation.tex
-
-LaTeX Warning: Reference `fig:DeltaE' on page 4 undefined on input line 4.
-
-<media/deltaE_vs_N_mse.png, id=32, 722.7pt x 433.62pt>
-File: media/deltaE_vs_N_mse.png Graphic file (type png)
-<use media/deltaE_vs_N_mse.png>
-Package pdftex.def Info: media/deltaE_vs_N_mse.png  used on input line 10.
+<media/mse_comparison_exact_paths.png, id=31, 867.24pt x 578.16pt>
+File: media/mse_comparison_exact_paths.png Graphic file (type png)
+<use media/mse_comparison_exact_paths.png>
+Package pdftex.def Info: media/mse_comparison_exact_paths.png  used on input line 109.
+(pdftex.def)             Requested size: 222.62204pt x 148.41249pt.
+<media/mse_comparison_exact_paths_n2_2.png, id=32, 867.24pt x 578.16pt>
+File: media/mse_comparison_exact_paths_n2_2.png Graphic file (type png)
+<use media/mse_comparison_exact_paths_n2_2.png>
+Package pdftex.def Info: media/mse_comparison_exact_paths_n2_2.png  used on input line 126.
+(pdftex.def)             Requested size: 222.62204pt x 148.41249pt.
+) (./sections/4_evaluation.tex [4 <./media/timing_comparison.png> <./media/mse_comparison_exact_paths.png> <./media/mse_comparison_exact_paths_n2_2.png>]
+<media/deltaE_vs_k_mse.png, id=39, 722.7pt x 433.62pt>
+File: media/deltaE_vs_k_mse.png Graphic file (type png)
+<use media/deltaE_vs_k_mse.png>
+Package pdftex.def Info: media/deltaE_vs_k_mse.png  used on input line 14.
 (pdftex.def)             Requested size: 222.62204pt x 133.5739pt.
-[4 <./media/deltaE_comparison_exact_paths.png> <./media/timing_comparison.png> <./media/deltaE_vs_N_mse.png>]
-<media/n3MSETransmission1.png, id=39, 875.4306pt x 730.8906pt>
-File: media/n3MSETransmission1.png Graphic file (type png)
-<use media/n3MSETransmission1.png>
-Package pdftex.def Info: media/n3MSETransmission1.png  used on input line 26.
+<media/k3top1_spectra.png, id=40, 875.4306pt x 730.8906pt>
+File: media/k3top1_spectra.png Graphic file (type png)
+<use media/k3top1_spectra.png>
+Package pdftex.def Info: media/k3top1_spectra.png  used on input line 25.
 (pdftex.def)             Requested size: 222.62204pt x 185.85605pt.
-<media/n5MSETransNOIR.png, id=40, 875.4306pt x 730.8906pt>
-File: media/n5MSETransNOIR.png Graphic file (type png)
-<use media/n5MSETransNOIR.png>
-Package pdftex.def Info: media/n5MSETransNOIR.png  used on input line 43.
-(pdftex.def)             Requested size: 222.62204pt x 185.85605pt.
-<media/n6_2MSETransmission1.png, id=41, 875.4306pt x 730.8906pt>
-File: media/n6_2MSETransmission1.png Graphic file (type png)
-<use media/n6_2MSETransmission1.png>
-Package pdftex.def Info: media/n6_2MSETransmission1.png  used on input line 52.
-(pdftex.def)             Requested size: 222.62204pt x 185.85605pt.
-<media/n5MSEMacbethRank0.png, id=42, 710.4141pt x 468.3096pt>
-File: media/n5MSEMacbethRank0.png Graphic file (type png)
-<use media/n5MSEMacbethRank0.png>
-Package pdftex.def Info: media/n5MSEMacbethRank0.png  used on input line 68.
-(pdftex.def)             Requested size: 222.62204pt x 146.7537pt.
- [5 <./media/n3MSETransmission1.png> <./media/n5MSETransNOIR.png> <./media/n6_2MSETransmission1.png>]
-<media/n3MSEMacbeth.png, id=49, 710.4141pt x 468.3096pt>
+<media/n3MSEMacbeth.png, id=41, 701.7417pt x 468.3096pt>
 File: media/n3MSEMacbeth.png Graphic file (type png)
 <use media/n3MSEMacbeth.png>
-Package pdftex.def Info: media/n3MSEMacbeth.png  used on input line 75.
-(pdftex.def)             Requested size: 222.62204pt x 146.7537pt.
-<media/n10M.png, id=50, 586.1097pt x 188.6247pt>
-File: media/n10M.png Graphic file (type png)
-<use media/n10M.png>
-Package pdftex.def Info: media/n10M.png  used on input line 83.
-(pdftex.def)             Requested size: 222.62204pt x 71.64645pt.
-) (./sections/5_conclusion.tex) [6 <./media/n5MSEMacbethRank0.png> <./media/n3MSEMacbeth.png> <./media/n10M.png>] (./main.bbl [7]) (./sections/6_appendix.tex [8]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9]) [10] (./main.aux)
+Package pdftex.def Info: media/n3MSEMacbeth.png  used on input line 33.
+(pdftex.def)             Requested size: 222.62204pt x 148.56158pt.
+<media/k4top1_spectra.png, id=42, 875.4306pt x 730.8906pt>
+File: media/k4top1_spectra.png Graphic file (type png)
+<use media/k4top1_spectra.png>
+Package pdftex.def Info: media/k4top1_spectra.png  used on input line 45.
+(pdftex.def)             Requested size: 222.62204pt x 185.85605pt.
+<media/k5top1_spectra.png, id=43, 875.4306pt x 730.8906pt>
+File: media/k5top1_spectra.png Graphic file (type png)
+<use media/k5top1_spectra.png>
+Package pdftex.def Info: media/k5top1_spectra.png  used on input line 53.
+(pdftex.def)             Requested size: 222.62204pt x 185.85605pt.
+ [5 <./media/deltaE_vs_k_mse.png> <./media/k3top1_spectra.png> <./media/n3MSEMacbeth.png> <./media/k4top1_spectra.png>]
+<media/k5Macbeth_render_rank_0.png, id=51, 701.7417pt x 468.3096pt>
+File: media/k5Macbeth_render_rank_0.png Graphic file (type png)
+<use media/k5Macbeth_render_rank_0.png>
+Package pdftex.def Info: media/k5Macbeth_render_rank_0.png  used on input line 59.
+(pdftex.def)             Requested size: 222.62204pt x 148.56158pt.
+<media/k6top1_spectra.png, id=52, 875.4306pt x 730.8906pt>
+File: media/k6top1_spectra.png Graphic file (type png)
+<use media/k6top1_spectra.png>
+Package pdftex.def Info: media/k6top1_spectra.png  used on input line 83.
+(pdftex.def)             Requested size: 222.62204pt x 185.85605pt.
+) (./sections/5_conclusion.tex) [6 <./media/k5top1_spectra.png> <./media/k5Macbeth_render_rank_0.png> <./media/k6top1_spectra.png>] (./main.bbl [7]) [8] (./sections/6_appendix.tex [9]) [10] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -425,23 +537,20 @@ L3 programming layer <2026-01-19>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.72pt have occurred.
 
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 4873 strings out of 467525
- 82188 string characters out of 5418983
- 502616 words of memory out of 5000000
- 33722 multiletter control sequences out of 15000+600000
- 637142 words of font info for 73 fonts, out of 8000000 for 9000
+ 5706 strings out of 467525
+ 93927 string characters out of 5418983
+ 517877 words of memory out of 5000000
+ 34539 multiletter control sequences out of 15000+600000
+ 636529 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,10n,65p,497b,524s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 65i,10n,86p,460b,509s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (10 pages, 5910710 bytes).
+Output written on main.pdf (10 pages, 6121030 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
+ 136 PDF objects out of 1000 (max. 8388607)
  70 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

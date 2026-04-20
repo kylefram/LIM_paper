@@ -2,15 +2,15 @@
 \section{Appendix}
 
 We include the timing records of our filter selection. 
-Both routines were run on NVIDIA GPU environment with the Brute Force run pruned to cosine similarity of .95 and able to utilize 6 GPUs. 
-Conversely, the PCA algorithm used one GPU for calculation and 6 GPUs only for the latter steps. 
+Both routines were run on NVIDIA GPU environment with the Brute Force run pruned to cosine similarity of .95 and able to utilize 8 GPUs. 
+Conversely, the PCA algorithm used one GPU for calculation and 8 GPUs only for the augmented steps. 
 
 \begin{table}[htbp]
     \begin{tabular}{llrrrrrr}
     \toprule
     &  & \multicolumn{2}{r}{Base Time (s)} & \multicolumn{2}{r}{Aug Time (s)} & \multicolumn{2}{r}{Total Time (s)} \\
     & Strategy & Brute Force & PCA & Brute Force & PCA & Brute Force & PCA \\
-    N & N2 &  &  &  &  &  &  \\
+    $k_1$ & $k_2$ &  &  &  &  &  &  \\
     \midrule
     \multirow[t]{3}{*}{1} & 0 & 13.70 & 7.50 & 0.00 & 0.00 & 13.70 & 7.50 \\
     & 1 & 13.70 & 7.50 & 19.23 & 19.98 & 32.93 & 27.48 \\
@@ -46,12 +46,13 @@ Conversely, the PCA algorithm used one GPU for calculation and 6 GPUs only for t
     \cline{1-8}
     \bottomrule
     \end{tabular}
-    \caption{Timing Comparison: PCA vs. Brute Force}
+    \caption{Timing Comparison: PCA vs. Brute Force, up to $k_1=8$, $k_2=2$}
     \label{tab:timing_comparison}
 
 \end{table}
 \newpage
-We also include the full loss and $\Delta E_{2000}$ results: 
+We also include the full loss and $\Delta E_{2000}$ results. 
+Note that 'Brute Force with Augmentation' considers additional filters to only the top result at $k_1$, and hence can have worse MSE than the PCA solution, which maximizes for orthogonality among filters. 
 
 \begin{table}[htbp]
     \centering
@@ -59,7 +60,7 @@ We also include the full loss and $\Delta E_{2000}$ results:
     \toprule
      &  & \multicolumn{2}{r}{Best MSE} & \multicolumn{2}{r}{Best $\Delta E$} \\
      & Strategy & Brute Force & PCA & Brute Force & PCA \\
-    N & N2 &  &  &  &  \\
+    $k_1$ & $k_2$ &  &  &  &  \\
     \midrule
     \multirow[t]{3}{*}{1} & 0 & 0.1904 & 0.2003 & 20.8603 & 17.7365 \\
       & 1 & 0.1432 & 0.0500 & 12.7010 & 12.6795 \\
@@ -87,6 +88,6 @@ We also include the full loss and $\Delta E_{2000}$ results:
     \cline{1-6}
     \bottomrule
     \end{tabular}
-    \caption{Minimum MSE and $\Delta E$ Comparison: PCA vs. Brute Force, up to $N=6$, $N_2=2$}
+    \caption{Minimum MSE and $\Delta E$ Comparison: PCA vs. Brute Force, up to $k_1=6$, $k_2=2$}
     \label{tab:mse_deltae_comparison}
 \end{table}
