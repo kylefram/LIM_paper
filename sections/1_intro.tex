@@ -1,10 +1,12 @@
 \section{Introduction}
-Multispectral image acquisition systems have uses ranging from agricultural monitoring to fine art analysis to medical scanning \cite{peyghambari2021lithological, ortega2019gastroenterology, mariotti2023forensics, qin2013foodsafety, wu2013foodfundamentals, lee2020colorluminance, wu2024headneckcancer, lu2020agriculture} 
+Multispectral image acquisition systems have uses ranging from agricultural monitoring to fine art analysis to medical scanning \cite{peyghambari2021lithological, ortega2019gastroenterology, mariotti2023forensics, qin2013foodsafety, wu2013foodfundamentals, lee2020colorluminance, wu2024headneckcancer, lu2020agriculture}{\color{red} .}
 State of the art systems are prohibitively costly \cite{SCUTELNIC2024e00596}, and are generally only suitable for their specialized purpose.
-A comparatively cheaper and more flexible solution lies in the filter wheel, notably employed in terrestrial and geological analysis as early as 1972 \cite{mannheimer1977landsat}, and now provides a useful framework for all uses of multispectral imaging. 
+A comparatively cheaper and more flexible solution lies in the filter wheel, notably employed in terrestrial and geological analysis as early as 1972 \cite{mannheimer1977landsat}, and now provides a useful framework for
+%all uses of 
+multispectral imaging. 
 In this paper, we construct an effective system using simple 3D-printed components, microcontrollers such as the Raspberry Pi, and a set of inexpensive gel filters such as those used for stage lights. 
 
-However, we aim to improve upon the classic apriori fixed filter wheel used with a monochromatic camera.
+However, {\color{red} our aim is to} improve upon the classic apriori fixed filter wheel used with a monochromatic camera.
 Here, we simulate image capture through a set of colored filters and then combine these to best approximate the desired XYZ colorimetric values, effectively solving for a new color wheel.
 
 Prior work has been limited by computational resources, and generally relies on heuristic measures to select filters \cite{Filterselection, vrhel1994filter}.

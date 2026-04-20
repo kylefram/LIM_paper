@@ -1,7 +1,7 @@
 \section{Method}
 \subsection{Data Collection}
 The aim of our method is to capture multiple images through different color filters and then combine them to match the colors of an image of a scene captured with respect to the CIE XYZ Color matching functions (CMFs). 
-We will choose filters drawn from a set of Rosco Supergel filters that we measure in our lab. 
+We will choose filters drawn from a set of {\color{red} $M$} Rosco Supergel filters that we measure in our lab. 
 We model our camera's and optional NOIR filter's spectral response function as per the manufacturer's specifications \cite{arducam_ov9281, coligh_ircut_650nm}
 All filters are represented in the domain $\omega = [400,750]$ nm. 
 
@@ -27,7 +27,7 @@ We consider loss from all color channels equally. Given that we are limited by 1
     \label{eq:6}
 \end{equation}
 
-We minimize loss by selection of $k$ representing our $N$ `active' filters (which incorporate the intrinsic sensitivity of a grey-scale sensor) each having transmission functions $\underline{f}_k(\lambda)$ (thus comprising a $k$ length vector of functions), and $\boldsymbol{M}$, a $3\times k$ color correction matrix. 
+We minimize loss by selection of $k$ representing our $k$ `active' filters (which incorporate the intrinsic sensitivity of a grey-scale sensor) each having transmission functions $\underline{f}_k(\lambda)$ (thus comprising a $k$ length vector of functions), and $\boldsymbol{M}$, a $3\times k$ color correction matrix. 
 We also define $\underline{X}(\lambda)$ as the $X,Y,$ and $Z$ functions, and $\underline{\rho}$ as the corresponding simulated response functions. 
 
 \begin{equation}
@@ -47,8 +47,10 @@ If we find a good minimization according to our loss function, then
 
 Using a least-squares loss we can solve for $\boldsymbol{M}$, in closed form, using the Moore-Penrose pseudo-inverse \cite{greville1960some, BEUTLER1965451}, denoted $A^+$ for a matrix $A$. 
 The unique $351 \times k$ Moore-Penrose pseudo-inverse solution $\boldsymbol{F}^+$ has the desirable property that while we may not exactly satisfy the Luther condition, it provides the closest possible approximation given filter set $k$ \cite{macausland2014moore}:
+
+%% Kyle changed approx to =
 \begin{equation}
-    \boldsymbol{M} \approx \boldsymbol{X}\boldsymbol{F}^+
+    \boldsymbol{M} = \boldsymbol{X}\boldsymbol{F}^+
 \end{equation} 
 
 %Kyle: either expand the pseudo inverse or give a reference
@@ -61,9 +63,9 @@ While the number of filters $M$ may be large we, ideally, would posit a filter w
 
 \subsubsection{Brute Force Search}
 In the naive solution, we find the optimal filter combination for every subset of $k$ filters (where $k$ is small) drawn from the $M$ filter set by selecting the combination with the lowest loss, considering all combinations of filters (there are nearly 10,000,000 of these for $k=5$). 
-In Figure \ref{fig:errors} we plot the errors across all sets of 5 filters (multiplied by the camera sensitivity) from the worst to best performing quintuple. 
+In Figure {\color{red} 2} we plot the errors across all sets of 5 filters (multiplied by the camera sensitivity) from the worst to best performing quintuple. 
 We compute the Moore-Penrose pseudo-inverse for each set of filters. 
-Our implementation is parallelized over 8 NVIDIA L4 GPUs, with a combined pool of up to 192GB VRAM, enabling us to compute brute-force searches of $k=5$ approximately 2 minutes. 
+Our implementation is parallelized over 8 NVIDIA L4 GPUs, with a combined pool of up to 192GB VRAM, enabling us to compute brute-force searches of $k=5$ approximately 2 minutes. {\color{redd} Clearly, in terms of MSE there is a large difference between the best and worst 5-filter filter set.}
 %% Kyle N=5?
 
 \begin{center}
@@ -89,9 +91,9 @@ without brute force search, we can use PCA analysis find approximate solutions.
 %% KYLE: this is fairly accurate. I initially did use N and M for my 'numbers' but it was a very similar statement that caused me to rethink that notation as 'capital M' is overloaded here. 
 %% unless you think the bold is clear enough.
 
-This method initially creates one $3\times M$ matrix $\boldsymbol{M}$ and iteratively selects until reaching $k$ filters and thus our final $3 \times k$ matrix of weights. 
+This method initially creates one $3\times M$ matrix $\boldsymbol{M}$ {\color{red} (i.e. a single combination using the whole set of Roscoe filters)}and iteratively {\color{red} de}selects until reaching $k$ filters and thus our final $3 \times k$ matrix of weights. 
 Specifically, the selection is performed by projecting $\boldsymbol{F}$ onto the space spanned by the target $\boldsymbol{X}$ matrix, finding the filter with the highest norm as per the Matching Pursuit method outlined in Mallat and Zhang \cite{mallat1993matching}.
-We iteratively apply this methodology $k$ times, each time on a subset of the resultant orthonormal basis formed by subtracting the selected filter's projection.
+%We iteratively apply this methodology $k$ times, each time on a subset of the resultant orthonormal basis formed by subtracting the selected filter's projection.
 
 This method is comparatively fast, able to compute the $k=5$ case in 19 seconds on a single L4 GPU. 
 This method also scales well, with $k=8$ runtime at only 20 seconds. 
@@ -103,7 +105,8 @@ We show the relative timings for Brute Force and PCA algorithms below.
     \captionof{figure}{Timing Comparison between PCA and Brute Force Selection Methods}
 \end{center}
 
-However, we note that the impeoved MSE result for the brute force selection methodology.
+However, we note that the {\color{red} improved} MSE result for the brute force selection methodology.
+
 \begin{center}
     \centering
     \includegraphics[width=1\linewidth]{media/mse_comparison_exact_paths.png}
