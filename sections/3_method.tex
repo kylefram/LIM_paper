@@ -1,6 +1,6 @@
 \section{Method}
 \subsection{Data Collection}
-The aim of our method is to capture multiple images through different color filters and then combine them to match the colors of an image of a scene captured with respect to the CIE XYZ Color matching functions (CMFs). 
+The aim of our method is to capture multiple images through different color filters and then combine them to match the colors of an image of a scene captured with respect to the CIE XYZ color matching functions (CMFs). 
 We will choose filters drawn from a set of Rosco Supergel filters that we measure in our lab. 
 We model our camera's and optional NOIR filter's spectral response function as per the manufacturer's specifications \cite{arducam_ov9281, coligh_ircut_650nm}
 All filters are represented in the domain $\omega = [400,750]$ nm. 
@@ -57,13 +57,13 @@ Finally, as a point of detail we must alter this optimization if any of our filt
 
 \subsection{Filter Selection}
 
-While the number of filters $M$ may be large we, ideally, would posit a filter wheel with fewer filters.
+While the number of filters $M$ may be large, we ideally would posit a filter wheel with fewer filters.
 
 \subsubsection{Brute Force Search}
 In the naive solution, we find the optimal filter combination for every subset of $k$ filters (where $k$ is small) drawn from the $M$ filter set by selecting the combination with the lowest loss, considering all combinations of filters (there are nearly 10,000,000 of these for $k=5$). 
 In Figure \ref{fig:errors} we plot the errors across all sets of 5 filters (multiplied by the camera sensitivity) from the worst to best performing quintuple. 
 We compute the Moore-Penrose pseudo-inverse for each set of filters. 
-Our implementation is parallelized over 8 NVIDIA L4 GPUs, with a combined pool of up to 192GB VRAM, enabling us to compute brute-force searches of $k=5$ approximately 2 minutes. 
+Our implementation is parallelized over 8 NVIDIA L4 GPUs, with a combined pool of up to 192GB VRAM, enabling us to compute brute force searches of $k=5$ in approximately 2 minutes. 
 %% Kyle N=5?
 
 \begin{center}
@@ -83,7 +83,7 @@ Our implementation is parallelized over 8 NVIDIA L4 GPUs, with a combined pool o
 
 To find the optimal filter combination
 %for each $N$ 
-without brute force search, we can use PCA analysis find approximate solutions. 
+without brute force search, we can use PCA analysis to find approximate solutions. 
 
 %% Kyle I am hoping I am not changing the sense of what your are doing. I commented the next out because I couldn't make it square with the text (as I see it)
 %% KYLE: this is fairly accurate. I initially did use N and M for my 'numbers' but it was a very similar statement that caused me to rethink that notation as 'capital M' is overloaded here. 
@@ -103,7 +103,7 @@ We show the relative timings for Brute Force and PCA algorithms below.
     \captionof{figure}{Timing Comparison between PCA and Brute Force Selection Methods}
 \end{center}
 
-However, we note that the impeoved MSE result for the brute force selection methodology.
+However, we note the improved MSE result for the brute force selection methodology.
 \begin{center}
     \centering
     \includegraphics[width=1\linewidth]{media/mse_comparison_exact_paths.png}
@@ -119,8 +119,8 @@ To address this problem, we use a blended method which finds a PCA solution for 
 This provides a middle ground to the performance-accuracy tradeoff.
 The observed MSE shortfall using PCA selection disappears at $k_2>1$.
 
-We note here that the MSE shortfall observed above has mostly disappeared, with PCA having a significant performance improvement over Brute Force. 
-A full performance overview is included in the Appendix (\ref{tab:timing_comparison}).
+We note here that the MSE shortfall observed above has mostly disappeared, with PCA having a significant performance improvement over Brute Force.
+%A full performance overview is included in the Appendix (\ref{tab:timing_comparison}).
 \begin{center}
     \centering
     \includegraphics[width=\linewidth]{media/mse_comparison_exact_paths_n2_2.png}
