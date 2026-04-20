@@ -7,7 +7,7 @@ All filters are represented in the domain $\omega = [400,750]$ nm.
 
 \subsection{Problem Formulation}
 
-For approximations of XYZ, we follow the work of Hardeberg \cite{Filterselection} in adopting MSE between target and simulation over the visible spetrum as the loss function and minimizing loss via search for an optimal $\boldsymbol{M}$.
+For approximations of XYZ, we follow the work of Hardeberg \cite{Filterselection} in adopting MSE between target and simulation over the visible spectrum as the loss function and minimizing loss via search for an optimal $\boldsymbol{M}$.
 %Abstractly, we denote the loss function $L(\boldsymbol{x}(\lambda),\boldsymbol{y}(\lambda))$ for arbitrary target $\boldsymbol{x}(\lambda)$ to be approximated by the estimation (i.e. combination of filter wheel sensitivities) as $\boldsymbol{y}(\lambda)$ (to be solved for) defined over the domain $\lambda \in \omega$. 
 
 \begin{equation}
@@ -20,7 +20,7 @@ For approximations of XYZ, we follow the work of Hardeberg \cite{Filterselection
 %%%We take $t \in \{X,Y,Z\}$ as our target color matching functions and 
 %% Kyle added y(\lambda)=
 %%%$y(\lambda)=\rho'_c(\lambda)$ with $c\in \{R,G,B\}$ as our simulated functions. 
-We consider loss from all color channels equally. Given that we are limited by 1nm steps in measurement, we discretize over $\omega$, taking $\omega_d = \{400,401...750\}$. We sum MSE over $\omega_d$ to compute our total error, and then sum over each response function:
+We consider loss from all color channels equally. Given that we are limited by 1 nanometer steps in measurement, we discretize over $\omega$, taking $\omega_d = \{400,401...750\}$. We sum MSE over $\omega_d$ to compute our total error, and then sum over each response function:
 
 \begin{equation}
     L_d({X_c}(\lambda),\rho_{c,k}(\lambda)) = \sum_{\lambda \in \omega_d}\|{X_c}(\lambda)-{\rho}_{c,k}(\lambda)\|
@@ -52,7 +52,9 @@ The unique $351 \times k$ Moore-Penrose pseudo-inverse solution $\boldsymbol{F}^
 \end{equation} 
 
 %Kyle: either expand the pseudo inverse or give a reference
-Finally, as a point of detail we must alter this optimization if any of our filters have 0 transmission in a part of the assumed wavelength interval. The NOIR filter only has non zero transmittance in [400,650] nanometres. So, when this filter is used we can only optimize within this wavelength interval.
+Finally, as a point of detail we must alter this optimization if any of our filters have 0 transmission in a part of the assumed wavelength interval. 
+The NOIR filter only has nonzero transmittance in [400,650] nanometers. 
+So, when this filter is used we can only optimize within this wavelength interval.
 %Note that for algorithmic stability of the pseudoinverse, we must truncate to $\lambda \in \{400,401...650\}$ when using the $NOIR$ filter. 
 
 \subsection{Filter Selection}
@@ -117,9 +119,9 @@ Additionally, our PCA method outlined above cannot always identify the optimal f
 
 To address this problem, we use a blended method which finds a PCA solution for $k_1$ filters, and then considers all further possible combinations from a further $k_2$ filters, for a total $k=k_1+k_2$. 
 This provides a middle ground to the performance-accuracy tradeoff.
-The observed MSE shortfall using PCA selection disappears at $k_2>1$.
-
-We note here that the MSE shortfall observed above has mostly disappeared, with PCA having a significant performance improvement over Brute Force.
+There is negligible MSE difference between brute force and PCA methods at $k_2>1$ for all $k_1$.
+Further, for $k_2<4$, the added time from the exhaustive search step is between 5-20 seconds on the 8 aforementioned L4 GPUs.
+%We note here that the MSE shortfall observed above has mostly disappeared, with PCA having a significant performance improvement over Brute Force.
 %A full performance overview is included in the Appendix (\ref{tab:timing_comparison}).
 \begin{center}
     \centering

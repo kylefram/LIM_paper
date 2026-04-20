@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  20 APR 2026 06:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  20 APR 2026 10:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -467,28 +467,28 @@ Package pdftex.def Info: media/measure2labeled.jpeg  used on input line 22.
 <media/all_errors.png, id=22, 867.24pt x 433.62pt>
 File: media/all_errors.png Graphic file (type png)
 <use media/all_errors.png>
-Package pdftex.def Info: media/all_errors.png  used on input line 72.
+Package pdftex.def Info: media/all_errors.png  used on input line 74.
 (pdftex.def)             Requested size: 222.62204pt x 111.30937pt.
  [3 <./media/all_errors.png>]
 <media/timing_comparison.png, id=30, 1011.78pt x 505.89pt>
 File: media/timing_comparison.png Graphic file (type png)
 <use media/timing_comparison.png>
-Package pdftex.def Info: media/timing_comparison.png  used on input line 102.
+Package pdftex.def Info: media/timing_comparison.png  used on input line 104.
 (pdftex.def)             Requested size: 233.75381pt x 116.87715pt.
 
-Overfull \hbox (11.13177pt too wide) in paragraph at lines 102--103
+Overfull \hbox (11.13177pt too wide) in paragraph at lines 104--105
  [] 
  []
 
 <media/mse_comparison_exact_paths.png, id=31, 867.24pt x 578.16pt>
 File: media/mse_comparison_exact_paths.png Graphic file (type png)
 <use media/mse_comparison_exact_paths.png>
-Package pdftex.def Info: media/mse_comparison_exact_paths.png  used on input line 109.
+Package pdftex.def Info: media/mse_comparison_exact_paths.png  used on input line 111.
 (pdftex.def)             Requested size: 222.62204pt x 148.41249pt.
 <media/mse_comparison_exact_paths_n2_2.png, id=32, 867.24pt x 578.16pt>
 File: media/mse_comparison_exact_paths_n2_2.png Graphic file (type png)
 <use media/mse_comparison_exact_paths_n2_2.png>
-Package pdftex.def Info: media/mse_comparison_exact_paths_n2_2.png  used on input line 126.
+Package pdftex.def Info: media/mse_comparison_exact_paths_n2_2.png  used on input line 128.
 (pdftex.def)             Requested size: 222.62204pt x 148.41249pt.
 ) (./sections/4_evaluation.tex [4 <./media/timing_comparison.png> <./media/mse_comparison_exact_paths.png> <./media/mse_comparison_exact_paths_n2_2.png>]
 <media/deltaE_vs_k_mse.png, id=39, 722.7pt x 433.62pt>
@@ -504,28 +504,28 @@ Package pdftex.def Info: media/k3top1_spectra.png  used on input line 25.
 <media/n3MSEMacbeth.png, id=41, 701.7417pt x 468.3096pt>
 File: media/n3MSEMacbeth.png Graphic file (type png)
 <use media/n3MSEMacbeth.png>
-Package pdftex.def Info: media/n3MSEMacbeth.png  used on input line 33.
+Package pdftex.def Info: media/n3MSEMacbeth.png  used on input line 36.
 (pdftex.def)             Requested size: 222.62204pt x 148.56158pt.
 <media/k4top1_spectra.png, id=42, 875.4306pt x 730.8906pt>
 File: media/k4top1_spectra.png Graphic file (type png)
 <use media/k4top1_spectra.png>
-Package pdftex.def Info: media/k4top1_spectra.png  used on input line 45.
+Package pdftex.def Info: media/k4top1_spectra.png  used on input line 48.
 (pdftex.def)             Requested size: 222.62204pt x 185.85605pt.
 <media/k5top1_spectra.png, id=43, 875.4306pt x 730.8906pt>
 File: media/k5top1_spectra.png Graphic file (type png)
 <use media/k5top1_spectra.png>
-Package pdftex.def Info: media/k5top1_spectra.png  used on input line 53.
+Package pdftex.def Info: media/k5top1_spectra.png  used on input line 56.
 (pdftex.def)             Requested size: 222.62204pt x 185.85605pt.
  [5 <./media/deltaE_vs_k_mse.png> <./media/k3top1_spectra.png> <./media/n3MSEMacbeth.png> <./media/k4top1_spectra.png>]
 <media/k5Macbeth_render_rank_0.png, id=51, 701.7417pt x 468.3096pt>
 File: media/k5Macbeth_render_rank_0.png Graphic file (type png)
 <use media/k5Macbeth_render_rank_0.png>
-Package pdftex.def Info: media/k5Macbeth_render_rank_0.png  used on input line 59.
+Package pdftex.def Info: media/k5Macbeth_render_rank_0.png  used on input line 62.
 (pdftex.def)             Requested size: 222.62204pt x 148.56158pt.
 <media/k6top1_spectra.png, id=52, 875.4306pt x 730.8906pt>
 File: media/k6top1_spectra.png Graphic file (type png)
 <use media/k6top1_spectra.png>
-Package pdftex.def Info: media/k6top1_spectra.png  used on input line 83.
+Package pdftex.def Info: media/k6top1_spectra.png  used on input line 86.
 (pdftex.def)             Requested size: 222.62204pt x 185.85605pt.
 ) (./sections/5_conclusion.tex) [6 <./media/k5top1_spectra.png> <./media/k5Macbeth_render_rank_0.png> <./media/k6top1_spectra.png>] (./main.bbl [7]) [8] (./main.aux)
  ***********
@@ -539,15 +539,15 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 5696 strings out of 467525
- 93690 string characters out of 5418983
+ 5698 strings out of 467525
+ 93718 string characters out of 5418983
  510877 words of memory out of 5000000
- 34532 multiletter control sequences out of 15000+600000
+ 34534 multiletter control sequences out of 15000+600000
  636529 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,6n,86p,460b,509s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 65i,6n,86p,461b,509s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (8 pages, 6117454 bytes).
+Output written on main.pdf (8 pages, 6117851 bytes).
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
  66 compressed objects within 1 object stream
